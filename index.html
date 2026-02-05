@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Compass Brasil 2026</title>
+    <meta name="description" content="Descubra seu posicionamento político e veja quais candidatos mais se alinham com suas opiniões">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="welcome-screen" class="screen active">
+        <div class="container">
+            <header>
+                <h1>Political Compass Brasil 2026</h1>
+                <p class="subtitle">Descubra seu posicionamento político</p>
+            </header>
+            
+            <main class="welcome-content">
+                <div class="intro-text">
+                    <p>Responda a 60 questões sobre diversos temas políticos, econômicos e sociais para descobrir onde você se posiciona no espectro político brasileiro.</p>
+                    <p>Ao final, você verá um gráfico com sua posição e quais candidatos de 2026 mais se alinham com suas opiniões.</p>
+                </div>
+                
+                <div class="info-boxes">
+                    <div class="info-box">
+                        <span class="icon">📊</span>
+                        <h3>60 Questões</h3>
+                        <p>Abrangendo economia, social e política</p>
+                    </div>
+                    <div class="info-box">
+                        <span class="icon">🎯</span>
+                        <h3>Seu Posicionamento</h3>
+                        <p>Visualize onde você está no espectro político</p>
+                    </div>
+                    <div class="info-box">
+                        <span class="icon">🗳️</span>
+                        <h3>Candidatos 2026</h3>
+                        <p>Veja quem mais se alinha com você</p>
+                    </div>
+                </div>
+                
+                <button id="start-btn" class="btn-primary">Começar</button>
+            </main>
+        </div>
+    </div>
+
+    <!-- Tela de Perguntas -->
+    <div id="questions-screen" class="screen">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+                <span class="progress-text" id="progress-text">1 / 60</span>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text" class="question-text">Carregando pergunta...</h2>
+                
+                <div class="answer-options">
+                    <button class="answer-btn" data-value="2">Concordo Totalmente</button>
+                    <button class="answer-btn" data-value="1">Concordo</button>
+                    <button class="answer-btn" data-value="0">Neutro</button>
+                    <button class="answer-btn" data-value="-1">Discordo</button>
+                    <button class="answer-btn" data-value="-2">Discordo Totalmente</button>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn-secondary" disabled>← Anterior</button>
+                <button id="next-btn" class="btn-secondary" disabled>Próxima →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultados -->
+    <div id="results-screen" class="screen">
+        <div class="container">
+            <header>
+                <h1>Seus Resultados</h1>
+            </header>
+            
+            <main class="results-content">
+                <div class="construction-message">
+                    <span class="icon-large">🚧</span>
+                    <h2>Resultados em Construção</h2>
+                    <p>Em breve você verá aqui:</p>
+                    <ul>
+                        <li>Seu gráfico no Political Compass</li>
+                        <li>Análise do seu posicionamento político</li>
+                        <li>Candidatos que mais se alinham com você</li>
+                    </ul>
+                    <button id="restart-btn" class="btn-primary">Refazer Teste</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
