@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Lula",
+    "party": "PT",
+    "economic": -60,
+    "social": 35,
+    "photo": "assets/lula.jpg",
+    "description": "Trabalhismo desenvolvimentista e regulação estatal"
+  },
+  {
+    "id": 2,
+    "name": "Flávio Bolsonaro",
+    "party": "PL",
+    "economic": 45,
+    "social": -70,
+    "photo": "assets/flavio.jpg",
+    "description": "Direita conservadora e defesa de valores tradicionais"
+  },
+  {
+    "id": 3,
+    "name": "Renan Santos",
+    "party": "MISSÃO",
+    "economic": 80,
+    "social": -30,
+    "photo": "assets/renan.jpg",
+    "description": "Ultraliberalismo e 'Bukelismo' na segurança (Direito Penal do Inimigo)"
+  },
+  {
+    "id": 4,
+    "name": "Ronaldo Caiado",
+    "party": "PSD",
+    "economic": 50,
+    "social": -65,
+    "photo": "assets/caiado.jpg",
+    "description": "Direita ruralista com foco total em segurança pública"
+  },
+  {
+    "id": 5,
+    "name": "Ratinho Jr.",
+    "party": "PSD",
+    "economic": 65,
+    "social": -20,
+    "photo": "assets/ratinho.jpg",
+    "description": "Liberalismo tecnocrático e privatizações (ex: Copel)"
+  },
+  {
+    "id": 6,
+    "name": "Eduardo Leite",
+    "party": "PSD",
+    "economic": 40,
+    "social": 35,
+    "photo": "assets/leite.jpg",
+    "description": "Social-liberalismo: mercado forte e liberdades individuais"
+  },
+  {
+    "id": 9,
+    "name": "Aldo Rebelo",
+    "party": "DC",
+    "economic": -40,
+    "social": -50,
+    "photo": "assets/aldo.jpg",
+    "description": "Nacionalismo soberanista e conservadorismo anti-woke"
+  },
+  {
+    "id": 10,
+    "name": "Michel Temer",
+    "party": "MDB",
+    "economic": 60,
+    "social": -10,
+    "photo": "assets/temer.jpg",
+    "description": "Constitucionalismo liberal e reformas económicas"
+  },
+  {
+    "id": 11,
+    "name": "Samara Martins",
+    "party": "UP",
+    "economic": -90,
+    "social": 80,
+    "photo": "assets/samara.jpg",
+    "description": "Socialismo revolucionário, feminismo marxista e poder popular"
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "category": "economic",
+    "text": {
+      "pt": "A economia funciona melhor quando o governo tem forte participação regulando o mercado.",
+      "en": "The economy works better when the government has strong participation in regulating the market.",
+      "es": "La economía funciona mejor cuando el gobierno tiene una fuerte participación regulando el mercado."
+    },
+    "weight": 1
+  },
+  {
+    "id": 2,
+    "category": "economic",
+    "text": {
+      "pt": "Grandes corporações deveriam pagar impostos significativamente mais altos.",
+      "en": "Large corporations should pay significantly higher taxes.",
+      "es": "Las grandes corporaciones deberían pagar impuestos significativamente más altos."
+    },
+    "weight": 1
+  },
+  {
+    "id": 3,
+    "category": "social",
+    "text": {
+      "pt": "O casamento entre pessoas do mesmo sexo deve ser legalizado em todos os países.",
+      "en": "Same-sex marriage should be legalized in all countries.",
+      "es": "El matrimonio entre personas del mismo sexo debería legalizarse en todos los países."
+    },
+    "weight": 1
+  },
+  {
+    "id": 4,
+    "category": "economic",
+    "text": {
+      "pt": "A saúde deve ser totalmente pública e gratuita, financiada por impostos.",
+      "en": "Healthcare should be completely public and free, funded by taxes.",
+      "es": "La salud debe ser totalmente pública y gratuita, financiada por impuestos."
+    },
+    "weight": 1
+  },
+  {
+    "id": 5,
+    "category": "social",
+    "text": {
+      "pt": "A imigração deve ser mais controlada e restrita.",
+      "en": "Immigration should be more controlled and restricted.",
+      "es": "La inmigración debería ser más controlada y restringida."
+    },
+    "weight": -1
+  },
+  {
+    "id": 6,
+    "category": "economic",
+    "text": {
+      "pt": "O livre comércio internacional beneficia mais a todos do que o protecionismo.",
+      "en": "International free trade benefits everyone more than protectionism.",
+      "es": "El libre comercio internacional beneficia más a todos que el proteccionismo."
+    },
+    "weight": -1
+  },
+  {
+    "id": 7,
+    "category": "social",
+    "text": {
+      "pt": "Mudanças climáticas são uma ameaça séria que requer ação governamental imediata.",
+      "en": "Climate change is a serious threat that requires immediate government action.",
+      "es": "El cambio climático es una amenaza seria que requiere acción gubernamental inmediata."
+    },
+    "weight": 1
+  },
+  {
+    "id": 8,
+    "category": "economic",
+    "text": {
+      "pt": "Salário mínimo universal deveria ser implementado em todos os países desenvolvidos.",
+      "en": "Universal minimum wage should be implemented in all developed countries.",
+      "es": "El salario mínimo universal debería implementarse en todos los países desarrollados."
+    },
+    "weight": 1
+  },
+  {
+    "id": 9,
+    "category": "social",
+    "text": {
+      "pt": "Aborto deve ser um direito garantido em todos os países.",
+      "en": "Abortion should be a guaranteed right in all countries.",
+      "es": "El aborto debe ser un derecho garantizado en todos los países."
+    },
+    "weight": 1
+  },
+  {
+    "id": 10,
+    "category": "economic",
+    "text": {
+      "pt": "Privatização de empresas estatais geralmente melhora sua eficiência.",
+      "en": "Privatization of state-owned companies generally improves their efficiency.",
+      "es": "La privatización de empresas estatales generalmente mejora su eficiencia."
+    },
+    "weight": -1
+  },
+  {
+    "id": 11,
+    "category": "social",
+    "text": {
+      "pt": "Valores tradicionais familiares devem ser protegidos pelo governo.",
+      "en": "Traditional family values should be protected by the government.",
+      "es": "Los valores familiares tradicionales deben ser protegidos por el gobierno."
+    },
+    "weight": -1
+  },
+  {
+    "id": 12,
+    "category": "economic",
+    "text": {
+      "pt": "Renda básica universal é uma boa solução para desigualdade econômica.",
+      "en": "Universal basic income is a good solution for economic inequality.",
+      "es": "La renta básica universal es una buena solución para la desigualdad económica."
+    },
+    "weight": 1
+  },
+  {
+    "id": 13,
+    "category": "social",
+    "text": {
+      "pt": "Drogas leves como maconha deveriam ser legalizadas.",
+      "en": "Soft drugs like marijuana should be legalized.",
+      "es": "Las drogas blandas como la marihuana deberían legalizarse."
+    },
+    "weight": 1
+  },
+  {
+    "id": 14,
+    "category": "economic",
+    "text": {
+      "pt": "Sindicatos são essenciais para proteger direitos dos trabalhadores.",
+      "en": "Unions are essential to protect workers' rights.",
+      "es": "Los sindicatos son esenciales para proteger los derechos de los trabajadores."
+    },
+    "weight": 1
+  },
+  {
+    "id": 15,
+    "category": "social",
+    "text": {
+      "pt": "Multiculturalismo fortalece a sociedade.",
+      "en": "Multiculturalism strengthens society.",
+      "es": "El multiculturalismo fortalece la sociedad."
+    },
+    "weight": 1
+  },
+  {
+    "id": 16,
+    "category": "economic",
+    "text": {
+      "pt": "Universidades públicas deveriam ser gratuitas para todos.",
+      "en": "Public universities should be free for everyone.",
+      "es": "Las universidades públicas deberían ser gratuitas para todos."
+    },
+    "weight": 1
+  },
+  {
+    "id": 17,
+    "category": "social",
+    "text": {
+      "pt": "Posse de armas é um direito fundamental que não deve ser restringido.",
+      "en": "Gun ownership is a fundamental right that should not be restricted.",
+      "es": "La posesión de armas es un derecho fundamental que no debe ser restringido."
+    },
+    "weight": -1
+  },
+  {
+    "id": 18,
+    "category": "economic",
+    "text": {
+      "pt": "Impostos sobre herança devem ser muito altos para reduzir desigualdade.",
+      "en": "Inheritance taxes should be very high to reduce inequality.",
+      "es": "Los impuestos sobre herencia deberían ser muy altos para reducir la desigualdad."
+    },
+    "weight": 1
+  },
+  {
+    "id": 19,
+    "category": "social",
+    "text": {
+      "pt": "Religião deve ter influência mínima ou nenhuma nas políticas públicas.",
+      "en": "Religion should have minimal or no influence on public policy.",
+      "es": "La religión debe tener influencia mínima o ninguna en las políticas públicas."
+    },
+    "weight": 1
+  },
+  {
+    "id": 20,
+    "category": "economic",
+    "text": {
+      "pt": "O capitalismo é o melhor sistema econômico disponível.",
+      "en": "Capitalism is the best economic system available.",
+      "es": "El capitalismo es el mejor sistema económico disponible."
+    },
+    "weight": -1
+  },
+  {
+    "id": 21,
+    "category": "social",
+    "text": {
+      "pt": "Ações afirmativas (cotas) são necessárias para corrigir injustiças históricas.",
+      "en": "Affirmative action (quotas) is necessary to correct historical injustices.",
+      "es": "Las acciones afirmativas (cuotas) son necesarias para corregir injusticias históricas."
+    },
+    "weight": 1
+  },
+  {
+    "id": 22,
+    "category": "economic",
+    "text": {
+      "pt": "Gastos governamentais devem ser reduzidos mesmo que isso signifique cortar programas sociais.",
+      "en": "Government spending should be reduced even if it means cutting social programs.",
+      "es": "El gasto gubernamental debe reducirse incluso si eso significa recortar programas sociales."
+    },
+    "weight": -1
+  },
+  {
+    "id": 23,
+    "category": "social",
+    "text": {
+      "pt": "Pena de morte é justificável em alguns casos.",
+      "en": "Death penalty is justifiable in some cases.",
+      "es": "La pena de muerte es justificable en algunos casos."
+    },
+    "weight": -1
+  },
+  {
+    "id": 24,
+    "category": "economic",
+    "text": {
+      "pt": "Empresas tecnológicas gigantes (Google, Amazon, etc.) deveriam ser desmembradas.",
+      "en": "Giant tech companies (Google, Amazon, etc.) should be broken up.",
+      "es": "Las gigantes empresas tecnológicas (Google, Amazon, etc.) deberían ser desmembradas."
+    },
+    "weight": 1
+  },
+  {
+    "id": 25,
+    "category": "social",
+    "text": {
+      "pt": "Liberdade de expressão deve ser absoluta, mesmo para discursos de ódio.",
+      "en": "Freedom of speech should be absolute, even for hate speech.",
+      "es": "La libertad de expresión debe ser absoluta, incluso para discursos de odio."
+    },
+    "weight": -1
+  },
+  {
+    "id": 26,
+    "category": "economic",
+    "text": {
+      "pt": "Energia nuclear é uma solução viável para a crise climática.",
+      "en": "Nuclear energy is a viable solution for the climate crisis.",
+      "es": "La energía nuclear es una solución viable para la crisis climática."
+    },
+    "weight": -1
+  },
+  {
+    "id": 27,
+    "category": "social",
+    "text": {
+      "pt": "Países desenvolvidos têm obrigação moral de receber refugiados.",
+      "en": "Developed countries have a moral obligation to receive refugees.",
+      "es": "Los países desarrollados tienen la obligación moral de recibir refugiados."
+    },
+    "weight": 1
+  },
+  {
+    "id": 28,
+    "category": "economic",
+    "text": {
+      "pt": "Criptomoedas devem ser fortemente reguladas ou proibidas.",
+      "en": "Cryptocurrencies should be heavily regulated or banned.",
+      "es": "Las criptomonedas deberían estar fuertemente reguladas o prohibidas."
+    },
+    "weight": 1
+  },
+  {
+    "id": 29,
+    "category": "social",
+    "text": {
+      "pt": "Identidade de gênero autodeclarada deve ser legalmente reconhecida.",
+      "en": "Self-declared gender identity should be legally recognized.",
+      "es": "La identidad de género autodeclarada debe ser legalmente reconocida."
+    },
+    "weight": 1
+  },
+  {
+    "id": 30,
+    "category": "economic",
+    "text": {
+      "pt": "Bilionários não deveriam existir - ninguém precisa de tanta riqueza.",
+      "en": "Billionaires shouldn't exist - no one needs that much wealth.",
+      "es": "Los multimillonarios no deberían existir - nadie necesita tanta riqueza."
+    },
+    "weight": 1
+  }
+]

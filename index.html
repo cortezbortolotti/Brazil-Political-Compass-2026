@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compasso Político Brasil 2026</title>
+    <meta name="description" content="Descubra seu posicionamento político e veja quais candidatos mais se alinham com suas opiniões">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="override.css">
+</head>
+<body>
+    <!-- Botão de Tema -->
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    
+    <!-- Tela Inicial -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-grid">
+            <!-- Lado Esquerdo - Brand e Info -->
+            <div class="welcome-left">
+                <!-- Formas 3D Glassmorphism -->
+                <div class="glass-shape-1"></div>
+                <div class="glass-shape-2"></div>
+                <div class="glass-plus">+</div>
+                
+                <!-- Glass Overlay Effect -->
+                <div class="glass-overlay"></div>
+                
+                <!-- Seletor de Idiomas -->
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="pt">PT</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="es">ES</button>
+                </div>
+                
+                <div class="brand-section">
+                    <!-- TOPO: Logo -->
+                    <div class="logo-section">
+                        <div class="logo">
+                            <img src="logo.png" 
+                                 alt="Seção Polls" 
+                                 class="logo-img"
+                                 onerror="this.onerror=null; this.src='secao_polls.png'; if(this.src.includes('secao_polls') && this.complete && !this.naturalHeight) this.style.display='none';">
+                        </div>
+                    </div>
+                    
+                    <!-- MEIO: Títulos -->
+                    <div class="title-section">
+                        <h1 data-i18n="title">Compasso Político</h1>
+                        <p class="year">Brasil 2026</p>
+                        <p class="tagline" data-i18n="tagline">Eleições Presidenciais</p>
+                    </div>
+                    
+                    <!-- FIM: Contagem -->
+                    <div class="countdown-section">
+                        <div class="countdown-label" data-i18n="countdownLabel">FALTAM PARA O 1º TURNO</div>
+                        <div class="countdown-display">
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="countdown-days">000</span>
+                                <span class="countdown-unit" data-i18n="countdownDays">dias</span>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="countdown-hours">00</span>
+                                <span class="countdown-unit" data-i18n="countdownHours">hrs</span>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="countdown-minutes">00</span>
+                                <span class="countdown-unit" data-i18n="countdownMinutes">min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lado Direito - Descrição e CTA -->
+            <div class="welcome-right">
+                <div class="description-section">
+                    <h2 data-i18n="subtitle">Descubra seu posicionamento político</h2>
+                    <p class="intro-text">
+                        <span data-i18n="intro1">Escolha qual teste político você quer fazer:</span>
+                    </p>
+                    
+                    <!-- Seletor de Quiz -->
+                    <div class="quiz-selector">
+                        <h3 data-i18n="chooseQuiz">Escolha o quiz:</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-card" data-quiz="brazil">
+                                <div class="quiz-icon-img">
+                                    <img src="brazil-flag.png" alt="Brasil" class="quiz-flag-img">
+                                </div>
+                                <h4 data-i18n="brazilQuiz">Presidenciais Brasil 2026</h4>
+                                <p data-i18n="brazilDesc">Compare com candidatos brasileiros</p>
+                            </div>
+                            <div class="quiz-card" data-quiz="world">
+                                <div class="quiz-icon-img">
+                                    <img src="https://flagcdn.com/w80/un.png" alt="Mundo" class="quiz-flag-img">
+                                </div>
+                                <h4 data-i18n="worldQuiz">Partidos do Mundo</h4>
+                                <p data-i18n="worldDesc">Descubra seu partido em 15 países</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seletor de Modo (só aparece quando Brasil estiver selecionado) -->
+                    <div class="mode-selector" id="mode-selector-brazil" style="display: none;">
+                        <h3 data-i18n="chooseMode">Escolha o modo:</h3>
+                        <div class="mode-options">
+                            <div class="mode-card" data-mode="quick">
+                                <div class="mode-icon">⚡</div>
+                                <h4 data-i18n="quickMode">Modo Rápido</h4>
+                                <p data-i18n="quickDesc">25 perguntas</p>
+                                <div class="mode-badge" data-i18n="quickBadge">Recomendado</div>
+                            </div>
+                            <div class="mode-card" data-mode="full">
+                                <div class="mode-icon">📊</div>
+                                <h4 data-i18n="fullMode">Modo Completo</h4>
+                                <p data-i18n="fullDesc">70 perguntas</p>
+                                <div class="mode-badge mode-badge-complete" data-i18n="fullBadge">Mais preciso</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span data-i18n="feature2">Análise em dois eixos: econômico e social</span>
+                        </div>
+                        <div class="feature-item feature-brazil" style="display: none;">
+                            <span class="check-icon">✓</span>
+                            <span data-i18n="feature3">Compare com os principais candidatos</span>
+                        </div>
+                        <div class="feature-item feature-world" style="display: none;">
+                            <span class="check-icon">✓</span>
+                            <span data-i18n="feature4">Veja partidos em 15 países diferentes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="start-btn" class="btn-primary" data-i18n="startButton" disabled>Selecione um quiz</button>
+                
+                <!-- Rodapé com Créditos -->
+                <footer class="footer-credits">
+                    <p class="credits-text">
+                        <span data-i18n="producedBy">Produzido por</span> <strong>Guilherme Bortolotti</strong>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://x.com/gcb_019" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            Twitter/X
+                        </a>
+                        <a href="https://youtube.com/@secaoeleitoraloficial" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            YouTube
+                        </a>
+                        <button id="pix-btn" class="social-link pix-link">
+                            💚 APOIE O PROJETO
+                        </button>
+                    </div>
+                    <p class="privacy-note-footer">
+                        <span data-i18n="privacy">Suas respostas são privadas e não são armazenadas. 
+                        Este é um projeto educacional e não partidário.</span>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Perguntas -->
+    <div id="questions-screen" class="screen">
+        <div class="questions-wrapper">
+            <!-- Barra de Progresso -->
+            <div class="progress-bar-modern">
+                <div class="progress-track">
+                    <div class="progress-fill-modern" id="progress-fill"></div>
+                </div>
+                <span class="progress-text-modern" id="progress-text">1 / 60</span>
+            </div>
+            
+            <!-- Card da Pergunta -->
+            <div class="question-card-modern">
+                <!-- Tag de Categoria -->
+                <div class="category-tag" id="category-tag">
+                    <span>Economia (Estado ≠ Mercado)</span>
+                </div>
+                
+                <h2 id="question-text" class="question-text-modern">Carregando pergunta...</h2>
+                
+                <div class="answer-options-modern">
+                    <button class="answer-btn-modern" data-value="2">Concordo Totalmente</button>
+                    <button class="answer-btn-modern" data-value="1">Concordo</button>
+                    <button class="answer-btn-modern" data-value="0">Neutro</button>
+                    <button class="answer-btn-modern" data-value="-1">Discordo</button>
+                    <button class="answer-btn-modern" data-value="-2">Discordo Totalmente</button>
+                </div>
+                
+                <!-- Botões de Navegação -->
+                <div class="navigation-modern">
+                    <button id="prev-btn" class="nav-btn-modern nav-prev" disabled>
+                        ← Anterior
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultados -->
+    <div id="results-screen" class="screen">
+        <div class="results-wrapper">
+            <!-- Header -->
+            <div class="results-header">
+                <h1 data-i18n="resultsTitle">Seus Resultados</h1>
+                <p class="results-subtitle" data-i18n="resultsSubtitle">Seu posicionamento no espectro político brasileiro</p>
+            </div>
+            
+            <!-- Card do Gráfico -->
+            <div class="compass-card">
+                <h2 data-i18n="compassTitle">Political Compass</h2>
+                <div class="compass-container">
+                    <canvas id="compass-canvas" width="600" height="600"></canvas>
+                </div>
+                <div class="compass-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot user-dot"></span>
+                        <span data-i18n="youLabel">Você</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot candidate-dot"></span>
+                        <span data-i18n="candidatesLabel">Candidatos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Posicionamento -->
+            <div class="position-card">
+                <h2 data-i18n="yourPositionTitle">Seu Posicionamento</h2>
+                <div class="position-description" id="position-description">
+                    <p class="position-main" id="position-main"></p>
+                    <div class="position-stats">
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="economicAxis">Eixo Econômico:</span>
+                            <span class="stat-value" id="economic-value"></span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="socialAxis">Eixo Social:</span>
+                            <span class="stat-value" id="social-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Candidatos -->
+            <div class="candidates-card">
+                <h2 data-i18n="closestCandidatesTitle">Candidatos mais próximos de você</h2>
+                <div class="candidates-ranking" id="candidates-ranking">
+                    <!-- Será preenchido via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Botões de Ação -->
+            <div class="results-actions">
+                <button id="restart-btn" class="btn-primary" data-i18n="restartButton">Refazer Teste</button>
+                <button id="share-btn" class="btn-secondary" data-i18n="shareButton">Compartilhar Resultado</button>
+            </div>
+            
+            <!-- Rodapé com Créditos -->
+            <footer class="footer-credits">
+                <p class="credits-text">
+                    <span data-i18n="producedBy">Produzido por</span> <strong>Guilherme Bortolotti</strong>
+                </p>
+                <div class="social-links">
+                    <a href="https://x.com/gcb_019" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        Twitter/X
+                    </a>
+                    <a href="https://youtube.com/@secaoeleitoraloficial" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        YouTube
+                    </a>
+                    <button id="pix-btn-results" class="social-link pix-link">
+                        💚 APOIE O PROJETO
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Tela do Mapa Mundial -->
+    <div id="world-map-screen" class="screen">
+        <div class="world-wrapper">
+            <!-- Header -->
+            <div class="world-header">
+                <button id="back-to-results" class="btn-back">← Voltar aos Resultados</button>
+                <h1>🌍 Seu Partido no Mundo</h1>
+                <p class="world-subtitle">Em qual partido você votaria em cada país?</p>
+            </div>
+
+            <!-- Mapa Interativo -->
+            <div class="world-map-container">
+                <svg viewBox="0 0 1200 600" class="world-map-svg" id="world-map-svg">
+                    <!-- Será preenchido via JavaScript -->
+                </svg>
+            </div>
+
+            <!-- Grid de Países -->
+            <div class="countries-grid" id="countries-grid">
+                <!-- Será preenchido via JavaScript -->
+            </div>
+
+            <!-- Modal de Ranking do País -->
+            <div id="country-modal" class="country-modal">
+                <div class="country-modal-content">
+                    <button class="country-close">&times;</button>
+                    <div class="country-flag" id="country-flag"></div>
+                    <h2 id="country-name">País</h2>
+                    <div class="country-ranking" id="country-ranking">
+                        <!-- Será preenchido via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal do PIX -->
+    <div id="pix-modal" class="pix-modal">
+        <div class="pix-modal-content">
+            <button class="pix-close">&times;</button>
+            <h2>Apoie este projeto! 💚</h2>
+            <p>Escaneie o QR Code para fazer sua contribuição por Pix</p>
+            <div class="pix-qr-container">
+                <img src="pix-qrcode.png" alt="QR Code PIX" class="pix-qrcode">
+            </div>
+            <p class="pix-thanks">Muito obrigado pelo seu apoio!</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="world-map.js"></script>
+</body>
+</html>

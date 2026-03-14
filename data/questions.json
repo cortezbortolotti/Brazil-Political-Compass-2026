@@ -1,0 +1,1122 @@
+[
+  {
+    "id": 1,
+    "text": {
+      "pt": "O Estado deve ter um papel forte na economia, regulando empresas e mercados.",
+      "en": "The State should have a strong role in the economy, regulating companies and markets.",
+      "es": "El Estado debe tener un papel fuerte en la economía, regulando empresas y mercados."
+    },
+    "category": {
+      "pt": "Economia (Estado ≠ Mercado)",
+      "en": "Economy (State ≠ Market)",
+      "es": "Economía (Estado ≠ Mercado)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 2,
+    "text": {
+      "pt": "A privatização de empresas estatais geralmente beneficia a economia.",
+      "en": "The privatization of state-owned companies generally benefits the economy.",
+      "es": "La privatización de empresas estatales generalmente beneficia la economía."
+    },
+    "category": {
+      "pt": "Economia (Estado ≠ Mercado)",
+      "en": "Economy (State ≠ Market)",
+      "es": "Economía (Estado ≠ Mercado)"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 3,
+    "text": {
+      "pt": "Impostos mais altos para os ricos ajudam a reduzir a desigualdade social.",
+      "en": "Higher taxes for the wealthy help reduce social inequality.",
+      "es": "Impuestos más altos para los ricos ayudan a reducir la desigualdad social."
+    },
+    "category": {
+      "pt": "Economia (Desigualdade)",
+      "en": "Economy (Inequality)",
+      "es": "Economía (Desigualdad)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 4,
+    "text": {
+      "pt": "O salário mínimo deveria ser determinado pelo mercado, não pelo governo.",
+      "en": "The minimum wage should be determined by the market, not by the government.",
+      "es": "El salario mínimo debería ser determinado por el mercado, no por el gobierno."
+    },
+    "category": {
+      "pt": "Economia (Estado ≠ Mercado)",
+      "en": "Economy (State ≠ Market)",
+      "es": "Economía (Estado ≠ Mercado)"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 5,
+    "text": {
+      "pt": "Programas sociais como Bolsa Família são essenciais para reduzir a pobreza.",
+      "en": "Social programs like Bolsa Família are essential to reduce poverty.",
+      "es": "Los programas sociales como Bolsa Família son esenciales para reducir la pobreza."
+    },
+    "category": {
+      "pt": "Políticas Sociais",
+      "en": "Social Policies",
+      "es": "Políticas Sociales"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 6,
+    "text": {
+      "pt": "O aborto deve ser legalizado e disponível para todas as mulheres.",
+      "en": "Abortion should be legalized and available to all women.",
+      "es": "El aborto debe ser legalizado y disponible para todas las mujeres."
+    },
+    "category": {
+      "pt": "Direitos Individuais",
+      "en": "Individual Rights",
+      "es": "Derechos Individuales"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 7,
+    "text": {
+      "pt": "A pena de morte deveria ser aplicada para crimes graves.",
+      "en": "The death penalty should be applied for serious crimes.",
+      "es": "La pena de muerte debería aplicarse para crímenes graves."
+    },
+    "category": {
+      "pt": "Justiça e Segurança",
+      "en": "Justice and Security",
+      "es": "Justicia y Seguridad"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 8,
+    "text": {
+      "pt": "O casamento entre pessoas do mesmo sexo é um direito que deve ser garantido.",
+      "en": "Same-sex marriage is a right that must be guaranteed.",
+      "es": "El matrimonio entre personas del mismo sexo es un derecho que debe garantizarse."
+    },
+    "category": {
+      "pt": "Direitos Individuais",
+      "en": "Individual Rights",
+      "es": "Derechos Individuales"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 9,
+    "text": {
+      "pt": "O porte de armas para civis deveria ser liberado.",
+      "en": "Civilian gun ownership should be permitted.",
+      "es": "El porte de armas para civiles debería ser permitido."
+    },
+    "category": {
+      "pt": "Justiça e Segurança",
+      "en": "Justice and Security",
+      "es": "Justicia y Seguridad"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 10,
+    "text": {
+      "pt": "O governo deve investir pesado em energias renováveis, mesmo que custe caro.",
+      "en": "The government should invest heavily in renewable energy, even if it's expensive.",
+      "es": "El gobierno debe invertir mucho en energías renovables, aunque sea costoso."
+    },
+    "category": {
+      "pt": "Meio Ambiente",
+      "en": "Environment",
+      "es": "Medio Ambiente"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 11,
+    "text": {
+      "pt": "A preservação da Amazônia deve ser prioridade, mesmo que limite o agronegócio.",
+      "en": "Amazon preservation should be a priority, even if it limits agribusiness.",
+      "es": "La preservación del Amazonas debe ser prioridad, aunque limite la agroindustria."
+    },
+    "category": {
+      "pt": "Meio Ambiente",
+      "en": "Environment",
+      "es": "Medio Ambiente"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 12,
+    "text": {
+      "pt": "Cotas raciais em universidades são necessárias para corrigir desigualdades históricas.",
+      "en": "Racial quotas in universities are necessary to correct historical inequalities.",
+      "es": "Las cuotas raciales en universidades son necesarias para corregir desigualdades históricas."
+    },
+    "category": {
+      "pt": "Educação e Igualdade",
+      "en": "Education and Equality",
+      "es": "Educación e Igualdad"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 13,
+    "text": {
+      "pt": "A educação superior deveria ser completamente privatizada.",
+      "en": "Higher education should be completely privatized.",
+      "es": "La educación superior debería ser completamente privatizada."
+    },
+    "category": {
+      "pt": "Educação e Igualdade",
+      "en": "Education and Equality",
+      "es": "Educación e Igualdad"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 14,
+    "text": {
+      "pt": "O SUS (Sistema Único de Saúde) deve continuar público e gratuito.",
+      "en": "The SUS (Unified Health System) should remain public and free.",
+      "es": "El SUS (Sistema Único de Salud) debe seguir siendo público y gratuito."
+    },
+    "category": {
+      "pt": "Saúde Pública",
+      "en": "Public Health",
+      "es": "Salud Pública"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 15,
+    "text": {
+      "pt": "A maioridade penal deveria ser reduzida para 16 anos.",
+      "en": "The age of criminal responsibility should be lowered to 16 years.",
+      "es": "La mayoría de edad penal debería reducirse a 16 años."
+    },
+    "category": {
+      "pt": "Justiça e Segurança",
+      "en": "Justice and Security",
+      "es": "Justicia y Seguridad"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 16,
+    "text": {
+      "pt": "Sindicatos são importantes para proteger os direitos dos trabalhadores.",
+      "en": "Unions are important to protect workers' rights.",
+      "es": "Los sindicatos son importantes para proteger los derechos de los trabajadores."
+    },
+    "category": {
+      "pt": "Trabalho",
+      "en": "Labor",
+      "es": "Trabajo"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 17,
+    "text": {
+      "pt": "As leis trabalhistas no Brasil são muito rígidas e prejudicam as empresas.",
+      "en": "Labor laws in Brazil are too rigid and harm businesses.",
+      "es": "Las leyes laborales en Brasil son muy rígidas y perjudican a las empresas."
+    },
+    "category": {
+      "pt": "Trabalho",
+      "en": "Labor",
+      "es": "Trabajo"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 18,
+    "text": {
+      "pt": "O combate ao crime organizado exige táticas militarizadas de tolerância zero e encarceramento em massa (como o 'Bukelismo').",
+      "en": "Fighting organized crime requires zero-tolerance militarized tactics and mass incarceration.",
+      "es": "La lucha contra el crimen organizado requiere tácticas militarizadas de tolerancia cero y encarcelamiento masivo."
+    },
+    "category": {
+      "pt": "Segurança Pública",
+      "en": "Public Security",
+      "es": "Seguridad Pública"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 19,
+    "text": {
+      "pt": "A imigração deve ser controlada rigorosamente para proteger empregos nacionais.",
+      "en": "Immigration should be strictly controlled to protect national jobs.",
+      "es": "La inmigración debe controlarse rigurosamente para proteger empleos nacionales."
+    },
+    "category": {
+      "pt": "Imigração e Fronteiras",
+      "en": "Immigration and Borders",
+      "es": "Inmigración y Fronteras"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 20,
+    "text": {
+      "pt": "Drogas leves como maconha deveriam ser legalizadas.",
+      "en": "Light drugs like marijuana should be legalized.",
+      "es": "Las drogas ligeras como la marihuana deberían legalizarse."
+    },
+    "category": {
+      "pt": "Liberdades Individuais",
+      "en": "Individual Freedoms",
+      "es": "Libertades Individuales"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 21,
+    "text": {
+      "pt": "O ensino religioso nas escolas públicas deve ser obrigatório.",
+      "en": "Religious education in public schools should be mandatory.",
+      "es": "La enseñanza religiosa en las escuelas públicas debe ser obligatoria."
+    },
+    "category": {
+      "pt": "Religião e Estado",
+      "en": "Religion and State",
+      "es": "Religión y Estado"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 22,
+    "text": {
+      "pt": "Empresas estrangeiras deveriam ter as mesmas condições que empresas brasileiras.",
+      "en": "Foreign companies should have the same conditions as Brazilian companies.",
+      "es": "Las empresas extranjeras deberían tener las mismas condiciones que las empresas brasileñas."
+    },
+    "category": {
+      "pt": "Economia (Nacionalismo)",
+      "en": "Economy (Nationalism)",
+      "es": "Economía (Nacionalismo)"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 23,
+    "text": {
+      "pt": "O voto deveria ser facultativo, não obrigatório.",
+      "en": "Voting should be optional, not mandatory.",
+      "es": "El voto debería ser facultativo, no obligatorio."
+    },
+    "category": {
+      "pt": "Democracia",
+      "en": "Democracy",
+      "es": "Democracia"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 24,
+    "text": {
+      "pt": "A reforma agrária é necessária para distribuir terras de forma mais justa.",
+      "en": "Agrarian reform is necessary to distribute land more fairly.",
+      "es": "La reforma agraria es necesaria para distribuir tierras de forma más justa."
+    },
+    "category": {
+      "pt": "Economia (Propriedade)",
+      "en": "Economy (Property)",
+      "es": "Economía (Propiedad)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 25,
+    "text": {
+      "pt": "Manifestações e protestos devem ser severamente regulados pelo Estado.",
+      "en": "Demonstrations and protests should be severely regulated by the State.",
+      "es": "Las manifestaciones y protestas deben ser severamente reguladas por el Estado."
+    },
+    "category": {
+      "pt": "Liberdades Civis",
+      "en": "Civil Liberties",
+      "es": "Libertades Civiles"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 26,
+    "text": {
+      "pt": "O financiamento de campanhas eleitorais deveria ser totalmente público.",
+      "en": "Campaign financing should be entirely public.",
+      "es": "El financiamiento de campañas electorales debería ser totalmente público."
+    },
+    "category": {
+      "pt": "Democracia",
+      "en": "Democracy",
+      "es": "Democracia"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 27,
+    "text": {
+      "pt": "Bancos e grandes empresas têm muito poder e deveriam ser mais regulados.",
+      "en": "Banks and large corporations have too much power and should be more regulated.",
+      "es": "Los bancos y las grandes empresas tienen demasiado poder y deberían ser más regulados."
+    },
+    "category": {
+      "pt": "Economia (Estado ≠ Mercado)",
+      "en": "Economy (State ≠ Market)",
+      "es": "Economía (Estado ≠ Mercado)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 28,
+    "text": {
+      "pt": "A censura prévia de conteúdo é aceitável para proteger a sociedade.",
+      "en": "Prior censorship of content is acceptable to protect society.",
+      "es": "La censura previa de contenido es aceptable para proteger a la sociedad."
+    },
+    "category": {
+      "pt": "Liberdades Civis",
+      "en": "Civil Liberties",
+      "es": "Libertades Civiles"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 29,
+    "text": {
+      "pt": "O Estado deveria fornecer moradia gratuita para pessoas de baixa renda.",
+      "en": "The State should provide free housing for low-income people.",
+      "es": "El Estado debería proporcionar vivienda gratuita para personas de bajos ingresos."
+    },
+    "category": {
+      "pt": "Políticas Sociais",
+      "en": "Social Policies",
+      "es": "Políticas Sociales"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 30,
+    "text": {
+      "pt": "A identidade de gênero autodeclarada deve ser reconhecida legalmente.",
+      "en": "Self-declared gender identity should be legally recognized.",
+      "es": "La identidad de género autodeclarada debe ser reconocida legalmente."
+    },
+    "category": {
+      "pt": "Direitos LGBTQIA+",
+      "en": "LGBTQIA+ Rights",
+      "es": "Derechos LGBTQIA+"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 31,
+    "text": {
+      "pt": "Políticos corruptos deveriam perder seus direitos políticos permanentemente.",
+      "en": "Corrupt politicians should permanently lose their political rights.",
+      "es": "Los políticos corruptos deberían perder sus derechos políticos permanentemente."
+    },
+    "category": {
+      "pt": "Justiça e Segurança",
+      "en": "Justice and Security",
+      "es": "Justicia y Seguridad"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 32,
+    "text": {
+      "pt": "A redução da jornada de trabalho sem redução salarial beneficiaria os trabalhadores.",
+      "en": "Reducing working hours without salary reduction would benefit workers.",
+      "es": "La reducción de la jornada laboral sin reducción salarial beneficiaría a los trabajadores."
+    },
+    "category": {
+      "pt": "Trabalho",
+      "en": "Labor",
+      "es": "Trabajo"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 33,
+    "text": {
+      "pt": "A reforma tributária deve priorizar impostos sobre consumo em vez de renda e patrimônio.",
+      "en": "Tax reform should prioritize consumption taxes instead of income and wealth taxes.",
+      "es": "La reforma tributaria debe priorizar impuestos sobre consumo en vez de renta y patrimonio."
+    },
+    "category": {
+      "pt": "Economia (Tributação)",
+      "en": "Economy (Taxation)",
+      "es": "Economía (Tributación)"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 34,
+    "text": {
+      "pt": "O governo deve regular a internet para combater fake news.",
+      "en": "The government should regulate the internet to combat fake news.",
+      "es": "El gobierno debe regular internet para combatir las noticias falsas."
+    },
+    "category": {
+      "pt": "Liberdades Civis",
+      "en": "Civil Liberties",
+      "es": "Libertades Civiles"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 35,
+    "text": {
+      "pt": "Grandes fortunas deveriam pagar um imposto especial sobre riqueza acumulada.",
+      "en": "Large fortunes should pay a special tax on accumulated wealth.",
+      "es": "Las grandes fortunas deberían pagar un impuesto especial sobre la riqueza acumulada."
+    },
+    "category": {
+      "pt": "Economia (Desigualdade)",
+      "en": "Economy (Inequality)",
+      "es": "Economía (Desigualdad)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 36,
+    "text": {
+      "pt": "O Supremo Tribunal Federal (STF) e o TSE têm cometido excessos ao censurar perfis e limitar a liberdade de expressão na internet.",
+      "en": "The Supreme Court (STF) and TSE have committed excesses by censoring profiles and limiting free speech online.",
+      "es": "El Tribunal Supremo (STF) y el TSE han cometido excesos al censurar perfiles y limitar la libertad de expresión en internet."
+    },
+    "category": {
+      "pt": "Instituições e STF",
+      "en": "Institutions and STF",
+      "es": "Instituciones y STF"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 37,
+    "text": {
+      "pt": "O Estado deve garantir creches públicas para todas as crianças.",
+      "en": "The State should guarantee public daycare for all children.",
+      "es": "El Estado debe garantizar guarderías públicas para todos los niños."
+    },
+    "category": {
+      "pt": "Políticas Sociais",
+      "en": "Social Policies",
+      "es": "Políticas Sociales"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 38,
+    "text": {
+      "pt": "A vigilância do governo é necessária para garantir a segurança nacional.",
+      "en": "Government surveillance is necessary to ensure national security.",
+      "es": "La vigilancia del gobierno es necesaria para garantizar la seguridad nacional."
+    },
+    "category": {
+      "pt": "Segurança e Privacidade",
+      "en": "Security and Privacy",
+      "es": "Seguridad y Privacidad"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 39,
+    "text": {
+      "pt": "Lucros excessivos de empresas deveriam ser redistribuídos aos trabalhadores.",
+      "en": "Excessive corporate profits should be redistributed to workers.",
+      "es": "Los beneficios excesivos de las empresas deberían redistribuirse a los trabajadores."
+    },
+    "category": {
+      "pt": "Economia (Capital vs Trabalho)",
+      "en": "Economy (Capital vs Labor)",
+      "es": "Economía (Capital vs Trabajo)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 40,
+    "text": {
+      "pt": "O Marco Temporal para a demarcação de terras indígenas deve ser mantido para garantir a segurança jurídica do agronegócio.",
+      "en": "The Time Frame (Marco Temporal) for indigenous land demarcation must be maintained to ensure legal security for agribusiness.",
+      "es": "El Marco Temporal para la demarcación de tierras indígenas debe mantenerse para garantizar la seguridad jurídica de la agroindustria."
+    },
+    "category": {
+      "pt": "Agronegócio e Indígenas",
+      "en": "Agribusiness and Indigenous",
+      "es": "Agroindustria e Indígenas"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 41,
+    "text": {
+      "pt": "O livre comércio internacional beneficia mais do que prejudica o Brasil.",
+      "en": "Free international trade benefits Brazil more than it harms it.",
+      "es": "El libre comercio internacional beneficia a Brasil más de lo que le perjudica."
+    },
+    "category": {
+      "pt": "Economia (Globalização)",
+      "en": "Economy (Globalization)",
+      "es": "Economía (Globalización)"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 42,
+    "text": {
+      "pt": "Pessoas transgênero devem poder usar banheiros de acordo com sua identidade de gênero.",
+      "en": "Transgender people should be able to use bathrooms according to their gender identity.",
+      "es": "Las personas transgénero deben poder usar baños de acuerdo con su identidad de género."
+    },
+    "category": {
+      "pt": "Direitos LGBTQIA+",
+      "en": "LGBTQIA+ Rights",
+      "es": "Derechos LGBTQIA+"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 43,
+    "text": {
+      "pt": "O sistema de previdência social deveria ser completamente privatizado.",
+      "en": "The social security system should be completely privatized.",
+      "es": "El sistema de seguridad social debería ser completamente privatizado."
+    },
+    "category": {
+      "pt": "Previdência",
+      "en": "Social Security",
+      "es": "Seguridad Social"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 44,
+    "text": {
+      "pt": "A educação domiciliar (homeschooling) deveria ser permitida sem restrições.",
+      "en": "Homeschooling should be allowed without restrictions.",
+      "es": "La educación en el hogar (homeschooling) debería permitirse sin restricciones."
+    },
+    "category": {
+      "pt": "Educação",
+      "en": "Education",
+      "es": "Educación"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 45,
+    "text": {
+      "pt": "O Estado deve investir mais em segurança pública, mesmo cortando outras áreas.",
+      "en": "The State should invest more in public security, even if it means cutting other areas.",
+      "es": "El Estado debe invertir más en seguridad pública, aunque recorte otras áreas."
+    },
+    "category": {
+      "pt": "Prioridades Orçamentárias",
+      "en": "Budget Priorities",
+      "es": "Prioridades Presupuestarias"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 46,
+    "text": {
+      "pt": "Deveria haver limite para o número de mandatos de políticos.",
+      "en": "There should be limits on the number of terms politicians can serve.",
+      "es": "Debería haber límite para el número de mandatos de los políticos."
+    },
+    "category": {
+      "pt": "Reforma Política",
+      "en": "Political Reform",
+      "es": "Reforma Política"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 47,
+    "text": {
+      "pt": "Empresas devem ser obrigadas a ter cotas para mulheres em cargos de liderança.",
+      "en": "Companies should be required to have quotas for women in leadership positions.",
+      "es": "Las empresas deben estar obligadas a tener cuotas para mujeres en cargos de liderazgo."
+    },
+    "category": {
+      "pt": "Igualdade de Gênero",
+      "en": "Gender Equality",
+      "es": "Igualdad de Género"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 48,
+    "text": {
+      "pt": "O agronegócio é essencial para o desenvolvimento econômico do Brasil.",
+      "en": "Agribusiness is essential for Brazil's economic development.",
+      "es": "La agroindustria es esencial para el desarrollo económico de Brasil."
+    },
+    "category": {
+      "pt": "Economia (Setores)",
+      "en": "Economy (Sectors)",
+      "es": "Economía (Sectores)"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 49,
+    "text": {
+      "pt": "Os envolvidos nos atos de 8 de janeiro de 2023 devem receber anistia.",
+      "en": "Those involved in the January 8, 2023 acts should receive amnesty.",
+      "es": "Los involucrados en los actos del 8 de enero de 2023 deben recibir amnistía."
+    },
+    "category": {
+      "pt": "Justiça e Instituições",
+      "en": "Justice and Institutions",
+      "es": "Justicia e Instituciones"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 50,
+    "text": {
+      "pt": "Subsídios agrícolas são necessários para garantir a segurança alimentar.",
+      "en": "Agricultural subsidies are necessary to ensure food security.",
+      "es": "Los subsidios agrícolas son necesarios para garantizar la seguridad alimentaria."
+    },
+    "category": {
+      "pt": "Economia (Agricultura)",
+      "en": "Economy (Agriculture)",
+      "es": "Economía (Agricultura)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 51,
+    "text": {
+      "pt": "O governo deve incentivar a indústria nacional, mesmo que os produtos sejam mais caros.",
+      "en": "The government should encourage national industry, even if products are more expensive.",
+      "es": "El gobierno debe incentivar la industria nacional, aunque los productos sean más caros."
+    },
+    "category": {
+      "pt": "Economia (Protecionismo)",
+      "en": "Economy (Protectionism)",
+      "es": "Economía (Proteccionismo)"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 52,
+    "text": {
+      "pt": "O equilíbrio fiscal e o corte de gastos públicos (como o Teto de Gastos) são prioridades absolutas, mesmo que limitem os investimentos sociais do Estado.",
+      "en": "Fiscal balance and cutting public spending are absolute priorities, even if they limit the State's social investments.",
+      "es": "El equilibrio fiscal y el recorte del gasto público son prioridades absolutas, incluso si limitan las inversiones sociales del Estado."
+    },
+    "category": {
+      "pt": "Responsabilidade Fiscal",
+      "en": "Fiscal Responsibility",
+      "es": "Responsabilidad Fiscal"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 53,
+    "text": {
+      "pt": "A soberania nacional sobre a Amazônia e estatais estratégicas (como a Petrobras) está acima dos interesses do mercado financeiro global.",
+      "en": "National sovereignty over the Amazon and strategic state-owned companies is above the interests of the global financial market.",
+      "es": "La soberanía nacional sobre la Amazonia y las empresas estatales estratégicas está por encima de los intereses del mercado financiero global."
+    },
+    "category": {
+      "pt": "Soberania e Nacionalismo",
+      "en": "Sovereignty and Nationalism",
+      "es": "Soberanía y Nacionalismo"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 54,
+    "text": {
+      "pt": "O desmatamento ilegal deve ser combatido com uso de força militar se necessário.",
+      "en": "Illegal deforestation should be fought with military force if necessary.",
+      "es": "La deforestación ilegal debe combatirse con fuerza militar si es necesario."
+    },
+    "category": {
+      "pt": "Meio Ambiente",
+      "en": "Environment",
+      "es": "Medio Ambiente"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 55,
+    "text": {
+      "pt": "A privatização de serviços essenciais de infraestrutura, como saneamento (ex: Sabesp) e energia (ex: Copel), é o melhor caminho para a modernização.",
+      "en": "The privatization of essential infrastructure services, such as sanitation and energy, is the best path to modernization.",
+      "es": "La privatización de servicios de infraestructura esenciales, como saneamiento y energía, es el mejor camino hacia la modernización."
+    },
+    "category": {
+      "pt": "Privatizações e Infraestrutura",
+      "en": "Privatizations and Infrastructure",
+      "es": "Privatizaciones e Infraestructura"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 56,
+    "text": {
+      "pt": "O Brasil deveria se aproximar mais dos BRICS e menos dos EUA e Europa.",
+      "en": "Brazil should get closer to the BRICS and less to the US and Europe.",
+      "es": "Brasil debería acercarse más a los BRICS y menos a EE. UU. y Europa."
+    },
+    "category": {
+      "pt": "Política Externa",
+      "en": "Foreign Policy",
+      "es": "Política Exterior"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 57,
+    "text": {
+      "pt": "O financiamento público de campanhas eleitorais deveria ser expandido para reduzir a influência do poder econômico.",
+      "en": "Public financing of electoral campaigns should be expanded to reduce the influence of economic power.",
+      "es": "La financiación pública de campañas electorales debería expandirse para reducir la influencia del poder económico."
+    },
+    "category": {
+      "pt": "Democracia e Reforma Política",
+      "en": "Democracy and Political Reform",
+      "es": "Democracia y Reforma Política"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 58,
+    "text": {
+      "pt": "As prisões devem ter como foco principal a reabilitação, não a punição.",
+      "en": "Prisons should focus primarily on rehabilitation, not punishment.",
+      "es": "Las prisiones deben centrarse principalmente en la rehabilitación, no en el castigo."
+    },
+    "category": {
+      "pt": "Justiça e Segurança",
+      "en": "Justice and Security",
+      "es": "Justicia y Seguridad"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 59,
+    "text": {
+      "pt": "O uso de agrotóxicos deve ser mais restringido para proteger a saúde.",
+      "en": "Pesticide use should be more restricted to protect health.",
+      "es": "El uso de pesticidas debe restringirse más para proteger la salud."
+    },
+    "category": {
+      "pt": "Meio Ambiente e Saúde",
+      "en": "Environment and Health",
+      "es": "Medio Ambiente y Salud"
+    },
+    "axis": "economic",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 60,
+    "text": {
+      "pt": "Jogos de azar e cassinos deveriam ser legalizados no Brasil.",
+      "en": "Gambling and casinos should be legalized in Brazil.",
+      "es": "Los juegos de azar y casinos deberían legalizarse en Brasil."
+    },
+    "category": {
+      "pt": "Liberdades Individuais",
+      "en": "Individual Freedoms",
+      "es": "Libertades Individuales"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 61,
+    "text": {
+      "pt": "A aliança com partidos políticos fisiológicos (o 'Centrão') é um mal necessário e aceitável para garantir a governabilidade do país.",
+      "en": "An alliance with physiological political parties (the 'Centrão') is a necessary and acceptable evil to guarantee the country's governability.",
+      "es": "La alianza con partidos políticos fisiológicos (el 'Centrão') es un mal necesario y aceptable para garantizar la gobernabilidad del país."
+    },
+    "category": {
+      "pt": "Governabilidade e Centrão",
+      "en": "Governability and Centrão",
+      "es": "Gobernabilidad y Centrão"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": true
+  },
+  {
+    "id": 62,
+    "text": {
+      "pt": "A distribuição de cargos em ministérios e estatais não deve ser usada como moeda de troca no Congresso Nacional sob nenhuma hipótese.",
+      "en": "The distribution of positions in ministries and state-owned companies should not be used as a bargaining chip in the National Congress under any circumstances.",
+      "es": "La distribución de cargos en ministerios y empresas estatales no debe usarse como moneda de cambio en el Congreso Nacional bajo ninguna circunstancia."
+    },
+    "category": {
+      "pt": "Ética Política e Centrão",
+      "en": "Political Ethics and Centrão",
+      "es": "Ética Política y Centrão"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": true
+  },
+  {
+    "id": 63,
+    "text": {
+      "pt": "O 'orçamento secreto' (emendas do relator) deveria ser completamente proibido por falta de transparência.",
+      "en": "The 'secret budget' (rapporteur amendments) should be completely banned due to lack of transparency.",
+      "es": "El 'presupuesto secreto' (enmiendas del relator) debería prohibirse completamente por falta de transparencia."
+    },
+    "category": {
+      "pt": "Transparência e Controle",
+      "en": "Transparency and Control",
+      "es": "Transparencia y Control"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 64,
+    "text": {
+      "pt": "O serviço militar obrigatório deve ser mantido.",
+      "en": "Mandatory military service should be maintained.",
+      "es": "El servicio militar obligatorio debe mantenerse."
+    },
+    "category": {
+      "pt": "Defesa",
+      "en": "Defense",
+      "es": "Defensa"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 65,
+    "text": {
+      "pt": "Os atos de 8 de janeiro de 2023 foram um ataque direto à democracia brasileira e devem ser punidos com rigor.",
+      "en": "The January 8, 2023 acts were a direct attack on Brazilian democracy and must be strictly punished.",
+      "es": "Los actos del 8 de enero de 2023 fueron un ataque directo a la democracia brasileña y deben ser castigados con rigor."
+    },
+    "category": {
+      "pt": "Defesa da Democracia",
+      "en": "Defense of Democracy",
+      "es": "Defensa de la Democracia"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 66,
+    "text": {
+      "pt": "O Brasil deve seguir as resoluções da ONU sobre direitos humanos e condenar violações em outros países, mesmo que isso prejudique relações comerciais ou alianças históricas.",
+      "en": "Brazil must follow UN human rights resolutions and condemn violations in other countries, even if it harms commercial relations or historical alliances.",
+      "es": "Brasil debe seguir las resoluciones de la ONU sobre derechos humanos y condenar las violaciones en otros países, incluso si eso perjudica las relaciones comerciales o las alianzas históricas."
+    },
+    "category": {
+      "pt": "Política Externa e Diplomacia",
+      "en": "Foreign Policy and Diplomacy",
+      "es": "Política Exterior y Diplomacia"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 67,
+    "text": {
+      "pt": "O Brasil deve condenar de forma veemente regimes autoritários de esquerda na América Latina, como Venezuela e Nicarágua.",
+      "en": "Brazil must strongly condemn authoritarian left-wing regimes in Latin America, such as Venezuela and Nicaragua.",
+      "es": "Brasil debe condenar enérgicamente a los regímenes autoritarios de izquierda en América Latina, como Venezuela y Nicaragua."
+    },
+    "category": {
+      "pt": "Política Externa e Diplomacia",
+      "en": "Foreign Policy and Diplomacy",
+      "es": "Política Exterior y Diplomacia"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 68,
+    "text": {
+      "pt": "O financiamento público de projetos culturais (como a Lei Rouanet) deve ser drasticamente reduzido ou eliminado.",
+      "en": "Public funding for cultural projects (like the Rouanet Law) should be drastically reduced or eliminated.",
+      "es": "La financiación pública de proyectos culturales (como la Ley Rouanet) debe reducirse drásticamente o eliminarse."
+    },
+    "category": {
+      "pt": "Cultura e Estado",
+      "en": "Culture and State",
+      "es": "Cultura y Estado"
+    },
+    "axis": "economic",
+    "weight": 1,
+    "quick": false
+  },
+  {
+    "id": 69,
+    "text": {
+      "pt": "O uso de 'linguagem neutra' deve ser proibido nas escolas e em documentos oficiais do Estado.",
+      "en": "The use of 'gender-neutral language' should be banned in schools and official State documents.",
+      "es": "El uso del 'lenguaje neutro' debe prohibirse en las escuelas y en los documentos oficiales del Estado."
+    },
+    "category": {
+      "pt": "Guerras Culturais e Educação",
+      "en": "Culture Wars and Education",
+      "es": "Guerras Culturales y Educación"
+    },
+    "axis": "social",
+    "weight": -1,
+    "quick": false
+  },
+  {
+    "id": 70,
+    "text": {
+      "pt": "O Estado deve garantir tratamentos de transição de gênero de forma gratuita pelo SUS.",
+      "en": "The State must guarantee gender transition treatments for free through the public health system (SUS).",
+      "es": "El Estado debe garantizar los tratamientos de transición de género de forma gratuita a través del sistema de salud pública (SUS)."
+    },
+    "category": {
+      "pt": "Direitos LGBTQIA+ e Saúde",
+      "en": "LGBTQIA+ Rights and Health",
+      "es": "Derechos LGBTQIA+ y Salud"
+    },
+    "axis": "social",
+    "weight": 1,
+    "quick": false
+  }
+]
