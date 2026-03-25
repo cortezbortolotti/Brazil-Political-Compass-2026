@@ -1,0 +1,912 @@
+{
+  "countries": [
+    {
+      "id": "usa",
+      "name": {
+        "pt": "Estados Unidos",
+        "en": "United States",
+        "es": "Estados Unidos"
+      },
+      "flag": "🇺🇸",
+      "parties": [
+        {
+          "name": "Partido Democrata",
+          "position": {
+            "economic": -2,
+            "social": 3
+          },
+          "color": "#0015BC"
+        },
+        {
+          "name": "Partido Republicano",
+          "position": {
+            "economic": 4,
+            "social": -4
+          },
+          "color": "#E81B23"
+        }
+      ]
+    },
+    {
+      "id": "uk",
+      "name": {
+        "pt": "Reino Unido",
+        "en": "United Kingdom",
+        "es": "Reino Unido"
+      },
+      "flag": "🇬🇧",
+      "parties": [
+        {
+          "name": "Labour Party",
+          "position": {
+            "economic": -3,
+            "social": 4
+          },
+          "color": "#E4003B"
+        },
+        {
+          "name": "Conservative Party",
+          "position": {
+            "economic": 3,
+            "social": -2
+          },
+          "color": "#0087DC"
+        },
+        {
+          "name": "Liberal Democrats",
+          "position": {
+            "economic": 0,
+            "social": 5
+          },
+          "color": "#FAA61A"
+        },
+        {
+          "name": "Green Party",
+          "position": {
+            "economic": -4,
+            "social": 6
+          },
+          "color": "#6AB023"
+        }
+      ]
+    },
+    {
+      "id": "canada",
+      "name": {
+        "pt": "Canadá",
+        "en": "Canada",
+        "es": "Canadá"
+      },
+      "flag": "🇨🇦",
+      "parties": [
+        {
+          "name": "Liberal Party",
+          "position": {
+            "economic": -1,
+            "social": 4
+          },
+          "color": "#D71920"
+        },
+        {
+          "name": "Conservative Party",
+          "position": {
+            "economic": 4,
+            "social": -1
+          },
+          "color": "#1A4782"
+        },
+        {
+          "name": "New Democratic Party",
+          "position": {
+            "economic": -4,
+            "social": 5
+          },
+          "color": "#F37021"
+        },
+        {
+          "name": "Green Party",
+          "position": {
+            "economic": -3,
+            "social": 6
+          },
+          "color": "#3D9B35"
+        }
+      ]
+    },
+    {
+      "id": "mexico",
+      "name": {
+        "pt": "México",
+        "en": "Mexico",
+        "es": "México"
+      },
+      "flag": "🇲🇽",
+      "parties": [
+        {
+          "name": "MORENA",
+          "position": {
+            "economic": -4,
+            "social": 2
+          },
+          "color": "#C00"
+        },
+        {
+          "name": "PAN",
+          "position": {
+            "economic": 4,
+            "social": -4
+          },
+          "color": "#0047AB"
+        },
+        {
+          "name": "PRI",
+          "position": {
+            "economic": 1,
+            "social": 0
+          },
+          "color": "#FF0000"
+        },
+        {
+          "name": "MC",
+          "position": {
+            "economic": 1,
+            "social": 5
+          },
+          "color": "#FF8300"
+        }
+      ]
+    },
+    {
+      "id": "argentina",
+      "name": {
+        "pt": "Argentina",
+        "en": "Argentina",
+        "es": "Argentina"
+      },
+      "flag": "🇦🇷",
+      "parties": [
+        {
+          "name": "La Libertad Avanza",
+          "position": {
+            "economic": 7,
+            "social": -3
+          },
+          "color": "#7D3F98"
+        },
+        {
+          "name": "Unión por la Patria",
+          "position": {
+            "economic": -4,
+            "social": 1
+          },
+          "color": "#1E90FF"
+        },
+        {
+          "name": "Juntos por el Cambio",
+          "position": {
+            "economic": 4,
+            "social": -1
+          },
+          "color": "#FFD700"
+        },
+        {
+          "name": "Frente de Izquierda",
+          "position": {
+            "economic": -6,
+            "social": 5
+          },
+          "color": "#DC143C"
+        }
+      ]
+    },
+    {
+      "id": "chile",
+      "name": {
+        "pt": "Chile",
+        "en": "Chile",
+        "es": "Chile"
+      },
+      "flag": "🇨🇱",
+      "parties": [
+        {
+          "name": "Frente Amplio",
+          "position": {
+            "economic": -4,
+            "social": 6
+          },
+          "color": "#FF0080"
+        },
+        {
+          "name": "Partido Comunista",
+          "position": {
+            "economic": -6,
+            "social": 4
+          },
+          "color": "#D40000"
+        },
+        {
+          "name": "UDI",
+          "position": {
+            "economic": 5,
+            "social": -4
+          },
+          "color": "#1E3F8C"
+        },
+        {
+          "name": "Renovación Nacional",
+          "position": {
+            "economic": 4,
+            "social": -2
+          },
+          "color": "#1874CD"
+        }
+      ]
+    },
+    {
+      "id": "uruguay",
+      "name": {
+        "pt": "Uruguai",
+        "en": "Uruguay",
+        "es": "Uruguay"
+      },
+      "flag": "🇺🇾",
+      "parties": [
+        {
+          "name": "Frente Amplio",
+          "position": {
+            "economic": -3,
+            "social": 5
+          },
+          "color": "#FF6B00"
+        },
+        {
+          "name": "Partido Nacional",
+          "position": {
+            "economic": 3,
+            "social": -1
+          },
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Partido Colorado",
+          "position": {
+            "economic": 2,
+            "social": 1
+          },
+          "color": "#FF0000"
+        },
+        {
+          "name": "Cabildo Abierto",
+          "position": {
+            "economic": 1,
+            "social": -3
+          },
+          "color": "#006400"
+        }
+      ]
+    },
+    {
+      "id": "germany",
+      "name": {
+        "pt": "Alemanha",
+        "en": "Germany",
+        "es": "Alemania"
+      },
+      "flag": "🇩🇪",
+      "parties": [
+        {
+          "name": "SPD",
+          "position": {
+            "economic": -2,
+            "social": 4
+          },
+          "color": "#E3000F"
+        },
+        {
+          "name": "CDU/CSU",
+          "position": {
+            "economic": 2,
+            "social": -1
+          },
+          "color": "#000000"
+        },
+        {
+          "name": "Die Grünen",
+          "position": {
+            "economic": -3,
+            "social": 6
+          },
+          "color": "#64A12D"
+        },
+        {
+          "name": "FDP",
+          "position": {
+            "economic": 5,
+            "social": 4
+          },
+          "color": "#FFED00"
+        },
+        {
+          "name": "Die Linke",
+          "position": {
+            "economic": -6,
+            "social": 5
+          },
+          "color": "#BE3075"
+        },
+        {
+          "name": "AfD",
+          "position": {
+            "economic": 3,
+            "social": -5
+          },
+          "color": "#009EE0"
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "name": {
+        "pt": "Itália",
+        "en": "Italy",
+        "es": "Italia"
+      },
+      "flag": "🇮🇹",
+      "parties": [
+        {
+          "name": "Fratelli d'Italia",
+          "position": {
+            "economic": 2,
+            "social": -4
+          },
+          "color": "#00429C"
+        },
+        {
+          "name": "Lega",
+          "position": {
+            "economic": 1,
+            "social": -5
+          },
+          "color": "#0F52BA"
+        },
+        {
+          "name": "Partito Democratico",
+          "position": {
+            "economic": -2,
+            "social": 3
+          },
+          "color": "#EF3E3E"
+        },
+        {
+          "name": "Movimento 5 Stelle",
+          "position": {
+            "economic": -3,
+            "social": 2
+          },
+          "color": "#FFEF00"
+        }
+      ]
+    },
+    {
+      "id": "france",
+      "name": {
+        "pt": "França",
+        "en": "France",
+        "es": "Francia"
+      },
+      "flag": "🇫🇷",
+      "parties": [
+        {
+          "name": "La France Insoumise",
+          "position": {
+            "economic": -5,
+            "social": 5
+          },
+          "color": "#CC2443"
+        },
+        {
+          "name": "Renaissance",
+          "position": {
+            "economic": 3,
+            "social": 4
+          },
+          "color": "#FFEB00"
+        },
+        {
+          "name": "Rassemblement National",
+          "position": {
+            "economic": -1,
+            "social": -6
+          },
+          "color": "#0E4484"
+        },
+        {
+          "name": "Les Républicains",
+          "position": {
+            "economic": 4,
+            "social": -2
+          },
+          "color": "#0066CC"
+        },
+        {
+          "name": "Europe Écologie",
+          "position": {
+            "economic": -3,
+            "social": 6
+          },
+          "color": "#00C000"
+        }
+      ]
+    },
+    {
+      "id": "portugal",
+      "name": {
+        "pt": "Portugal",
+        "en": "Portugal",
+        "es": "Portugal"
+      },
+      "flag": "🇵🇹",
+      "parties": [
+        {
+          "name": "Partido Socialista",
+          "position": {
+            "economic": -2,
+            "social": 4
+          },
+          "color": "#FF66FF"
+        },
+        {
+          "name": "PSD",
+          "position": {
+            "economic": 3,
+            "social": 0
+          },
+          "color": "#FF6600"
+        },
+        {
+          "name": "Chega",
+          "position": {
+            "economic": 1,
+            "social": -4
+          },
+          "color": "#1C1C1C"
+        },
+        {
+          "name": "Bloco de Esquerda",
+          "position": {
+            "economic": -5,
+            "social": 6
+          },
+          "color": "#8B0000"
+        },
+        {
+          "name": "Iniciativa Liberal",
+          "position": {
+            "economic": 6,
+            "social": 5
+          },
+          "color": "#00BFFF"
+        }
+      ]
+    },
+    {
+      "id": "australia",
+      "name": {
+        "pt": "Austrália",
+        "en": "Australia",
+        "es": "Australia"
+      },
+      "flag": "🇦🇺",
+      "parties": [
+        {
+          "name": "Labor Party",
+          "position": {
+            "economic": -2,
+            "social": 3
+          },
+          "color": "#DE3533"
+        },
+        {
+          "name": "Liberal Party",
+          "position": {
+            "economic": 4,
+            "social": -1
+          },
+          "color": "#0047AB"
+        },
+        {
+          "name": "Greens",
+          "position": {
+            "economic": -4,
+            "social": 6
+          },
+          "color": "#10C25B"
+        },
+        {
+          "name": "One Nation",
+          "position": {
+            "economic": 2,
+            "social": -5
+          },
+          "color": "#FF6300"
+        }
+      ]
+    },
+    {
+      "id": "newzealand",
+      "name": {
+        "pt": "Nova Zelândia",
+        "en": "New Zealand",
+        "es": "Nueva Zelanda"
+      },
+      "flag": "🇳🇿",
+      "parties": [
+        {
+          "name": "Labour",
+          "position": {
+            "economic": -3,
+            "social": 4
+          },
+          "color": "#D82A20"
+        },
+        {
+          "name": "National",
+          "position": {
+            "economic": 3,
+            "social": 0
+          },
+          "color": "#00529F"
+        },
+        {
+          "name": "Green Party",
+          "position": {
+            "economic": -4,
+            "social": 6
+          },
+          "color": "#098137"
+        },
+        {
+          "name": "ACT",
+          "position": {
+            "economic": 6,
+            "social": 4
+          },
+          "color": "#FDE401"
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "name": {
+        "pt": "Japão",
+        "en": "Japan",
+        "es": "Japón"
+      },
+      "flag": "🇯🇵",
+      "parties": [
+        {
+          "name": "LDP",
+          "position": {
+            "economic": 4,
+            "social": -3
+          },
+          "color": "#FF0000"
+        },
+        {
+          "name": "CDP",
+          "position": {
+            "economic": -3,
+            "social": 3
+          },
+          "color": "#0000FF"
+        },
+        {
+          "name": "Komeito",
+          "position": {
+            "economic": 0,
+            "social": 1
+          },
+          "color": "#FF9900"
+        },
+        {
+          "name": "JCP",
+          "position": {
+            "economic": -6,
+            "social": 4
+          },
+          "color": "#C40000"
+        }
+      ]
+    },
+    {
+      "id": "southkorea",
+      "name": {
+        "pt": "Coreia do Sul",
+        "en": "South Korea",
+        "es": "Corea del Sur"
+      },
+      "flag": "🇰🇷",
+      "parties": [
+        {
+          "name": "People Power Party",
+          "position": {
+            "economic": 3,
+            "social": -2
+          },
+          "color": "#E61E2B"
+        },
+        {
+          "name": "Democratic Party",
+          "position": {
+            "economic": -2,
+            "social": 3
+          },
+          "color": "#004EA2"
+        },
+        {
+          "name": "Justice Party",
+          "position": {
+            "economic": -4,
+            "social": 5
+          },
+          "color": "#FFCC00"
+        },
+        {
+          "name": "Reform Party",
+          "position": {
+            "economic": 1,
+            "social": 1
+          },
+          "color": "#00A9E0"
+        }
+      ]
+    },
+    {
+      "id": "netherlands",
+      "name": {
+        "pt": "Holanda",
+        "en": "Netherlands",
+        "es": "Países Bajos"
+      },
+      "flag": "🇳🇱",
+      "parties": [
+        {
+          "name": "VVD",
+          "position": {
+            "economic": 4,
+            "social": 3
+          },
+          "color": "#FF7F00"
+        },
+        {
+          "name": "D66",
+          "position": {
+            "economic": 2,
+            "social": 6
+          },
+          "color": "#00A651"
+        },
+        {
+          "name": "PVV (Wilders)",
+          "position": {
+            "economic": -1,
+            "social": -6
+          },
+          "color": "#003082"
+        },
+        {
+          "name": "GroenLinks-PvdA",
+          "position": {
+            "economic": -4,
+            "social": 5
+          },
+          "color": "#C00"
+        },
+        {
+          "name": "SP",
+          "position": {
+            "economic": -6,
+            "social": 3
+          },
+          "color": "#EE0000"
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "name": {
+        "pt": "Espanha",
+        "en": "Spain",
+        "es": "España"
+      },
+      "flag": "🇪🇸",
+      "parties": [
+        {
+          "name": "PSOE",
+          "position": {
+            "economic": -2,
+            "social": 5
+          },
+          "color": "#E4003B"
+        },
+        {
+          "name": "Partido Popular",
+          "position": {
+            "economic": 3,
+            "social": -2
+          },
+          "color": "#007FFF"
+        },
+        {
+          "name": "Vox",
+          "position": {
+            "economic": 2,
+            "social": -6
+          },
+          "color": "#63BE21"
+        },
+        {
+          "name": "Sumar",
+          "position": {
+            "economic": -5,
+            "social": 6
+          },
+          "color": "#E52D40"
+        },
+        {
+          "name": "Junts / ERC",
+          "position": {
+            "economic": -1,
+            "social": 4
+          },
+          "color": "#E09B25"
+        }
+      ]
+    },
+    {
+      "id": "sweden",
+      "name": {
+        "pt": "Suécia",
+        "en": "Sweden",
+        "es": "Suecia"
+      },
+      "flag": "🇸🇪",
+      "parties": [
+        {
+          "name": "Socialdemokraterna",
+          "position": {
+            "economic": -3,
+            "social": 4
+          },
+          "color": "#E8112D"
+        },
+        {
+          "name": "Moderaterna",
+          "position": {
+            "economic": 4,
+            "social": 1
+          },
+          "color": "#52BDEC"
+        },
+        {
+          "name": "Sverigedemokraterna",
+          "position": {
+            "economic": 0,
+            "social": -5
+          },
+          "color": "#DDDD00"
+        },
+        {
+          "name": "Vänsterpartiet",
+          "position": {
+            "economic": -6,
+            "social": 5
+          },
+          "color": "#DA291C"
+        },
+        {
+          "name": "Liberalerna",
+          "position": {
+            "economic": 3,
+            "social": 5
+          },
+          "color": "#006AB3"
+        }
+      ]
+    },
+    {
+      "id": "israel",
+      "name": {
+        "pt": "Israel",
+        "en": "Israel",
+        "es": "Israel"
+      },
+      "flag": "🇮🇱",
+      "parties": [
+        {
+          "name": "Likud",
+          "position": {
+            "economic": 3,
+            "social": -4
+          },
+          "color": "#4682B4"
+        },
+        {
+          "name": "Yesh Atid",
+          "position": {
+            "economic": 2,
+            "social": 3
+          },
+          "color": "#FF8C00"
+        },
+        {
+          "name": "Otzma Yehudit",
+          "position": {
+            "economic": 1,
+            "social": -8
+          },
+          "color": "#800000"
+        },
+        {
+          "name": "Meretz",
+          "position": {
+            "economic": -4,
+            "social": 6
+          },
+          "color": "#D73C3C"
+        },
+        {
+          "name": "Hadash",
+          "position": {
+            "economic": -5,
+            "social": 5
+          },
+          "color": "#CC0000"
+        }
+      ]
+    },
+    {
+      "id": "india",
+      "name": {
+        "pt": "Índia",
+        "en": "India",
+        "es": "India"
+      },
+      "flag": "🇮🇳",
+      "parties": [
+        {
+          "name": "BJP",
+          "position": {
+            "economic": 3,
+            "social": -5
+          },
+          "color": "#FF9933"
+        },
+        {
+          "name": "Congresso Nacional",
+          "position": {
+            "economic": -2,
+            "social": 2
+          },
+          "color": "#19AAED"
+        },
+        {
+          "name": "AAP",
+          "position": {
+            "economic": -3,
+            "social": 4
+          },
+          "color": "#0066CC"
+        },
+        {
+          "name": "CPI(M)",
+          "position": {
+            "economic": -7,
+            "social": 3
+          },
+          "color": "#CC0000"
+        }
+      ]
+    }
+  ]
+}

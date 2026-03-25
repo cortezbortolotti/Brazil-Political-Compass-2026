@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "text": {
+      "pt": "A economia funciona melhor quando o governo tem forte participação regulando o mercado.",
+      "en": "The economy works better when the government has strong participation in regulating the market.",
+      "es": "La economía funciona mejor cuando el gobierno tiene una fuerte participación regulando el mercado."
+    },
+    "weight": -1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 2,
+    "text": {
+      "pt": "Grandes corporações e super-ricos deveriam pagar impostos significativamente mais altos.",
+      "en": "Large corporations and the super-rich should pay significantly higher taxes.",
+      "es": "Las grandes corporaciones y los súper ricos deberían pagar impuestos significativamente más altos."
+    },
+    "weight": -1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 3,
+    "text": {
+      "pt": "O casamento entre pessoas do mesmo sexo deve ser plenamente legalizado e reconhecido.",
+      "en": "Same-sex marriage should be fully legalized and recognized.",
+      "es": "El matrimonio entre personas del mismo sexo debe ser plenamente legalizado y reconocido."
+    },
+    "weight": 1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 4,
+    "text": {
+      "pt": "A saúde e a educação devem ser totalmente públicas e gratuitas, financiadas pelo Estado.",
+      "en": "Healthcare and education should be completely public and free, funded by the State.",
+      "es": "La salud y la educación deben ser totalmente públicas y gratuitas, financiadas por el Estado."
+    },
+    "weight": -1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 5,
+    "text": {
+      "pt": "A imigração deve ser rigorosamente controlada e restringida para proteger a cultura nacional.",
+      "en": "Immigration must be strictly controlled and restricted to protect national culture.",
+      "es": "La inmigración debe ser estrictamente controlada y restringida para proteger la cultura nacional."
+    },
+    "weight": -1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 6,
+    "text": {
+      "pt": "Leis trabalhistas rígidas e sindicatos fortes são essenciais para proteger os trabalhadores.",
+      "en": "Strict labor laws and strong unions are essential to protect workers.",
+      "es": "Las leyes laborales estrictas y los sindicatos fuertes son esenciales para proteger a los trabajadores."
+    },
+    "weight": -1,
+    "axis": "economic"
+  },
+  {
+    "id": 7,
+    "text": {
+      "pt": "A privatização de empresas estatais geralmente aumenta a eficiência e beneficia a sociedade.",
+      "en": "The privatization of state-owned companies generally increases efficiency and benefits society.",
+      "es": "La privatización de empresas estatales generalmente aumenta la eficiencia y beneficia a la sociedad."
+    },
+    "weight": 1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 8,
+    "text": {
+      "pt": "O aborto deve ser uma escolha legal e acessível para as mulheres.",
+      "en": "Abortion should be a legal and accessible choice for women.",
+      "es": "El aborto debe ser una opción legal y accesible para las mujeres."
+    },
+    "weight": 1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 9,
+    "text": {
+      "pt": "Reduzir impostos e regulamentações é a melhor forma de estimular o crescimento econômico.",
+      "en": "Reducing taxes and regulations is the best way to stimulate economic growth.",
+      "es": "Reducir impuestos y regulaciones es la mejor manera de estimular el crecimiento económico."
+    },
+    "weight": 1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 10,
+    "text": {
+      "pt": "A religião deve desempenhar um papel importante na educação e nas leis do país.",
+      "en": "Religion should play an important role in the country's education and laws.",
+      "es": "La religión debe jugar un papel importante en la educación y las leyes del país."
+    },
+    "weight": -1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 11,
+    "text": {
+      "pt": "A preservação dos valores familiares tradicionais é fundamental para uma sociedade saudável.",
+      "en": "The preservation of traditional family values is fundamental for a healthy society.",
+      "es": "La preservación de los valores familiares tradicionales es fundamental para una sociedad sana."
+    },
+    "weight": -1,
+    "axis": "social"
+  },
+  {
+    "id": 12,
+    "text": {
+      "pt": "O livre comércio global é melhor do que o protecionismo para a economia de um país.",
+      "en": "Global free trade is better than protectionism for a country's economy.",
+      "es": "El libre comercio global es mejor que el proteccionismo para la economía de un país."
+    },
+    "weight": 1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 13,
+    "text": {
+      "pt": "O porte de armas por cidadãos civis deve ser facilitado para defesa pessoal.",
+      "en": "The carrying of firearms by civilian citizens should be facilitated for personal defense.",
+      "es": "El porte de armas de fuego por parte de ciudadanos civiles debe facilitarse para la defensa personal."
+    },
+    "weight": -1,
+    "axis": "social"
+  },
+  {
+    "id": 14,
+    "text": {
+      "pt": "Programas de bem-estar social muito generosos desencorajam as pessoas de trabalhar.",
+      "en": "Overly generous social welfare programs discourage people from working.",
+      "es": "Los programas de bienestar social demasiado generosos desaniman a la gente a trabajar."
+    },
+    "weight": 1,
+    "axis": "economic"
+  },
+  {
+    "id": 15,
+    "text": {
+      "pt": "A identidade de gênero autodeclarada deve ser legalmente reconhecida pelo Estado.",
+      "en": "Self-declared gender identity should be legally recognized by the State.",
+      "es": "La identidad de género autodeclarada debe ser reconocida legalmente por el Estado."
+    },
+    "weight": 1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 16,
+    "text": {
+      "pt": "O Banco Central deve ser totalmente independente da interferência dos políticos.",
+      "en": "The Central Bank must be completely independent from political interference.",
+      "es": "El Banco Central debe ser completamente independiente de la interferencia política."
+    },
+    "weight": 1,
+    "axis": "economic"
+  },
+  {
+    "id": 17,
+    "text": {
+      "pt": "Países desenvolvidos têm a obrigação moral de acolher refugiados de guerra e crises.",
+      "en": "Developed countries have a moral obligation to welcome refugees from wars and crises.",
+      "es": "Los países desarrollados tienen la obligación moral de acoger a refugiados de guerras y crisis."
+    },
+    "weight": 1,
+    "axis": "social"
+  },
+  {
+    "id": 18,
+    "text": {
+      "pt": "O governo deveria controlar os preços de itens essenciais como alimentos e combustíveis.",
+      "en": "The government should control the prices of essential items like food and fuel.",
+      "es": "El gobierno debería controlar los precios de artículos esenciales como alimentos y combustible."
+    },
+    "weight": -1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 19,
+    "text": {
+      "pt": "Drogas leves, como a maconha, deveriam ser legalizadas e regulamentadas.",
+      "en": "Soft drugs, like marijuana, should be legalized and regulated.",
+      "es": "Las drogas blandas, como la marihuana, deberían ser legalizadas y reguladas."
+    },
+    "weight": 1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 20,
+    "text": {
+      "pt": "A propriedade privada é um direito absoluto e não deve sofrer intervenção do Estado.",
+      "en": "Private property is an absolute right and should not face State intervention.",
+      "es": "La propiedad privada es un derecho absoluto y no debe sufrir intervención del Estado."
+    },
+    "weight": 1,
+    "axis": "economic"
+  },
+  {
+    "id": 21,
+    "text": {
+      "pt": "Penas mais duras e tolerância zero são as melhores formas de combater a criminalidade.",
+      "en": "Harsher sentences and zero tolerance are the best ways to fight crime.",
+      "es": "Penas más duras y tolerancia cero son las mejores formas de combatir la criminalidad."
+    },
+    "weight": -1,
+    "axis": "social"
+  },
+  {
+    "id": 22,
+    "text": {
+      "pt": "Bilionários não deveriam existir - o Estado deve redistribuir a riqueza extrema.",
+      "en": "Billionaires shouldn't exist - the State must redistribute extreme wealth.",
+      "es": "Los multimillonarios no deberían existir - el Estado debe redistribuir la riqueza extrema."
+    },
+    "weight": -1,
+    "axis": "economic"
+  },
+  {
+    "id": 23,
+    "text": {
+      "pt": "Políticas de cotas e ações afirmativas são necessárias para corrigir desigualdades históricas.",
+      "en": "Quota policies and affirmative actions are necessary to correct historical inequalities.",
+      "es": "Las políticas de cuotas y acciones afirmativas son necesarias para corregir desigualdades históricas."
+    },
+    "weight": 1,
+    "axis": "social"
+  },
+  {
+    "id": 24,
+    "text": {
+      "pt": "Leis trabalhistas devem ser mais flexíveis para facilitar as contratações por empresários.",
+      "en": "Labor laws should be more flexible to make hiring easier for employers.",
+      "es": "Las leyes laborales deben ser más flexibles para facilitar la contratación por parte de los empresarios."
+    },
+    "weight": 1,
+    "axis": "economic"
+  },
+  {
+    "id": 25,
+    "text": {
+      "pt": "O Estado não deve ter nenhuma ligação ou favorecimento a qualquer religião.",
+      "en": "The State should have no connection or favoritism towards any religion.",
+      "es": "El Estado no debe tener ninguna conexión o favoritismo hacia ninguna religión."
+    },
+    "weight": 1,
+    "axis": "social",
+    "quick": true
+  },
+  {
+    "id": 26,
+    "text": {
+      "pt": "O governo deve garantir uma Renda Básica Universal para todos os cidadãos.",
+      "en": "The government must guarantee a Universal Basic Income for all citizens.",
+      "es": "El gobierno debe garantizar una Renta Básica Universal para todos los ciudadanos."
+    },
+    "weight": -1,
+    "axis": "economic",
+    "quick": true
+  },
+  {
+    "id": 27,
+    "text": {
+      "pt": "A autoridade e a obediência civil são virtudes mais importantes do que a liberdade irrestrita.",
+      "en": "Authority and civil obedience are more important virtues than unrestricted freedom.",
+      "es": "La autoridad y la obediencia civil son virtudes más importantes que la libertad irrestricta."
+    },
+    "weight": -1,
+    "axis": "social"
+  },
+  {
+    "id": 28,
+    "text": {
+      "pt": "Criptomoedas e finanças descentralizadas devem ser fortemente reguladas ou proibidas.",
+      "en": "Cryptocurrencies and decentralized finance should be heavily regulated or banned.",
+      "es": "Las criptomonedas y las finanzas descentralizadas deben ser fuertemente reguladas o prohibidas."
+    },
+    "weight": -1,
+    "axis": "economic"
+  },
+  {
+    "id": 29,
+    "text": {
+      "pt": "A eutanásia e o suicídio assistido devem ser escolhas legais para pacientes terminais.",
+      "en": "Euthanasia and assisted suicide should be legal choices for terminally ill patients.",
+      "es": "La eutanasia y el suicidio asistido deben ser opciones legales para pacientes terminales."
+    },
+    "weight": 1,
+    "axis": "social"
+  },
+  {
+    "id": 30,
+    "text": {
+      "pt": "O lucro é o principal motor do progresso e as empresas devem focar em maximizá-lo.",
+      "en": "Profit is the main driver of progress and companies should focus on maximizing it.",
+      "es": "El beneficio es el principal motor del progreso y las empresas deben centrarse en maximizarlo."
+    },
+    "weight": 1,
+    "axis": "economic"
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Lula",
+    "party": "PT",
+    "economic": -50,
+    "social": -10,
+    "photo": "data/candidates/avatars/lula.webp",
+    "description": "Trabalhismo desenvolvimentista e regulação estatal"
+  },
+  {
+    "id": 2,
+    "name": "Flávio Bolsonaro",
+    "party": "PL",
+    "economic": 50,
+    "social": -75,
+    "photo": "data/candidates/avatars/flavio.webp",
+    "description": "Direita conservadora e defesa de valores tradicionais com forte apelo punitivista"
+  },
+  {
+    "id": 3,
+    "name": "Renan Santos",
+    "party": "MISSÃO",
+    "economic": 80,
+    "social": -45,
+    "photo": "data/candidates/avatars/renan.webp",
+    "description": "Ultraliberalismo econômico e 'Bukelismo' na segurança pública"
+  },
+  {
+    "id": 4,
+    "name": "Ronaldo Caiado",
+    "party": "PSD",
+    "economic": 50,
+    "social": -80,
+    "photo": "data/candidates/avatars/caiado.webp",
+    "description": "Direita ruralista com foco total e rígido em segurança pública"
+  },
+  {
+    "id": 6,
+    "name": "Eduardo Leite",
+    "party": "PSD",
+    "economic": 30,
+    "social": 10,
+    "photo": "data/candidates/avatars/leite.webp",
+    "description": "Social-liberalismo: mercado forte e gestão pragmática institucional"
+  },
+  {
+    "id": 9,
+    "name": "Aldo Rebelo",
+    "party": "DC",
+    "economic": -40,
+    "social": -40,
+    "photo": "data/candidates/avatars/aldo.webp",
+    "description": "Nacionalismo soberanista com forte papel do Estado"
+  },
+  {
+    "id": 10,
+    "name": "Michel Temer",
+    "party": "MDB",
+    "economic": 50,
+    "social": -5,
+    "photo": "data/candidates/avatars/temer.webp",
+    "description": "Constitucionalismo liberal e reformas econômicas institucionais"
+  },
+  {
+    "id": 11,
+    "name": "Samara Martins",
+    "party": "UP",
+    "economic": -85,
+    "social": -60,
+    "photo": "data/candidates/avatars/samara.webp",
+    "description": "Socialismo revolucionário e poder popular com planejamento estatal"
+  },
+  {
+    "id": 12,
+    "name": "Edmilson Costa",
+    "party": "PCB",
+    "economic": -100,
+    "social": -90,
+    "photo": "data/candidates/avatars/edmilson.webp",
+    "description": "Comunismo marxista-leninista ortodoxo e centralismo democrático"
+  }
+]
