@@ -1067,7 +1067,7 @@ window.APP_STATIC_DATA = {
       "name": "Renan Santos",
       "party": "MISSÃO",
       "economic": 80,
-      "social": -30,
+      "social": -55,
       "photo": "assets/renan.jpg",
       "description": "Ultraliberalismo e 'Bukelismo' na segurança (Direito Penal do Inimigo)"
     },
@@ -1103,18 +1103,9 @@ window.APP_STATIC_DATA = {
       "name": "Aldo Rebelo",
       "party": "DC",
       "economic": -40,
-      "social": -50,
+      "social": -55,
       "photo": "assets/aldo.jpg",
       "description": "Nacionalismo soberanista e conservadorismo anti-woke"
-    },
-    {
-      "id": 10,
-      "name": "Michel Temer",
-      "party": "MDB",
-      "economic": 60,
-      "social": -10,
-      "photo": "assets/temer.jpg",
-      "description": "Constitucionalismo liberal e reformas económicas"
     },
     {
       "id": 11,

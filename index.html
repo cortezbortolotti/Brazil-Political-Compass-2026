@@ -177,7 +177,7 @@ body {
 .cand-pct { font-size: 1.8rem; font-weight: 900; transition: color 0.2s; }
 .cand-row:hover .cand-pct { color: var(--green) !important; }
 .res-explicacao { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6; color: var(--txt); }
-.modal-cand { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; padding: 1rem; }
+.modal-cand { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; padding: 1rem; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
 .modal-cand.show { opacity: 1; pointer-events: auto; }
 .modal-cand-content { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; max-width: 500px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto; }
 .modal-cand-close { position: absolute; top: 1rem; right: 1rem; background: transparent; border: none; color: var(--txt2); font-size: 1.5rem; cursor: pointer; }
@@ -329,12 +329,25 @@ body.dark-mode {
 .p-pct { font-size: 1rem; font-weight: 900; flex-shrink: 0; min-width: 40px; text-align: right; }
 
 @media (max-width: 768px) {
+    .nav { padding: 1rem; flex-wrap: wrap; height: auto; min-height: 64px; justify-content: center; gap: 0.5rem; }
+    .nav-links { display: none; }
+    .logo { margin-bottom: 0.25rem; }
+    .nav-r { justify-content: center; width: 100%; flex-wrap: wrap; gap: 0.5rem; }
+    .btn-apoie { display: none; }
     .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem; }
     .hero-panel { order: -1; }
-    .hero-visual { min-height: unset; padding: 1rem; }
+    .hero-visual { min-height: 260px; padding: 1rem; aspect-ratio: 16/9; }
+    .hero-photo { z-index: 0; }
+    .hero-visual::before { z-index: 1; pointer-events: none; }
     .hero-visual-badge { position: static; margin-top: -0.5rem; width: fit-content; }
     .hero-stats { grid-template-columns: 1fr; }
-    .scores { grid-template-columns: 1fr; }
+    .quiz-main, .res-main, .world-main { padding: 1rem; }
+    .scores { grid-template-columns: 1fr; gap: 1rem; }
+    .sc { padding: 1rem; }
+    .compass-wrap { padding: 1.5rem 0.5rem; }
+    .cand-row { padding: 1rem 0.75rem; gap: 0.5rem; }
+    .cand-pct { font-size: 1.4rem; }
+    .q-card { padding: 1.5rem; }
     .footer-proof { justify-content: flex-start; }
 }
 </style>
@@ -348,8 +361,7 @@ body.dark-mode {
             <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
             <div class="nav-links">
                 <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')">Compasso Político</button>
-                <button class="nav-link" data-i18n="nav_eleicoes" onclick="ir('t-home')">Eleições</button>
-                <button class="nav-link" data-i18n="nav_noticias" onclick="window.open('https://secaoeleitoral.com.br','_blank')">Notícias</button>
+                <button class="nav-link" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Eleições</button>
             </div>
             <div class="nav-r">
                 <div class="nav-lang">
@@ -484,6 +496,29 @@ body.dark-mode {
     </header>
     <main class="res-main">
         <div class="res-wrap" id="res-wrap"></div>
+    </main>
+</div>
+
+<!-- TELA 3: ELEIÇÕES (Provisório) -->
+<div class="tela" id="t-eleicoes">
+    <header class="header">
+        <nav class="nav">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <div class="nav-links">
+                <button class="nav-link" data-i18n="nav_compasso" onclick="ir('t-home')">Compasso Político</button>
+                <button class="nav-link ativo" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Eleições</button>
+            </div>
+            <div class="nav-r">
+                <button class="btn-theme" onclick="dark=!dark;aplicarTema()" aria-label="Alternar tema">🌙</button>
+            </div>
+        </nav>
+    </header>
+    <main class="hero" style="min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800;">Painel de Eleições</h2>
+            <p style="color: var(--txt2); font-size: 1.1rem;">Esta página está em construção. Em breve, estatísticas e dados eleitorais estarão disponíveis aqui.</p>
+            <button class="btn-p" style="margin-top: 2rem;" onclick="ir('t-home')">← Voltar</button>
+        </div>
     </main>
 </div>
 
@@ -1221,7 +1256,7 @@ const LANGS = {
     btn_refazer: '🔄 Refazer',
     res_titulo: 'Seu Posicionamento', res_eixo_eco: 'Eixo Econômico', res_eixo_soc: 'Eixo Social',
     res_esquerda: '← Esquerda', res_direita: 'Direita →', res_centro: 'Centro',
-    res_conservador: '← Conservador', res_progressista: 'Progressista →', res_moderado: 'Moderado',
+    res_conservador: 'Autoritário ↑', res_progressista: 'Libertário ↓', res_moderado: 'Moderado',
     res_candidatos_titulo: 'Todos os candidatos ordenados por alinhamento',
     mundo_badge: 'Resultados Mundiais', mundo_titulo: 'Seus Partidos no Mundo', mundo_sub: 'Clique em um país para ver o ranking completo',
     modo_titulo_brasil: 'Escolha o Modo', modo_sub_brasil: 'Selecione quantas perguntas você quer responder',
@@ -1245,7 +1280,7 @@ const LANGS = {
     btn_refazer: '🔄 Retake',
     res_titulo: 'Your Position', res_eixo_eco: 'Economic Axis', res_eixo_soc: 'Social Axis',
     res_esquerda: '← Left', res_direita: 'Right →', res_centro: 'Center',
-    res_conservador: '← Conservative', res_progressista: 'Progressive →', res_moderado: 'Moderate',
+    res_conservador: 'Authoritarian ↑', res_progressista: 'Libertarian ↓', res_moderado: 'Moderate',
     res_candidatos_titulo: 'All candidates ranked by alignment',
     mundo_badge: 'World Results', mundo_titulo: 'Your Parties Worldwide', mundo_sub: 'Click a country to see the full ranking',
     modo_titulo_brasil: 'Choose Mode', modo_sub_brasil: 'Select how many questions you want to answer',
@@ -1269,7 +1304,7 @@ const LANGS = {
     btn_refazer: '🔄 Repetir',
     res_titulo: 'Tu Posicionamiento', res_eixo_eco: 'Eje Económico', res_eixo_soc: 'Eje Social',
     res_esquerda: '← Izquierda', res_direita: 'Derecha →', res_centro: 'Centro',
-    res_conservador: '← Conservador', res_progressista: 'Progresista →', res_moderado: 'Moderado',
+    res_conservador: 'Autoritario ↑', res_progressista: 'Libertario ↓', res_moderado: 'Moderado',
     res_candidatos_titulo: 'Todos los candidatos ordenados por alineación',
     mundo_badge: 'Resultados Mundiales', mundo_titulo: 'Tus Partidos en el Mundo', mundo_sub: 'Haz clic en un país para ver el ranking completo',
     modo_titulo_brasil: 'Elige el Modo', modo_sub_brasil: 'Selecciona cuántas preguntas quieres responder',
@@ -1439,11 +1474,26 @@ async function carregarResumoHome() {
 }
 
 // ===== TELAS =====
-function ir(id) {
+function ir(id, push = true) {
+    if ((id === 't-resultado' || id === 't-mundo') && (!S || !S.pos || (S.pos.economic === 0 && S.pos.social === 0 && S.respostas.length === 0))) {
+        id = 't-home';
+    }
     document.querySelectorAll('.tela').forEach(t => t.classList.remove('ativa'));
     const el = document.getElementById(id);
-    if (el) { el.classList.add('ativa'); el.scrollTop = 0; }
+    if (el) { el.classList.add('ativa'); window.scrollTo(0, 0); }
+    if (push && window.history.pushState) {
+        window.history.pushState({ tela: id }, "", "#" + id);
+    }
 }
+
+window.addEventListener('popstate', function(e) {
+    if (e.state && e.state.tela) {
+        ir(e.state.tela, false);
+    } else {
+        var hash = window.location.hash.substring(1);
+        ir(hash || 't-home', false);
+    }
+});
 
 // ===== MODAIS =====
 function abrirModal(id) { document.getElementById(id).classList.add('aberto'); }
@@ -1575,8 +1625,8 @@ function calcular() {
         const w = q.weight || 1;
         if (r===undefined) return;
         const v = r * w;
-        if (q.axis==='economic') { e+=v; maxE+=2*w; }
-        else if (q.axis==='social') { s+=v; maxS+=2*w; }
+        if (q.axis==='economic') { e+=v; maxE+=2*Math.abs(w); }
+        else if (q.axis==='social') { s+=v; maxS+=2*Math.abs(w); }
     });
     S.pos = {
         economic: maxE>0 ? Math.max(-100, Math.min(100, (e/maxE)*100)) : 0,
@@ -1587,13 +1637,45 @@ function calcular() {
 }
 
 function obterExplicacaoQuadrante(econ, soc) {
-    if (Math.abs(econ) <= 25 && Math.abs(soc) <= 25) return "Seu perfil indica posições <b>centristas e pragmáticas</b>. Você tende a rejeitar radicalismos, equilibrando justiça social com livre mercado e valorizando a ordem institucional sem abrir mão das liberdades fundamentais.";
-    if (econ < -25 && soc < -25) return "Seu perfil <b>(Esquerda Autoritária)</b> sugere forte desconfiança do livre mercado excessivo, priorizando a igualdade socioeconômica guiada por um Estado forte, planejador e punitivista, que garanta a ordem coletiva acima das liberdades individuais irrestritas.";
-    if (econ > 25 && soc < -25) return "Seu perfil <b>(Direita Autoritária)</b> combina a defesa entusiasmada do livre mercado com uma visão rígida dos costumes, onde a manutenção da ordem, lei, tradições e hierarquias sociais justifica um controle estatal alto na esfera civil.";
-    if (econ < -25 && soc > 25) return "Seu perfil <b>(Esquerda Libertária)</b> alia o desejo por ampla proteção social, igualdade material e regulação econômica ao respeito máximo absoluto pelas liberdades individuais, criticando duramente a interferência moral ou autoridade punitiva do Estado.";
-    if (econ > 25 && soc > 25) return "Seu perfil <b>(Direita Libertária)</b> prega a soberania individual em ambas as esferas: rejeita o intervencionismo do Estado tanto na economia (mercado livre/impostos baixos) quanto na vida civil (recusa ao puritanismo estatal e pautas moralistas coercitivas).";
-    if (econ < 0) return "Seu perfil tem forte viés no lado econômico sustentando a redistribuição e garantias sociais, adotando um pragmatismo flexível na dimensão de liberdade vs. autoritarismo civil.";
-    return "Seu perfil revela profunda crença na iniciativa privada como motor principal da sociedade, mantendo uma abordagem moderada sobre os recortes de liberdade comportamental e punitivismo estatal.";
+    const isCenterEcon = Math.abs(econ) <= 25;
+    const isCenterSoc = Math.abs(soc) <= 25;
+
+    // Centro Absoluto
+    if (isCenterEcon && isCenterSoc) {
+        return "Seu perfil indica posições <b>centristas e pragmáticas</b>. Você baliza o livre mercado com necessidades sociais e valoriza a ordem institucional sem abrir mão das liberdades civis.";
+    }
+
+    // Centros nos eixos (Esquerda/Direita)
+    if (isCenterSoc && econ < -25) {
+        return "Seu perfil de <b>Centro-Esquerda</b> sustenta a redistribuição e fortes garantias sociais na economia, mantendo uma abordagem moderada e pragmática na dimensão comportamental civil e punitivida do Estado.";
+    }
+    if (isCenterSoc && econ > 25) {
+        return "Seu perfil de <b>Centro-Direita</b> revela profunda crença na iniciativa privada como motor principal da sociedade, mantendo uma abordagem equilibrada, nem puritana nem tolerante em excesso, na esfera comportamental.";
+    }
+
+    // Centros nos eixos (Autoritário/Libertário)
+    if (isCenterEcon && soc < -25) {
+        return "Seu perfil <b>Autoritário de Centro</b> não foca nas disputas econômicas tradicionais (aceita economia mista), centrado fortemente na manutenção estrita da ordem, hierarquias, leis severas e costumes tradicionais na vida social.";
+    }
+    if (isCenterEcon && soc > 25) {
+        return "Seu perfil <b>Libertário de Centro</b> prega a tolerância social ampla e máxima preservação das liberdades civis, recusando intromissões morais estatais, embora adote pragmatismo sem grandes radicalismos nas pautas de mercado.";
+    }
+
+    // Quadrantes Extremos (soc < 0 = Autoritário, soc > 0 = Libertário)
+    if (econ < -25 && soc < -25) {
+        return "Seu perfil <b>(Esquerda Autoritária)</b> sugere desconfiança do livre mercado, priorizando a igualdade socioeconômica guiada por um Estado forte, planejador e punitivista, garantindo a ordem coletiva acima de liberdades individuais excessivas.";
+    }
+    if (econ > 25 && soc < -25) {
+        return "Seu perfil <b>(Direita Autoritária)</b> combina a defesa entusiasmada do livre mercado com uma visão rígida dos costumes, onde a manutenção da ordem, tradições corporativas e hierarquias civil-militares justifica controle estatal alto nas liberdades.";
+    }
+    if (econ < -25 && soc > 25) {
+        return "Seu perfil <b>(Esquerda Libertária)</b> associa o desejo por igualdade material e Estado provedor/coletivista ao respeito máximo absoluto pelas minorias e liberdades individuais, rechaçando pautas morais coercitivas e o aparato punitivo tradicional.";
+    }
+    if (econ > 25 && soc > 25) {
+        return "Seu perfil <b>(Direita Libertária)</b> prega a soberania do indivíduo em todas as esferas institucionais: recusa o intervencionismo na economia (mercado livre/impostos baixos) e rejeita moralismos limitadores de direitos civis, abominando o excesso estatal.";
+    }
+    
+    return "Seu perfil demonstra equilíbrio entre mercado e bem-estar coletivo, com nuances claras na autoridade governamental pretendida.";
 }
 
 // ===== RESULTADO BRASIL =====
@@ -1601,10 +1683,15 @@ function resultadoBrasil() {
     const p = S.pos;
     window._lastUsuPos = p; // Global access for modal comparacao
     
-    const MAX_DIST = Math.sqrt(200*200 + 200*200); // ~282.84
+    // Normalizar escala de -100..+100 para -1..+1
+    var ue = p.economic / 100;
+    var us = p.social / 100;
+    var maxDist = Math.sqrt(2*2 + 2*2); // sqrt(8) ≈ 2.83
     const matches = S.candidatos.map(c => {
-        const dist = Math.sqrt(Math.pow(p.economic - c.economic, 2) + Math.pow(p.social - c.social, 2));
-        const match = Math.max(0, Math.min(100, 100 * (1 - dist / MAX_DIST)));
+        var ce = c.economic / 100;
+        var cs = c.social / 100;
+        const dist = Math.sqrt(Math.pow(ue - ce, 2) + Math.pow(us - cs, 2));
+        const match = Math.max(0, Math.min(100, 100 * (1 - dist / maxDist)));
         return {...c, match};
     }).sort((a,b)=>b.match-a.match);
     const eL = p.economic<-30?t('res_esquerda'):p.economic>30?t('res_direita'):t('res_centro');
@@ -1644,37 +1731,44 @@ function abrirComparacao(id) {
     var h = document.getElementById('mc-header');
     var b = document.getElementById('mc-body');
     
-    h.innerHTML = '<div style="display:flex; align-items:center; gap:1rem;"><div class="cand-avatar" style="width:52px;height:52px"><img src="'+c.photo+'" class="cand-avatar-img" style="object-position:center 15%"></div><div><h3 style="margin:0;font-size:1.3rem;">'+c.name+'</h3><div style="font-size:0.9rem;color:var(--txt2);margin-top:0.2rem">'+c.party+' — '+c.description+'</div></div></div>';
+    h.innerHTML = '<div style="display:flex; align-items:center; gap:1rem;"><div class="cand-avatar" style="width:52px;height:52px"><img src="'+c.photo+'" class="cand-avatar-img" style="object-position:center 15%"></div><div><h3 style="margin:0;font-size:1.3rem;">'+c.name+'</h3><div style="font-size:0.9rem;color:var(--txt2);margin-top:0.2rem">'+c.party+'</div></div></div>';
     
-    var eDiff = p.economic - c.economic;
-    var sDiff = p.social - c.social;
+    var eDiff = Math.abs(p.economic - c.economic);
+    var sDiff = Math.abs(p.social - c.social);
     
-    var sim = [];
-    var dif = [];
-    
-    // Comparação Econômica
-    if (Math.abs(eDiff) <= 30) {
-        sim.push('Vocês possuem uma visão macroeconômica muito alinhada, concordando intimamente no nível ideal de propriedade privada vs. regulação e intervenção.');
-    } else if (Math.abs(eDiff) >= 70) {
-        dif.push('Discordância profunda na economia: posições diametralmente opostas sobre o papel do empresariado, mercado livre e a máquina do Estado.');
-    } else {
-        dif.push('Há divergências parciais a respeito da eficiência do mercado livre e no uso das estatais ou impostos na economia civil.');
+    var items = [];
+
+    // Helper para gerar o bloco com 5 níveis de granularidade
+    function adc(diff, eixoInfo, txt1, txt2, txt3, txt4, txt5) {
+        var str, badge, bdgStyle = '';
+        if (diff <= 20)      { str = txt1; badge = 'ALINHAMENTO FORTE'; bdgStyle = 'class="badge-sim"'; }
+        else if (diff <= 40) { str = txt2; badge = 'ALINHAMENTO PARCIAL'; bdgStyle = 'class="badge-sim" style="background:#0284c7; color:#ffffff;"'; }
+        else if (diff <= 60) { str = txt3; badge = 'DIVERGÊNCIA MODERADA'; bdgStyle = 'class="badge-dif" style="background:#ca8a04; color:#ffffff;"'; }
+        else if (diff <= 80) { str = txt4; badge = 'DIVERGÊNCIA FORTE'; bdgStyle = 'class="badge-dif"'; }
+        else                 { str = txt5; badge = 'OPOSIÇÃO TOTAL'; bdgStyle = 'class="badge-dif" style="background:#7f1d1d; color:#ffffff;"'; }
+        
+        items.push('<div class="comp-row"><div ' + bdgStyle + '>' + badge + '</div><div style="font-size:0.95rem; line-height:1.4"><b>' + eixoInfo + ' (' + diff.toFixed(1) + ' pts de dist.):</b> ' + str + '</div></div>');
     }
+
+    // Eixo Econômico
+    adc(eDiff, "Eixo Econômico",
+        "Vocês possuem uma visão macroeconômica quase idêntica, concordando intimamente no nível ideal de propriedade privada, impostos e livre mercado.",
+        "Vocês concordam na maior parte da pauta econômica, com apenas pequenas variações sobre o grau exato de regulação e tamanho do Estado.",
+        "Há divergências razoáveis a respeito da eficiência do mercado livre; vocês discordam parcialmente no uso das estatais ou impostos na economia civil.",
+        "Discordância profunda na economia: suas visões sobre o papel do empresariado vs. intervencionismo do Estado são conflitantes na maioria dos temas.",
+        "Posições diametralmente opostas. Um de vocês defende o planejamento estatal estrutural enquanto o outro exige um mercado absolutamente livre."
+    );
+
+    // Eixo Social
+    adc(sDiff, "Eixo Civil/Social",
+        "Ambos compartilham a exata mesma sintonia cívica, concordando profundamente no limite de atuação do Estado na vida privada, segurança e costumes.",
+        "Visões bastante alinhadas quanto às liberdades individuais e punitivismo, diferindo apenas em detalhes de políticas públicas ou foco moral.",
+        "Divergem de forma moderada na pauta teórica da ordem pública, segurança ou costumes em relação à escala de tolerância estatal no aspecto individual.",
+        "Ruptura severa no âmbito civil: enquanto um foca na expansão de liberdades individuais, o outro demanda controle estatal, costumes rígidos e ordem punitivista.",
+        "Antagonismo completo. Vocês representam visões de mundo inconciliáveis sobre o papel da autoridade moral, segurança punitiva e controle do Estado sobre o indivíduo."
+    );
     
-    // Comparação Social
-    if (Math.abs(sDiff) <= 30) {
-        sim.push('Ambos compartilham a mesma sintonia cívica, concordando profundamente no limite de atuação do Estado na vida privada, segurança e defesa de valores.');
-    } else if (Math.abs(sDiff) >= 70) {
-        dif.push('Ruptura completa no âmbito social ou punitivo: enquanto um prioriza liberdades vitais inegociáveis, o outro demanda controle estatal rígido e ordem estrita.');
-    } else {
-        dif.push('Divergem de forma moderada na pauta teórica da ordem pública, segurança ou costumes em relação à tolerância estatal.');
-    }
-    
-    var html = '';
-    sim.forEach(function(s) { html += '<div class="comp-row"><div class="badge-sim">SEMELHANÇA</div><div style="font-size:0.95rem; line-height:1.4">' + s + '</div></div>'; });
-    dif.forEach(function(d) { html += '<div class="comp-row"><div class="badge-dif">DIVERGÊNCIA</div><div style="font-size:0.95rem; line-height:1.4">' + d + '</div></div>'; });
-    
-    b.innerHTML = html;
+    b.innerHTML = items.join('');
     document.getElementById('modal-comparacao').classList.add('show');
 }
 
@@ -1702,15 +1796,22 @@ function desenharBussola(pos, matches) {
     ctx.fillStyle = isDark ? '#0d1117' : '#ffffff';
     ctx.fillRect(0, 0, size, size);
 
-    // Quadrantes com cores mais vibrantes
-    ctx.fillStyle = isDark ? 'rgba(239,68,68,0.18)' : 'rgba(239,68,68,0.18)';
-    ctx.fillRect(pad, pad, half, half); // Esquerda Autoritário (vermelho)
-    ctx.fillStyle = isDark ? 'rgba(59,130,246,0.18)' : 'rgba(59,130,246,0.18)';
-    ctx.fillRect(pad + half, pad, half, half); // Direita Autoritário (azul)
-    ctx.fillStyle = isDark ? 'rgba(16,185,129,0.18)' : 'rgba(16,185,129,0.18)';
-    ctx.fillRect(pad, pad + half, half, half); // Esquerda Progressista (verde)
-    ctx.fillStyle = isDark ? 'rgba(139,92,246,0.18)' : 'rgba(139,92,246,0.18)';
-    ctx.fillRect(pad + half, pad + half, half, half); // Direita Progressista (roxo)
+    // Quadrantes sem transparência (solicitado pelo usuário)
+    ctx.fillStyle = '#5c1717'; // Vermelho mais escuro adaptado para fundo sólido
+    if(!isDark) ctx.fillStyle = '#ef4444';
+    ctx.fillRect(pad, pad, half, half); // Esquerda Autoritário
+    
+    ctx.fillStyle = '#163666'; // Azul escuro
+    if(!isDark) ctx.fillStyle = '#3b82f6';
+    ctx.fillRect(pad + half, pad, half, half); // Direita Autoritário
+    
+    ctx.fillStyle = '#064e3b'; // Verde escuro
+    if(!isDark) ctx.fillStyle = '#10b981';
+    ctx.fillRect(pad, pad + half, half, half); // Esquerda Libertário
+    
+    ctx.fillStyle = '#3b226e'; // Roxo escuro
+    if(!isDark) ctx.fillStyle = '#8b5cf6';
+    ctx.fillRect(pad + half, pad + half, half, half); // Direita Libertário
 
     // Grid
     ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.10)';
@@ -1733,20 +1834,19 @@ function desenharBussola(pos, matches) {
     ctx.lineWidth = 1.5;
     ctx.strokeRect(pad, pad, gSize, gSize);
 
-    // Labels dos eixos
-    ctx.font = '700 10px system-ui, sans-serif';
+    // Labels dos eixos (Political Compass padrão)
+    ctx.font = '700 11px system-ui, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillStyle = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.6)';
-    ctx.fillText('ESQUERDA', pad + half / 2, pad - 10);
-    ctx.fillText('DIREITA', pad + half + half / 2, pad - 10);
-    ctx.fillText('LIBERTÁRIO', cx, pad + gSize + 18);
+    ctx.fillStyle = isDark ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,0.65)';
+    ctx.fillText('AUTHORITARIAN', cx, pad - 10);
+    ctx.fillText('LIBERTARIAN', cx, pad + gSize + 20);
     ctx.save();
-    ctx.translate(pad - 12, cy); ctx.rotate(-Math.PI / 2);
-    ctx.fillText('AUTORITÁRIO', 0, 0);
+    ctx.translate(pad - 14, cy); ctx.rotate(-Math.PI / 2);
+    ctx.fillText('LEFT', 0, 0);
     ctx.restore();
     ctx.save();
-    ctx.translate(pad + gSize + 12, cy); ctx.rotate(Math.PI / 2);
-    ctx.fillText('PROGRESSISTA', 0, 0);
+    ctx.translate(pad + gSize + 14, cy); ctx.rotate(Math.PI / 2);
+    ctx.fillText('RIGHT', 0, 0);
     ctx.restore();
 
     // Labels dos quadrantes
@@ -1811,7 +1911,6 @@ function desenharBussola(pos, matches) {
         // Nome de exibição na bússola
         var nome = c.name.split(' ')[0];
         if (c.name === 'Ronaldo Caiado') nome = 'Caiado';
-        if (c.name === 'Michel Temer') nome = 'Temer';
         if (c.name === 'Eduardo Leite') nome = 'Leite';
         
         ctx.fillStyle = isDark ? '#e6edf3' : '#1f2328';
@@ -1825,7 +1924,7 @@ function desenharBussola(pos, matches) {
         ctx.shadowBlur = 0;
     });
 
-    // Ponto do usuário (convertendo de -5..5 para -100..100)
+    // Ponto do usuário
     var uPt = toPixel(pos.economic, pos.social);
     ctx.shadowColor = '#10b981'; ctx.shadowBlur = 14;
     ctx.fillStyle = '#10b981';
@@ -1839,6 +1938,53 @@ function desenharBussola(pos, matches) {
     ctx.font = '800 12px system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('VOCÊ', uPt[0], uPt[1] - 16);
+
+    // Hover tooltip nos candidatos
+    var candPositions = matches.map(function(c) {
+        var pt = toPixel(c.economic, c.social);
+        return { x: pt[0], y: pt[1], name: c.name, party: c.party };
+    });
+    window._bussolaCandPositions = candPositions;
+
+    if (!canvas._hoverInit) {
+        canvas._hoverInit = true;
+        var tip = document.createElement('div');
+        tip.id = 'compass-tooltip';
+        tip.style.cssText = 'position:absolute;background:rgba(13,17,23,0.92);color:#e6edf3;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;pointer-events:none;opacity:0;transition:opacity 0.15s;z-index:10;white-space:nowrap;border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(6px);font-family:Inter,system-ui,sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+        canvas.parentElement.appendChild(tip);
+
+        canvas.addEventListener('mousemove', function(e) {
+            var rect = canvas.getBoundingClientRect();
+            var scaleRatio = 600 / rect.width;
+            var mx = (e.clientX - rect.left) * scaleRatio;
+            var my = (e.clientY - rect.top) * scaleRatio;
+            var found = null;
+            var pts = window._bussolaCandPositions || [];
+            for (var i = 0; i < pts.length; i++) {
+                var dx = mx - pts[i].x, dy = my - pts[i].y;
+                if (Math.sqrt(dx * dx + dy * dy) < 18) { found = pts[i]; break; }
+            }
+            var t = document.getElementById('compass-tooltip');
+            if (found) {
+                t.textContent = found.name + ' — ' + found.party;
+                var tipX = found.x / scaleRatio + 16;
+                var tipY = found.y / scaleRatio - 14;
+                if (tipX + 140 > rect.width) tipX = found.x / scaleRatio - 16 - t.offsetWidth;
+                t.style.left = tipX + 'px';
+                t.style.top = tipY + 'px';
+                t.style.opacity = '1';
+                canvas.style.cursor = 'pointer';
+            } else {
+                t.style.opacity = '0';
+                canvas.style.cursor = 'default';
+            }
+        });
+        canvas.addEventListener('mouseleave', function() {
+            var t = document.getElementById('compass-tooltip');
+            if (t) t.style.opacity = '0';
+            canvas.style.cursor = 'default';
+        });
+    }
 }
 
 // ===== RESULTADO MUNDO =====
@@ -1887,10 +2033,12 @@ async function resultadoMundo() {
 }
 
 function calcM(u, pp) {
-    // World parties use -5..+5 scale, user is -100..+100, normalize user to same scale
-    var ue = u.economic / 20, us = u.social / 20;
-    var maxDist = Math.sqrt(10*10 + 10*10); // ~14.14
-    var dist = Math.sqrt(Math.pow(ue - pp.economic, 2) + Math.pow(us - pp.social, 2));
+    // Normalizar usuário (-100..+100) e partidos mundiais (-10..+10) para a mesma escala padronizada (-1..+1)
+    var ue = u.economic / 100, us = u.social / 100;
+    var pe = pp.economic / 10, ps = pp.social / 10;
+    var maxDist = Math.sqrt(2*2 + 2*2); // sqrt(8) ≈ 2.83
+    var dist = Math.sqrt(Math.pow(ue - pe, 2) + Math.pow(us - ps, 2));
+    // Clamp de segurança mantido conforme especificado
     return Math.max(0, Math.min(100, 100 * (1 - dist / maxDist)));
 }
 
@@ -2510,6 +2658,8 @@ function aplicarTema() {
 document.addEventListener('DOMContentLoaded', function() {
     carregarResumoHome();
     aplicarTema();
+    var hash = window.location.hash.substring(1);
+    ir(hash || 't-home', false);
     document.getElementById('btn-brasil').addEventListener('click', function() { abrirModalModo('brazil'); });
     document.getElementById('btn-mundo').addEventListener('click', function() { abrirModalModo('world'); });
     document.getElementById('opt-rapido').addEventListener('click', function() { fecharModal('modal-modo'); iniciarQuiz(MODAL_QUIZ_ATUAL,'quick'); });
@@ -2532,6 +2682,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn-refazer-mundo').addEventListener('click', reiniciar);
     document.getElementById('pais-fechar').addEventListener('click', function() { fecharModal('modal-pais'); });
     document.getElementById('modal-pais').addEventListener('click', function(e) { if(e.target.id==='modal-pais') fecharModal('modal-pais'); });
+    document.getElementById('modal-comparacao').addEventListener('click', function(e) { if(e.target.id==='modal-comparacao') fecharModalCand(); });
     document.getElementById('btn-theme').addEventListener('click', function() { dark=!dark; aplicarTema(); });
 });
 

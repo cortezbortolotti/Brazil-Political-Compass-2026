@@ -22,7 +22,7 @@
     "name": "Renan Santos",
     "party": "MISSÃO",
     "economic": 80,
-    "social": -45,
+    "social": -55,
     "photo": "data/candidates/avatars/renan.webp",
     "description": "Ultraliberalismo econômico e 'Bukelismo' na segurança pública"
   },
@@ -49,18 +49,9 @@
     "name": "Aldo Rebelo",
     "party": "DC",
     "economic": -40,
-    "social": -40,
+    "social": -55,
     "photo": "data/candidates/avatars/aldo.webp",
     "description": "Nacionalismo soberanista com forte papel do Estado"
-  },
-  {
-    "id": 10,
-    "name": "Michel Temer",
-    "party": "MDB",
-    "economic": 50,
-    "social": -5,
-    "photo": "data/candidates/avatars/temer.webp",
-    "description": "Constitucionalismo liberal e reformas econômicas institucionais"
   },
   {
     "id": 11,
