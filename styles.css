@@ -404,6 +404,20 @@ body.dark-mode {
     .comp-copy { font-size: 0.9rem; }
     .pais-top-partido { font-size: 1rem; }
     .pais-top-pct { font-size: 1.45rem; }
+    .hero { padding: 2rem 1rem; grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+    .hero-copy { max-width: 100%; }
+    .btns { justify-content: center; }
+    .title { font-size: 1.8rem; }
+    .badge { margin-bottom: 1rem; }
+    .hero-photo { height: 180px; }
+    .res-wrap { padding: 1rem 0.5rem; }
+    .cand-row { flex-direction: column; text-align: center; }
+    .cand-row .c-img-wrap { margin-bottom: 0.5rem; }
+    .cand-row .c-side { flex-direction: column; width: 100%; gap: 0.5rem; }
+    .cand-row .score { justify-content: center; }
+    .c-bar-left, .c-bar-right { justify-content: center; }
+    .score-detail { text-align: center; }
+    .compass-wrap { padding: 1rem 0.5rem; }
     .world-header h2 { font-size: 1.75rem !important; line-height: 1.1; }
     .world-header p { max-width: 28ch; margin: 0 auto; }
 }
