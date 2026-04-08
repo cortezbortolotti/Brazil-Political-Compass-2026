@@ -1,122 +1,122 @@
 [
     {
-        "id":  1,
-        "name":  "Lula",
-        "party":  "PT",
+        "id": 1,
+        "name": "Lula",
+        "party": "PT",
         "economic":  -50,
         "social":  -15,
-        "photo":  "data/candidates/avatars/lula.webp",
-        "description":  "Trabalhismo desenvolvimentista e regulação estatal",
-        "ideologyLabel":  "Social-democrata pragmático"
+        "photo": "data/candidates/avatars/lula.webp",
+        "description": "Trabalhismo desenvolvimentista e regulação estatal",
+        "ideologyLabel": "Social-democrata pragmático"
     },
     {
-        "id":  2,
-        "name":  "Flávio Bolsonaro",
-        "party":  "PL",
+        "id": 2,
+        "name": "Flávio Bolsonaro",
+        "party": "PL",
         "economic":  75,
         "social":  -80,
-        "photo":  "data/candidates/avatars/flavio.webp",
-        "description":  "Direita conservadora e defesa de valores tradicionais com forte apelo punitivista",
-        "ideologyLabel":  "Ultraliberal + punitivismo"
+        "photo": "data/candidates/avatars/flavio.webp",
+        "description": "Direita conservadora e defesa de valores tradicionais com forte apelo punitivista",
+        "ideologyLabel": "Ultraliberal + punitivismo"
     },
     {
-        "id":  3,
-        "name":  "Renan Santos",
-        "party":  "MISSÃO",
+        "id": 3,
+        "name": "Renan Santos",
+        "party": "MISSÃO",
         "economic":  48,
         "social":  -85,
-        "photo":  "data/candidates/avatars/renan.webp",
-        "description":  "Direita nacional-autoritária com forte punitivismo e viés populista",
-        "ideologyLabel":  "Direita nacional-autoritária"
+        "photo": "data/candidates/avatars/renan.webp",
+        "description": "Direita nacional-autoritária com forte punitivismo e viés populista",
+        "ideologyLabel": "Direita nacional-autoritária"
     },
     {
-        "id":  4,
-        "name":  "Ronaldo Caiado",
-        "party":  "PSD",
+        "id": 4,
+        "name": "Ronaldo Caiado",
+        "party": "PSD",
         "economic":  50,
         "social":  -78,
-        "photo":  "data/candidates/avatars/caiado.webp",
-        "description":  "Direita ruralista com foco total e rígido em segurança pública",
-        "ideologyLabel":  "Direita rural + linha dura"
+        "photo": "data/candidates/avatars/caiado.webp",
+        "description": "Direita ruralista com foco total e rígido em segurança pública",
+        "ideologyLabel": "Direita rural + linha dura"
     },
     {
-        "id":  9,
-        "name":  "Aldo Rebelo",
-        "party":  "DC",
-        "economic":  -10,
-        "social":  -75,
-        "photo":  "data/candidates/avatars/aldo.webp",
-        "description":  "Nacionalismo soberanista com forte papel do Estado",
-        "ideologyLabel":  "Nacionalista conservador + militarista"
+        "id": 9,
+        "name": "Aldo Rebelo",
+        "party": "DC",
+        "economic": -10,
+        "social": -75,
+        "photo": "data/candidates/avatars/aldo.webp",
+        "description": "Nacionalismo soberanista com forte papel do Estado",
+        "ideologyLabel": "Nacionalista conservador + militarista"
     },
     {
-        "id":  11,
-        "name":  "Samara Martins",
-        "party":  "UP",
+        "id": 11,
+        "name": "Samara Martins",
+        "party": "UP",
         "economic":  -85,
         "social":  -60,
-        "photo":  "data/candidates/avatars/samara.webp",
-        "description":  "Socialismo revolucionário e poder popular com planejamento estatal",
-        "ideologyLabel":  "Esquerda socialista revolucionária"
+        "photo": "data/candidates/avatars/samara.webp",
+        "description": "Socialismo revolucionário e poder popular com planejamento estatal",
+        "ideologyLabel": "Esquerda socialista revolucionária"
     },
     {
-        "id":  12,
-        "name":  "Edmilson Costa",
-        "party":  "PCB",
+        "id": 12,
+        "name": "Edmilson Costa",
+        "party": "PCB",
         "economic":  -100,
         "social":  -90,
-        "photo":  "data/candidates/avatars/edmilson.webp",
-        "description":  "Comunismo marxista-leninista ortodoxo e centralismo democrático",
-        "ideologyLabel":  "Comunista marxista-leninista"
+        "photo": "data/candidates/avatars/edmilson.webp",
+        "description": "Comunismo marxista-leninista ortodoxo e centralismo democrático",
+        "ideologyLabel": "Comunista marxista-leninista"
     },
     {
-        "id":  13,
-        "name":  "Romeu Zema",
-        "party":  "NOVO",
-        "economic":  90,
-        "social":  -40,
-        "photo":  "data/candidates/avatars/zema.webp",
-        "description":  "Ultraliberalismo econômico com foco em austeridade e privatizações.",
-        "ideologyLabel":  "Liberal puro"
+        "id": 13,
+        "name": "Romeu Zema",
+        "party": "NOVO",
+        "economic": 90,
+        "social": -40,
+        "photo": "data/candidates/avatars/zema.webp",
+        "description": "Ultraliberalismo econômico com foco em austeridade e privatizações.",
+        "ideologyLabel": "Liberal puro"
     },
     {
-        "id":  14,
-        "name":  "Augusto Cury",
-        "party":  "Avante",
-        "economic":  20,
-        "social":  15,
-        "photo":  "data/candidates/avatars/cury.webp",
-        "description":  "Posições centristas com forte apelo psico-social e espiritualidade.",
-        "ideologyLabel":  "Centro humanista"
+        "id": 14,
+        "name": "Augusto Cury",
+        "party": "Avante",
+        "economic": 15,
+        "social": 18,
+        "photo": "data/candidates/avatars/cury.webp",
+        "description": "Posições centristas com forte apelo psico-social e espiritualidade.",
+        "ideologyLabel": "Centro humanista"
     },
     {
-        "id":  15,
-        "name":  "Cabo Daciolo",
-        "party":  "Mobiliza",
+        "id": 15,
+        "name": "Cabo Daciolo",
+        "party": "Mobiliza",
         "economic":  -40,
         "social":  -40,
-        "photo":  "data/candidates/avatars/daciolo.webp",
-        "description":  "Nacionalismo de raízes religiosas com fortes traços de estado forte e militarismo",
-        "ideologyLabel":  "Teocrata nacionalista"
+        "photo": "data/candidates/avatars/daciolo.webp",
+        "description": "Nacionalismo de raízes religiosas com fortes traços de estado forte e militarismo",
+        "ideologyLabel": "Teocrata nacionalista"
     },
     {
-        "id":  16,
-        "name":  "Hertz Dias",
-        "party":  "PSTU",
+        "id": 16,
+        "name": "Hertz Dias",
+        "party": "PSTU",
         "economic":  -85,
         "social":  -15,
-        "photo":  "data/candidates/avatars/hertz.webp",
-        "description":  "Socialismo revolucionário trotskista focado na mobilização da classe operária",
-        "ideologyLabel":  "Extrema-esquerda classista"
+        "photo": "data/candidates/avatars/hertz.webp",
+        "description": "Socialismo revolucionário trotskista focado na mobilização da classe operária",
+        "ideologyLabel": "Extrema-esquerda classista"
     },
     {
-        "id":  17,
-        "name":  "Rui Costa Pimenta",
-        "party":  "PCO",
-        "economic":  -95,
-        "social":  -95,
-        "photo":  "data/candidates/avatars/pimenta.webp",
-        "description":  "Comunismo revolucionário inflexível com pautas polêmicas de liberdade de expressão irrestrita",
-        "ideologyLabel":  "Comunista radical"
+        "id": 17,
+        "name": "Rui Costa Pimenta",
+        "party": "PCO",
+        "economic": -95,
+        "social": -95,
+        "photo": "data/candidates/avatars/pimenta.webp",
+        "description": "Comunismo revolucionário inflexível com pautas polêmicas de liberdade de expressão irrestrita",
+        "ideologyLabel": "Comunista radical"
     }
 ]

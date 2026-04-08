@@ -961,7 +961,7 @@ window.APP_STATIC_DATA = {
                                              "id":  22,
                                              "text":  {
                                                           "pt":  "O Estado deve redistribuir a riqueza extrema.",
-                                                          "en":  "Billionaires shouldn\u0027t exist - the State must redistribute extreme wealth.",
+                                                          "en":  "The State must redistribute extreme wealth.",
                                                           "es":  "El Estado debe redistribuir la riqueza extrema."
                                                       },
                                              "weight":  -1,
@@ -1095,16 +1095,6 @@ window.APP_STATIC_DATA = {
                                          "ideologyLabel":  "Direita rural + linha dura"
                                      },
                                      {
-                                         "id":  6,
-                                         "name":  "Eduardo Leite",
-                                         "party":  "PSD",
-                                         "economic":  35,
-                                         "social":  15,
-                                         "photo":  "data/candidates/avatars/leite.webp",
-                                         "description":  "Social-liberalismo: mercado forte e gestão pragmática institucional",
-                                         "ideologyLabel":  "Social-liberal progressista"
-                                     },
-                                     {
                                          "id":  9,
                                          "name":  "Aldo Rebelo",
                                          "party":  "DC",
@@ -1133,9 +1123,59 @@ window.APP_STATIC_DATA = {
                                          "photo":  "data/candidates/avatars/edmilson.webp",
                                          "description":  "Comunismo marxista-leninista ortodoxo e centralismo democrático",
                                          "ideologyLabel":  "Comunista marxista-leninista"
+                                     },
+                                     {
+                                         "id":  13,
+                                         "name":  "Romeu Zema",
+                                         "party":  "NOVO",
+                                         "economic":  90,
+                                         "social":  -40,
+                                         "photo":  "data/candidates/avatars/zema.webp",
+                                         "description":  "Ultraliberalismo econômico com foco em austeridade e privatizações.",
+                                         "ideologyLabel":  "Liberal puro"
+                                     },
+                                     {
+                                         "id":  14,
+                                         "name":  "Augusto Cury",
+                                         "party":  "Avante",
+                                         "economic":  15,
+                                         "social":  18,
+                                         "photo":  "data/candidates/avatars/cury.webp",
+                                         "description":  "Posições centristas com forte apelo psico-social e espiritualidade.",
+                                         "ideologyLabel":  "Centro humanista"
+                                     },
+                                     {
+                                         "id":  15,
+                                         "name":  "Cabo Daciolo",
+                                         "party":  "Mobiliza",
+                                         "economic":  -40,
+                                         "social":  -40,
+                                         "photo":  "data/candidates/avatars/daciolo.webp",
+                                         "description":  "Nacionalismo de raízes religiosas com fortes traços de estado forte e militarismo",
+                                         "ideologyLabel":  "Teocrata nacionalista"
+                                     },
+                                     {
+                                         "id":  16,
+                                         "name":  "Hertz Dias",
+                                         "party":  "PSTU",
+                                         "economic":  -85,
+                                         "social":  -15,
+                                         "photo":  "data/candidates/avatars/hertz.webp",
+                                         "description":  "Socialismo revolucionário trotskista focado na mobilização da classe operária",
+                                         "ideologyLabel":  "Extrema-esquerda classista"
+                                     },
+                                     {
+                                         "id":  17,
+                                         "name":  "Rui Costa Pimenta",
+                                         "party":  "PCO",
+                                         "economic":  -95,
+                                         "social":  -95,
+                                         "photo":  "data/candidates/avatars/pimenta.webp",
+                                         "description":  "Comunismo revolucionário inflexível com pautas polêmicas de liberdade de expressão irrestrita",
+                                         "ideologyLabel":  "Comunista radical"
                                      }
                                  ],
-                       "Count":  8
+                       "Count":  12
                    },
     "worldParties":  {
                          "countries":  [
@@ -1154,7 +1194,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#0015BC"
+                                                                   "color":  "#0015BC",
+                                                                   "logo":  "data/logos/usa-partido-democrata.png"
                                                                },
                                                                {
                                                                    "name":  "Partido Republicano",
@@ -1162,7 +1203,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -4
                                                                                 },
-                                                                   "color":  "#E81B23"
+                                                                   "color":  "#E81B23",
+                                                                   "logo":  "data/logos/usa-partido-republicano.png"
                                                                }
                                                            ]
                                            },
@@ -1181,7 +1223,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#E4003B"
+                                                                   "color":  "#E4003B",
+                                                                   "logo":  "data/logos/uk-labour-party.png"
                                                                },
                                                                {
                                                                    "name":  "Conservative Party",
@@ -1189,7 +1232,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -2
                                                                                 },
-                                                                   "color":  "#0087DC"
+                                                                   "color":  "#0087DC",
+                                                                   "logo":  "data/logos/uk-conservative-party.png"
                                                                },
                                                                {
                                                                    "name":  "Liberal Democrats",
@@ -1197,7 +1241,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  0,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#FAA61A"
+                                                                   "color":  "#FAA61A",
+                                                                   "logo":  "data/logos/uk-liberal-democrats.png"
                                                                },
                                                                {
                                                                    "name":  "Green Party",
@@ -1205,7 +1250,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#6AB023"
+                                                                   "color":  "#6AB023",
+                                                                   "logo":  "data/logos/uk-green-party.png"
                                                                }
                                                            ]
                                            },
@@ -1224,7 +1270,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -1,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#D71920"
+                                                                   "color":  "#D71920",
+                                                                   "logo":  "data/logos/canada-liberal-party.png"
                                                                },
                                                                {
                                                                    "name":  "Conservative Party",
@@ -1232,7 +1279,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -1
                                                                                 },
-                                                                   "color":  "#1A4782"
+                                                                   "color":  "#1A4782",
+                                                                   "logo":  "data/logos/canada-conservative-party.png"
                                                                },
                                                                {
                                                                    "name":  "New Democratic Party",
@@ -1240,7 +1288,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#F37021"
+                                                                   "color":  "#F37021",
+                                                                   "logo":  "data/logos/canada-new-democratic-party.png"
                                                                },
                                                                {
                                                                    "name":  "Green Party",
@@ -1248,7 +1297,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#3D9B35"
+                                                                   "color":  "#3D9B35",
+                                                                   "logo":  "data/logos/canada-green-party.png"
                                                                }
                                                            ]
                                            },
@@ -1267,7 +1317,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  2
                                                                                 },
-                                                                   "color":  "#C00"
+                                                                   "color":  "#C00",
+                                                                   "logo":  "data/logos/mexico-morena.png"
                                                                },
                                                                {
                                                                    "name":  "PAN",
@@ -1275,7 +1326,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -4
                                                                                 },
-                                                                   "color":  "#0047AB"
+                                                                   "color":  "#0047AB",
+                                                                   "logo":  "data/logos/mexico-pan.png"
                                                                },
                                                                {
                                                                    "name":  "PRI",
@@ -1283,7 +1335,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  0
                                                                                 },
-                                                                   "color":  "#FF0000"
+                                                                   "color":  "#FF0000",
+                                                                   "logo":  "data/logos/mexico-pri.png"
                                                                },
                                                                {
                                                                    "name":  "MC",
@@ -1291,7 +1344,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#FF8300"
+                                                                   "color":  "#FF8300",
+                                                                   "logo":  "data/logos/mexico-mc.png"
                                                                }
                                                            ]
                                            },
@@ -1310,7 +1364,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  7,
                                                                                     "social":  -3
                                                                                 },
-                                                                   "color":  "#7D3F98"
+                                                                   "color":  "#7D3F98",
+                                                                   "logo":  "data/logos/argentina-la-libertad-avanza.png"
                                                                },
                                                                {
                                                                    "name":  "Unión por la Patria",
@@ -1318,7 +1373,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  1
                                                                                 },
-                                                                   "color":  "#1E90FF"
+                                                                   "color":  "#1E90FF",
+                                                                   "logo":  "data/logos/argentina-union-por-la-patria.png"
                                                                },
                                                                {
                                                                    "name":  "Juntos por el Cambio",
@@ -1326,7 +1382,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -1
                                                                                 },
-                                                                   "color":  "#FFD700"
+                                                                   "color":  "#FFD700",
+                                                                   "logo":  "data/logos/argentina-juntos-por-el-cambio.png"
                                                                },
                                                                {
                                                                    "name":  "Frente de Izquierda",
@@ -1334,7 +1391,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -6,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#DC143C"
+                                                                   "color":  "#DC143C",
+                                                                   "logo":  "data/logos/argentina-frente-de-izquierda.png"
                                                                }
                                                            ]
                                            },
@@ -1353,7 +1411,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#FF0080"
+                                                                   "color":  "#FF0080",
+                                                                   "logo":  "data/logos/chile-frente-amplio.png"
                                                                },
                                                                {
                                                                    "name":  "Partido Comunista",
@@ -1361,7 +1420,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -6,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#D40000"
+                                                                   "color":  "#D40000",
+                                                                   "logo":  "data/logos/chile-partido-comunista.png"
                                                                },
                                                                {
                                                                    "name":  "UDI",
@@ -1369,7 +1429,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  5,
                                                                                     "social":  -4
                                                                                 },
-                                                                   "color":  "#1E3F8C"
+                                                                   "color":  "#1E3F8C",
+                                                                   "logo":  "data/logos/chile-udi.png"
                                                                },
                                                                {
                                                                    "name":  "Renovación Nacional",
@@ -1377,7 +1438,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -2
                                                                                 },
-                                                                   "color":  "#1874CD"
+                                                                   "color":  "#1874CD",
+                                                                   "logo":  "data/logos/chile-renovacion-nacional.png"
                                                                }
                                                            ]
                                            },
@@ -1396,7 +1458,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#FF6B00"
+                                                                   "color":  "#FF6B00",
+                                                                   "logo":  "data/logos/uruguay-frente-amplio.png"
                                                                },
                                                                {
                                                                    "name":  "Partido Nacional",
@@ -1404,7 +1467,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -1
                                                                                 },
-                                                                   "color":  "#FFFFFF"
+                                                                   "color":  "#FFFFFF",
+                                                                   "logo":  "data/logos/uruguay-partido-nacional.png"
                                                                },
                                                                {
                                                                    "name":  "Partido Colorado",
@@ -1412,7 +1476,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  1
                                                                                 },
-                                                                   "color":  "#FF0000"
+                                                                   "color":  "#FF0000",
+                                                                   "logo":  "data/logos/uruguay-partido-colorado.png"
                                                                },
                                                                {
                                                                    "name":  "Cabildo Abierto",
@@ -1420,7 +1485,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  -3
                                                                                 },
-                                                                   "color":  "#006400"
+                                                                   "color":  "#006400",
+                                                                   "logo":  "data/logos/uruguay-cabildo-abierto.png"
                                                                }
                                                            ]
                                            },
@@ -1439,7 +1505,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#E3000F"
+                                                                   "color":  "#E3000F",
+                                                                   "logo":  "data/logos/germany-spd.png"
                                                                },
                                                                {
                                                                    "name":  "CDU/CSU",
@@ -1447,7 +1514,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  -1
                                                                                 },
-                                                                   "color":  "#000000"
+                                                                   "color":  "#000000",
+                                                                   "logo":  "data/logos/germany-cdu-csu.png"
                                                                },
                                                                {
                                                                    "name":  "Die Grünen",
@@ -1455,7 +1523,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#64A12D"
+                                                                   "color":  "#64A12D",
+                                                                   "logo":  "data/logos/germany-die-grunen.png"
                                                                },
                                                                {
                                                                    "name":  "FDP",
@@ -1463,7 +1532,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  5,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#FFED00"
+                                                                   "color":  "#FFED00",
+                                                                   "logo":  "data/logos/germany-fdp.png"
                                                                },
                                                                {
                                                                    "name":  "Die Linke",
@@ -1471,7 +1541,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -6,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#BE3075"
+                                                                   "color":  "#BE3075",
+                                                                   "logo":  "data/logos/germany-die-linke.png"
                                                                },
                                                                {
                                                                    "name":  "AfD",
@@ -1479,7 +1550,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -5
                                                                                 },
-                                                                   "color":  "#009EE0"
+                                                                   "color":  "#009EE0",
+                                                                   "logo":  "data/logos/germany-afd.png"
                                                                }
                                                            ]
                                            },
@@ -1498,7 +1570,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  -4
                                                                                 },
-                                                                   "color":  "#00429C"
+                                                                   "color":  "#00429C",
+                                                                   "logo":  "data/logos/italy-fratelli-d-italia.png"
                                                                },
                                                                {
                                                                    "name":  "Lega",
@@ -1506,7 +1579,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  -5
                                                                                 },
-                                                                   "color":  "#0F52BA"
+                                                                   "color":  "#0F52BA",
+                                                                   "logo":  "data/logos/italy-lega.png"
                                                                },
                                                                {
                                                                    "name":  "Partito Democratico",
@@ -1514,7 +1588,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#EF3E3E"
+                                                                   "color":  "#EF3E3E",
+                                                                   "logo":  "data/logos/italy-partito-democratico.png"
                                                                },
                                                                {
                                                                    "name":  "Movimento 5 Stelle",
@@ -1522,7 +1597,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  2
                                                                                 },
-                                                                   "color":  "#FFEF00"
+                                                                   "color":  "#FFEF00",
+                                                                   "logo":  "data/logos/italy-movimento-5-stelle.png"
                                                                }
                                                            ]
                                            },
@@ -1541,7 +1617,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -5,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#CC2443"
+                                                                   "color":  "#CC2443",
+                                                                   "logo":  "data/logos/france-la-france-insoumise.png"
                                                                },
                                                                {
                                                                    "name":  "Renaissance",
@@ -1549,7 +1626,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#FFEB00"
+                                                                   "color":  "#FFEB00",
+                                                                   "logo":  "data/logos/france-renaissance.png"
                                                                },
                                                                {
                                                                    "name":  "Rassemblement National",
@@ -1557,7 +1635,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -1,
                                                                                     "social":  -6
                                                                                 },
-                                                                   "color":  "#0E4484"
+                                                                   "color":  "#0A2E5C",
+                                                                   "logo":  "data/logos/france-rassemblement-national.png"
                                                                },
                                                                {
                                                                    "name":  "Les Républicains",
@@ -1565,7 +1644,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -2
                                                                                 },
-                                                                   "color":  "#0066CC"
+                                                                   "color":  "#0066CC",
+                                                                   "logo":  "data/logos/france-les-r-publicains.png"
                                                                },
                                                                {
                                                                    "name":  "Europe Écologie",
@@ -1573,7 +1653,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#00C000"
+                                                                   "color":  "#00C000",
+                                                                   "logo":  "data/logos/france-europe-cologie.png"
                                                                }
                                                            ]
                                            },
@@ -1592,7 +1673,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#FF66FF"
+                                                                   "color":  "#FF66FF",
+                                                                   "logo":  "data/logos/portugal-partido-socialista.png"
                                                                },
                                                                {
                                                                    "name":  "PSD",
@@ -1600,7 +1682,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  0
                                                                                 },
-                                                                   "color":  "#FF6600"
+                                                                   "color":  "#FF6600",
+                                                                   "logo":  "data/logos/portugal-psd.png"
                                                                },
                                                                {
                                                                    "name":  "Chega",
@@ -1608,7 +1691,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  -4
                                                                                 },
-                                                                   "color":  "#1C1C1C"
+                                                                   "color":  "#183059",
+                                                                   "logo":  "data/logos/portugal-chega.png"
                                                                },
                                                                {
                                                                    "name":  "Bloco de Esquerda",
@@ -1616,7 +1700,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -5,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#8B0000"
+                                                                   "color":  "#8B0000",
+                                                                   "logo":  "data/logos/portugal-bloco-de-esquerda.png"
                                                                },
                                                                {
                                                                    "name":  "Iniciativa Liberal",
@@ -1624,7 +1709,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  6,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#00BFFF"
+                                                                   "color":  "#00BFFF",
+                                                                   "logo":  "data/logos/portugal-iniciativa-liberal.png"
                                                                }
                                                            ]
                                            },
@@ -1643,7 +1729,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#DE3533"
+                                                                   "color":  "#DE3533",
+                                                                   "logo":  "data/logos/australia-labor-party.png"
                                                                },
                                                                {
                                                                    "name":  "Liberal Party",
@@ -1651,7 +1738,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -1
                                                                                 },
-                                                                   "color":  "#0047AB"
+                                                                   "color":  "#0047AB",
+                                                                   "logo":  "data/logos/australia-liberal-party.png"
                                                                },
                                                                {
                                                                    "name":  "Greens",
@@ -1659,7 +1747,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#10C25B"
+                                                                   "color":  "#10C25B",
+                                                                   "logo":  "data/logos/australia-greens.png"
                                                                },
                                                                {
                                                                    "name":  "One Nation",
@@ -1667,7 +1756,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  -5
                                                                                 },
-                                                                   "color":  "#FF6300"
+                                                                   "color":  "#FF6300",
+                                                                   "logo":  "data/logos/australia-one-nation.png"
                                                                }
                                                            ]
                                            },
@@ -1686,7 +1776,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#D82A20"
+                                                                   "color":  "#D82A20",
+                                                                   "logo":  "data/logos/newzealand-labour.png"
                                                                },
                                                                {
                                                                    "name":  "National",
@@ -1694,7 +1785,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  0
                                                                                 },
-                                                                   "color":  "#00529F"
+                                                                   "color":  "#00529F",
+                                                                   "logo":  "data/logos/newzealand-national.png"
                                                                },
                                                                {
                                                                    "name":  "Green Party",
@@ -1702,7 +1794,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#098137"
+                                                                   "color":  "#098137",
+                                                                   "logo":  "data/logos/newzealand-green-party.png"
                                                                },
                                                                {
                                                                    "name":  "ACT",
@@ -1710,7 +1803,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  6,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#FDE401"
+                                                                   "color":  "#FDE401",
+                                                                   "logo":  "data/logos/newzealand-act.png"
                                                                }
                                                            ]
                                            },
@@ -1729,7 +1823,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  -3
                                                                                 },
-                                                                   "color":  "#FF0000"
+                                                                   "color":  "#FF0000",
+                                                                   "logo":  "data/logos/japan-ldp.png"
                                                                },
                                                                {
                                                                    "name":  "CDP",
@@ -1737,7 +1832,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#0000FF"
+                                                                   "color":  "#0000FF",
+                                                                   "logo":  "data/logos/japan-cdp.png"
                                                                },
                                                                {
                                                                    "name":  "Komeito",
@@ -1745,7 +1841,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  0,
                                                                                     "social":  1
                                                                                 },
-                                                                   "color":  "#FF9900"
+                                                                   "color":  "#FF9900",
+                                                                   "logo":  "data/logos/japan-komeito.png"
                                                                },
                                                                {
                                                                    "name":  "JCP",
@@ -1753,7 +1850,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -6,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#C40000"
+                                                                   "color":  "#C40000",
+                                                                   "logo":  "data/logos/japan-jcp.png"
                                                                }
                                                            ]
                                            },
@@ -1772,7 +1870,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -2
                                                                                 },
-                                                                   "color":  "#E61E2B"
+                                                                   "color":  "#E61E2B",
+                                                                   "logo":  "data/logos/southkorea-people-power-party.png"
                                                                },
                                                                {
                                                                    "name":  "Democratic Party",
@@ -1780,7 +1879,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#004EA2"
+                                                                   "color":  "#004EA2",
+                                                                   "logo":  "data/logos/southkorea-democratic-party.png"
                                                                },
                                                                {
                                                                    "name":  "Justice Party",
@@ -1788,7 +1888,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#FFCC00"
+                                                                   "color":  "#FFCC00",
+                                                                   "logo":  "data/logos/southkorea-justice-party.png"
                                                                },
                                                                {
                                                                    "name":  "Reform Party",
@@ -1796,7 +1897,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  1
                                                                                 },
-                                                                   "color":  "#00A9E0"
+                                                                   "color":  "#00A9E0",
+                                                                   "logo":  "data/logos/southkorea-reform-party.png"
                                                                }
                                                            ]
                                            },
@@ -1815,7 +1917,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#FF7F00"
+                                                                   "color":  "#FF7F00",
+                                                                   "logo":  "data/logos/netherlands-vvd.png"
                                                                },
                                                                {
                                                                    "name":  "D66",
@@ -1823,15 +1926,17 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#00A651"
+                                                                   "color":  "#00A651",
+                                                                   "logo":  "data/logos/netherlands-d66.png"
                                                                },
                                                                {
-                                                                   "name":  "PVV (Wilders)",
+                                                                   "name":  "PVV",
                                                                    "position":  {
                                                                                     "economic":  -1,
                                                                                     "social":  -6
                                                                                 },
-                                                                   "color":  "#003082"
+                                                                   "color":  "#003082",
+                                                                   "logo":  "data/logos/netherlands-pvv-wilders.png"
                                                                },
                                                                {
                                                                    "name":  "GroenLinks-PvdA",
@@ -1839,7 +1944,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#C00"
+                                                                   "color":  "#C00",
+                                                                   "logo":  "data/logos/netherlands-groenlinks-pvda.png"
                                                                },
                                                                {
                                                                    "name":  "SP",
@@ -1847,7 +1953,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -6,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#EE0000"
+                                                                   "color":  "#EE0000",
+                                                                   "logo":  "data/logos/netherlands-sp.png"
                                                                }
                                                            ]
                                            },
@@ -1866,7 +1973,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#E4003B"
+                                                                   "color":  "#E4003B",
+                                                                   "logo":  "data/logos/spain-psoe.png"
                                                                },
                                                                {
                                                                    "name":  "Partido Popular",
@@ -1874,7 +1982,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -2
                                                                                 },
-                                                                   "color":  "#007FFF"
+                                                                   "color":  "#007FFF",
+                                                                   "logo":  "data/logos/spain-partido-popular.png"
                                                                },
                                                                {
                                                                    "name":  "Vox",
@@ -1882,7 +1991,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  -6
                                                                                 },
-                                                                   "color":  "#63BE21"
+                                                                   "color":  "#63BE21",
+                                                                   "logo":  "data/logos/spain-vox.png"
                                                                },
                                                                {
                                                                    "name":  "Sumar",
@@ -1890,15 +2000,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -5,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#E52D40"
-                                                               },
-                                                               {
-                                                                   "name":  "Junts / ERC",
-                                                                   "position":  {
-                                                                                    "economic":  -1,
-                                                                                    "social":  4
-                                                                                },
-                                                                   "color":  "#E09B25"
+                                                                   "color":  "#E52D40",
+                                                                   "logo":  "data/logos/spain-sumar.png"
                                                                }
                                                            ]
                                            },
@@ -1917,7 +2020,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#E8112D"
+                                                                   "color":  "#E8112D",
+                                                                   "logo":  "data/logos/sweden-socialdemokraterna.png"
                                                                },
                                                                {
                                                                    "name":  "Moderaterna",
@@ -1925,7 +2029,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  4,
                                                                                     "social":  1
                                                                                 },
-                                                                   "color":  "#52BDEC"
+                                                                   "color":  "#52BDEC",
+                                                                   "logo":  "data/logos/sweden-moderaterna.png"
                                                                },
                                                                {
                                                                    "name":  "Sverigedemokraterna",
@@ -1933,7 +2038,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  0,
                                                                                     "social":  -5
                                                                                 },
-                                                                   "color":  "#DDDD00"
+                                                                   "color":  "#DDDD00",
+                                                                   "logo":  "data/logos/sweden-sverigedemokraterna.png"
                                                                },
                                                                {
                                                                    "name":  "Vänsterpartiet",
@@ -1941,7 +2047,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -6,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#DA291C"
+                                                                   "color":  "#DA291C",
+                                                                   "logo":  "data/logos/sweden-v-nsterpartiet.png"
                                                                },
                                                                {
                                                                    "name":  "Liberalerna",
@@ -1949,7 +2056,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#006AB3"
+                                                                   "color":  "#006AB3",
+                                                                   "logo":  "data/logos/sweden-liberalerna.png"
                                                                }
                                                            ]
                                            },
@@ -1968,7 +2076,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -4
                                                                                 },
-                                                                   "color":  "#4682B4"
+                                                                   "color":  "#4682B4",
+                                                                   "logo":  "data/logos/israel-likud.png"
                                                                },
                                                                {
                                                                    "name":  "Yesh Atid",
@@ -1976,7 +2085,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  2,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#FF8C00"
+                                                                   "color":  "#FF8C00",
+                                                                   "logo":  "data/logos/israel-yesh-atid.png"
                                                                },
                                                                {
                                                                    "name":  "Otzma Yehudit",
@@ -1984,7 +2094,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  1,
                                                                                     "social":  -8
                                                                                 },
-                                                                   "color":  "#800000"
+                                                                   "color":  "#800000",
+                                                                   "logo":  "data/logos/israel-otzma-yehudit.png"
                                                                },
                                                                {
                                                                    "name":  "Meretz",
@@ -1992,7 +2103,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -4,
                                                                                     "social":  6
                                                                                 },
-                                                                   "color":  "#D73C3C"
+                                                                   "color":  "#D73C3C",
+                                                                   "logo":  "data/logos/israel-meretz.png"
                                                                },
                                                                {
                                                                    "name":  "Hadash",
@@ -2000,7 +2112,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -5,
                                                                                     "social":  5
                                                                                 },
-                                                                   "color":  "#CC0000"
+                                                                   "color":  "#CC0000",
+                                                                   "logo":  "data/logos/israel-hadash.png"
                                                                }
                                                            ]
                                            },
@@ -2019,7 +2132,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  3,
                                                                                     "social":  -5
                                                                                 },
-                                                                   "color":  "#FF9933"
+                                                                   "color":  "#FF9933",
+                                                                   "logo":  "data/logos/india-bjp.png"
                                                                },
                                                                {
                                                                    "name":  "Congresso Nacional",
@@ -2027,7 +2141,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -2,
                                                                                     "social":  2
                                                                                 },
-                                                                   "color":  "#19AAED"
+                                                                   "color":  "#19AAED",
+                                                                   "logo":  "data/logos/india-congresso-nacional.png"
                                                                },
                                                                {
                                                                    "name":  "AAP",
@@ -2035,7 +2150,8 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -3,
                                                                                     "social":  4
                                                                                 },
-                                                                   "color":  "#0066CC"
+                                                                   "color":  "#0066CC",
+                                                                   "logo":  "data/logos/india-aap.png"
                                                                },
                                                                {
                                                                    "name":  "CPI(M)",
@@ -2043,7 +2159,664 @@ window.APP_STATIC_DATA = {
                                                                                     "economic":  -7,
                                                                                     "social":  3
                                                                                 },
-                                                                   "color":  "#CC0000"
+                                                                   "color":  "#CC0000",
+                                                                   "logo":  "data/logos/india-cpi-m.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "brazil",
+                                               "name":  {
+                                                            "pt":  "Brasil",
+                                                            "en":  "Brazil",
+                                                            "es":  "Brasil"
+                                                        },
+                                               "flag":  "🇧🇷",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "PL",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  -4
+                                                                                },
+                                                                   "color":  "#284A88",
+                                                                   "logo":  "data/logos/brazil-pl.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PT",
+                                                                   "position":  {
+                                                                                    "economic":  -4,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#CC0000",
+                                                                   "logo":  "data/logos/brazil-pt.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PSOL",
+                                                                   "position":  {
+                                                                                    "economic":  -6,
+                                                                                    "social":  7
+                                                                                },
+                                                                   "color":  "#FFF200",
+                                                                   "logo":  "data/logos/brazil-psol.png"
+                                                               },
+                                                               {
+                                                                   "name":  "MDB",
+                                                                   "position":  {
+                                                                                    "economic":  1,
+                                                                                    "social":  0
+                                                                                },
+                                                                   "color":  "#00A94E",
+                                                                   "logo":  "data/logos/brazil-mdb.png"
+                                                               },
+                                                               {
+                                                                   "name":  "NOVO",
+                                                                   "position":  {
+                                                                                    "economic":  7,
+                                                                                    "social":  1
+                                                                                },
+                                                                   "color":  "#FF8000",
+                                                                   "logo":  "data/logos/brazil-novo.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PDT",
+                                                                   "position":  {
+                                                                                    "economic":  -3,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#D0021B",
+                                                                   "logo":  "data/logos/brazil-pdt.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PSB",
+                                                                   "position":  {
+                                                                                    "economic":  -2,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#FFD700",
+                                                                   "logo":  "data/logos/brazil-psb.png"
+                                                               },
+                                                               {
+                                                                   "name":  "União Brasil",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  -2
+                                                                                },
+                                                                   "color":  "#272B5F",
+                                                                   "logo":  "data/logos/brazil-uniao.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PSD",
+                                                                   "position":  {
+                                                                                    "economic":  1.5,
+                                                                                    "social":  -1
+                                                                                },
+                                                                   "color":  "#FAB900",
+                                                                   "logo":  "data/logos/brazil-psd.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Republicanos",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  -4
+                                                                                },
+                                                                   "color":  "#00458C",
+                                                                   "logo":  "data/logos/brazil-republicanos.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PSDB",
+                                                                   "position":  {
+                                                                                    "economic":  1,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#00519E",
+                                                                   "logo":  "data/logos/brazil-psdb.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "colombia",
+                                               "name":  {
+                                                            "pt":  "Colômbia",
+                                                            "en":  "Colombia",
+                                                            "es":  "Colombia"
+                                                        },
+                                               "flag":  "🇨🇴",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Pacto Histórico",
+                                                                   "position":  {
+                                                                                    "economic":  -4,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#FF00FF",
+                                                                   "logo":  "data/logos/colombia-pacto-hist-rico.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Centro Democrático",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  -4
+                                                                                },
+                                                                   "color":  "#0000FF",
+                                                                   "logo":  "data/logos/colombia-centro-democr-tico.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Partido Conservador",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  -5
+                                                                                },
+                                                                   "color":  "#000080",
+                                                                   "logo":  "data/logos/colombia-partido-conservador.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Partido Liberal",
+                                                                   "position":  {
+                                                                                    "economic":  1,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#FF0000",
+                                                                   "logo":  "data/logos/colombia-partido-liberal.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "paraguay",
+                                               "name":  {
+                                                            "pt":  "Paraguai",
+                                                            "en":  "Paraguay",
+                                                            "es":  "Paraguay"
+                                                        },
+                                               "flag":  "🇵🇾",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Partido Colorado",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  -5
+                                                                                },
+                                                                   "color":  "#FF0000",
+                                                                   "logo":  "data/logos/paraguay-partido-colorado.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PLRA",
+                                                                   "position":  {
+                                                                                    "economic":  2,
+                                                                                    "social":  -2
+                                                                                },
+                                                                   "color":  "#0000FF",
+                                                                   "logo":  "data/logos/paraguay-plra.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Cruzada Nacional",
+                                                                   "position":  {
+                                                                                    "economic":  5,
+                                                                                    "social":  -6
+                                                                                },
+                                                                   "color":  "#000000",
+                                                                   "logo":  "data/logos/paraguay-cruzada-nacional.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Frente Guasú",
+                                                                   "position":  {
+                                                                                    "economic":  -5,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#800080",
+                                                                   "logo":  "data/logos/paraguay-frente-guas.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "bolivia",
+                                               "name":  {
+                                                            "pt":  "Bolívia",
+                                                            "en":  "Bolivia",
+                                                            "es":  "Bolivia"
+                                                        },
+                                               "flag":  "🇧🇴",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "MAS",
+                                                                   "position":  {
+                                                                                    "economic":  -5,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#002060",
+                                                                   "logo":  "data/logos/bolivia-mas.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Comunidad Ciudadana",
+                                                                   "position":  {
+                                                                                    "economic":  1,
+                                                                                    "social":  3
+                                                                                },
+                                                                   "color":  "#FF6600",
+                                                                   "logo":  "data/logos/bolivia-comunidad-ciudadana.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Creemos",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  -6
+                                                                                },
+                                                                   "color":  "#E30052",
+                                                                   "logo":  "data/logos/bolivia-creemos.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "ecuador",
+                                               "name":  {
+                                                            "pt":  "Equador",
+                                                            "en":  "Ecuador",
+                                                            "es":  "Ecuador"
+                                                        },
+                                               "flag":  "🇪🇨",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Revolución Ciudadana",
+                                                                   "position":  {
+                                                                                    "economic":  -4,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#3399FF",
+                                                                   "logo":  "data/logos/ecuador-revoluci-n-ciudadana.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Movimiento CREO",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  -3
+                                                                                },
+                                                                   "color":  "#0033A0",
+                                                                   "logo":  "data/logos/ecuador-movimiento-creo.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Pachakutik",
+                                                                   "position":  {
+                                                                                    "economic":  -5,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#FF0000",
+                                                                   "logo":  "data/logos/ecuador-pachakutik.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "peru",
+                                               "name":  {
+                                                            "pt":  "Peru",
+                                                            "en":  "Peru",
+                                                            "es":  "Perú"
+                                                        },
+                                               "flag":  "🇵🇪",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Fuerza Popular",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  -6
+                                                                                },
+                                                                   "color":  "#FF6600",
+                                                                   "logo":  "data/logos/peru-fuerza-popular.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Perú Libre",
+                                                                   "position":  {
+                                                                                    "economic":  -6,
+                                                                                    "social":  -2
+                                                                                },
+                                                                   "color":  "#E30613",
+                                                                   "logo":  "data/logos/peru-per-libre.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Alianza para el Progreso",
+                                                                   "position":  {
+                                                                                    "economic":  2,
+                                                                                    "social":  -1
+                                                                                },
+                                                                   "color":  "#0000FF",
+                                                                   "logo":  "data/logos/peru-alianza-para-el-progreso.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Acción Popular",
+                                                                   "position":  {
+                                                                                    "economic":  0,
+                                                                                    "social":  -1
+                                                                                },
+                                                                   "color":  "#E60000",
+                                                                   "logo":  "data/logos/peru-acci-n-popular.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "norway",
+                                               "name":  {
+                                                            "pt":  "Noruega",
+                                                            "en":  "Norway",
+                                                            "es":  "Noruega"
+                                                        },
+                                               "flag":  "🇳🇴",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Høyre",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  0
+                                                                                },
+                                                                   "color":  "#0065F1",
+                                                                   "logo":  "data/logos/norway-h-yre.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Arbeiderpartiet",
+                                                                   "position":  {
+                                                                                    "economic":  -2,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#D70926",
+                                                                   "logo":  "data/logos/norway-arbeiderpartiet.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Fremskrittspartiet",
+                                                                   "position":  {
+                                                                                    "economic":  5,
+                                                                                    "social":  -3
+                                                                                },
+                                                                   "color":  "#004F80",
+                                                                   "logo":  "data/logos/norway-fremskrittspartiet.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Senterpartiet",
+                                                                   "position":  {
+                                                                                    "economic":  -1,
+                                                                                    "social":  -2
+                                                                                },
+                                                                   "color":  "#008542",
+                                                                   "logo":  "data/logos/norway-senterpartiet.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "denmark",
+                                               "name":  {
+                                                            "pt":  "Dinamarca",
+                                                            "en":  "Denmark",
+                                                            "es":  "Dinamarca"
+                                                        },
+                                               "flag":  "🇩🇰",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Socialdemokratiet",
+                                                                   "position":  {
+                                                                                    "economic":  -1,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#A32828",
+                                                                   "logo":  "data/logos/denmark-socialdemokratiet.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Venstre",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  1
+                                                                                },
+                                                                   "color":  "#005099",
+                                                                   "logo":  "data/logos/denmark-venstre.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Moderaterne",
+                                                                   "position":  {
+                                                                                    "economic":  2,
+                                                                                    "social":  3
+                                                                                },
+                                                                   "color":  "#B42997",
+                                                                   "logo":  "data/logos/denmark-moderaterne.png"
+                                                               },
+                                                               {
+                                                                   "name":  "SF",
+                                                                   "position":  {
+                                                                                    "economic":  -4,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#E05481",
+                                                                   "logo":  "data/logos/denmark-sf.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "finland",
+                                               "name":  {
+                                                            "pt":  "Finlândia",
+                                                            "en":  "Finland",
+                                                            "es":  "Finlandia"
+                                                        },
+                                               "flag":  "🇫🇮",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "SDP",
+                                                                   "position":  {
+                                                                                    "economic":  -3,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#F54B4B",
+                                                                   "logo":  "data/logos/finland-sdp.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Kokoomus",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#006288",
+                                                                   "logo":  "data/logos/finland-kokoomus.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Perussuomalaiset",
+                                                                   "position":  {
+                                                                                    "economic":  2,
+                                                                                    "social":  -4
+                                                                                },
+                                                                   "color":  "#FFDD93",
+                                                                   "logo":  "data/logos/finland-perussuomalaiset.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Vihreät",
+                                                                   "position":  {
+                                                                                    "economic":  -2,
+                                                                                    "social":  6
+                                                                                },
+                                                                   "color":  "#61BF1A",
+                                                                   "logo":  "data/logos/finland-vihre-t.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "iceland",
+                                               "name":  {
+                                                            "pt":  "Islândia",
+                                                            "en":  "Iceland",
+                                                            "es":  "Islandia"
+                                                        },
+                                               "flag":  "🇮🇸",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Sjálfstæðisflokkurinn",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  1
+                                                                                },
+                                                                   "color":  "#005A9C",
+                                                                   "logo":  "data/logos/iceland-sj-lfst-isflokkurinn.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Framsóknarflokkurinn",
+                                                                   "position":  {
+                                                                                    "economic":  0,
+                                                                                    "social":  -1
+                                                                                },
+                                                                   "color":  "#80962D",
+                                                                   "logo":  "data/logos/iceland-frams-knarflokkurinn.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Vinstrihreyfingin",
+                                                                   "position":  {
+                                                                                    "economic":  -5,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#00B878",
+                                                                   "logo":  "data/logos/iceland-vinstrihreyfingin.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Samfylkingin",
+                                                                   "position":  {
+                                                                                    "economic":  -3,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#ED145B",
+                                                                   "logo":  "data/logos/iceland-samfylkingin.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "ireland",
+                                               "name":  {
+                                                            "pt":  "Irlanda",
+                                                            "en":  "Ireland",
+                                                            "es":  "Irlanda"
+                                                        },
+                                               "flag":  "🇮🇪",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "Sinn Féin",
+                                                                   "position":  {
+                                                                                    "economic":  -4,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#326760",
+                                                                   "logo":  "data/logos/ireland-sinn-f-in.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Fianna Fáil",
+                                                                   "position":  {
+                                                                                    "economic":  1,
+                                                                                    "social":  -1
+                                                                                },
+                                                                   "color":  "#66BB66",
+                                                                   "logo":  "data/logos/ireland-fianna-f-il.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Fine Gael",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#6699FF",
+                                                                   "logo":  "data/logos/ireland-fine-gael.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Green Party",
+                                                                   "position":  {
+                                                                                    "economic":  -3,
+                                                                                    "social":  6
+                                                                                },
+                                                                   "color":  "#99CC33",
+                                                                   "logo":  "data/logos/ireland-green-party.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "poland",
+                                               "name":  {
+                                                            "pt":  "Polônia",
+                                                            "en":  "Poland",
+                                                            "es":  "Polonia"
+                                                        },
+                                               "flag":  "🇵🇱",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "PiS",
+                                                                   "position":  {
+                                                                                    "economic":  -2,
+                                                                                    "social":  -6
+                                                                                },
+                                                                   "color":  "#002253",
+                                                                   "logo":  "data/logos/poland-pis.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PO",
+                                                                   "position":  {
+                                                                                    "economic":  3,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#FCA22E",
+                                                                   "logo":  "data/logos/poland-po.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Lewica",
+                                                                   "position":  {
+                                                                                    "economic":  -5,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#BE0E38",
+                                                                   "logo":  "data/logos/poland-lewica.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Trzecia Droga",
+                                                                   "position":  {
+                                                                                    "economic":  2,
+                                                                                    "social":  0
+                                                                                },
+                                                                   "color":  "#00762E",
+                                                                   "logo":  "data/logos/poland-trzecia-droga.png"
+                                                               }
+                                                           ]
+                                           },
+                                           {
+                                               "id":  "greece",
+                                               "name":  {
+                                                            "pt":  "Grécia",
+                                                            "en":  "Greece",
+                                                            "es":  "Grecia"
+                                                        },
+                                               "flag":  "🇬��",
+                                               "parties":  [
+                                                               {
+                                                                   "name":  "New Democracy",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  -2
+                                                                                },
+                                                                   "color":  "#1C4CA0",
+                                                                   "logo":  "data/logos/greece-new-democracy.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Syriza",
+                                                                   "position":  {
+                                                                                    "economic":  -5,
+                                                                                    "social":  4
+                                                                                },
+                                                                   "color":  "#ED1B24",
+                                                                   "logo":  "data/logos/greece-syriza.png"
+                                                               },
+                                                               {
+                                                                   "name":  "PASOK",
+                                                                   "position":  {
+                                                                                    "economic":  -2,
+                                                                                    "social":  2
+                                                                                },
+                                                                   "color":  "#007A33",
+                                                                   "logo":  "data/logos/greece-pasok.png"
+                                                               },
+                                                               {
+                                                                   "name":  "KKE",
+                                                                   "position":  {
+                                                                                    "economic":  -8,
+                                                                                    "social":  5
+                                                                                },
+                                                                   "color":  "#E3030B",
+                                                                   "logo":  "data/logos/greece-kke.png"
                                                                }
                                                            ]
                                            }

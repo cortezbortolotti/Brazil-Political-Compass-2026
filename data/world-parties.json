@@ -456,7 +456,7 @@
                                                                "economic":  -1,
                                                                "social":  -6
                                                            },
-                                              "color":  "#0E4484",
+                                              "color":  "#0A2E5C",
                                               "logo":  "data/logos/france-rassemblement-national.png"
                                           },
                                           {
@@ -1056,6 +1056,42 @@
                                                            },
                                               "color":  "#FFD700",
                                               "logo":  "data/logos/brazil-psb.png"
+                                          },
+                                          {
+                                              "name":  "União Brasil",
+                                              "position":  {
+                                                               "economic":  3,
+                                                               "social":  -2
+                                                           },
+                                              "color":  "#272B5F",
+                                              "logo":  "data/logos/brazil-uniao.png"
+                                          },
+                                          {
+                                              "name":  "PSD",
+                                              "position":  {
+                                                               "economic":  1.5,
+                                                               "social":  -1
+                                                           },
+                                              "color":  "#FAB900",
+                                              "logo":  "data/logos/brazil-psd.png"
+                                          },
+                                          {
+                                              "name":  "Republicanos",
+                                              "position":  {
+                                                               "economic":  3,
+                                                               "social":  -4
+                                                           },
+                                              "color":  "#00458C",
+                                              "logo":  "data/logos/brazil-republicanos.png"
+                                          },
+                                          {
+                                              "name":  "PSDB",
+                                              "position":  {
+                                                               "economic":  1,
+                                                               "social":  2
+                                                           },
+                                              "color":  "#00519E",
+                                              "logo":  "data/logos/brazil-psdb.png"
                                           }
                                       ]
                       },

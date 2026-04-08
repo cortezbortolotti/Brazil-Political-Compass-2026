@@ -903,7 +903,7 @@ async function resultadoBrasil(push) {
     if (!wrap) return;
     wrap.innerHTML = [
         '<div class="compass-wrap">',
-            '<div class="compass-canvas-wrap"><canvas id="compass-canvas" width="600" height="600"></canvas></div>',
+            '<div class="compass-canvas-wrap"><canvas id="compass-canvas" width="600" height="600"></canvas><div id="compass-grid-overlay" class="compass-grid-overlay"></div></div>',
         '</div>',
         '<div class="scores">',
             scoreCard(group("result").econ, formatSigned(pos.economic), axisDescriptor("economic", pos.economic)),
@@ -1197,6 +1197,54 @@ function drawAvatarPoint(ctx, canvas, person, point, redraw) {
     });
 }
 
+function _buildGridOverlay() {
+    var overlay = document.getElementById("compass-grid-overlay");
+    if (!overlay) return;
+    overlay.innerHTML = "";
+
+    var pad = 44, size = 600, gSize = size - pad * 2;
+    var padPct = (pad / size) * 100;
+    var gPct = (gSize / size) * 100;
+    var isDark = document.body.classList.contains("dark-mode");
+
+    for (var xVal = -100; xVal <= 100; xVal += 10) {
+        for (var yVal = -100; yVal <= 100; yVal += 10) {
+            var xPct = padPct + ((xVal + 100) / 200) * gPct;
+            var yPct = padPct + ((yVal + 100) / 200) * gPct;
+
+            var isOrigin = (xVal === 0 && yVal === 0);
+            var isMajor = (xVal % 50 === 0 && yVal % 50 === 0);
+            var isMid = (xVal % 25 === 0 && yVal % 25 === 0);
+
+            var span = document.createElement("span");
+            span.className = "grid-coord";
+            span.textContent = xVal + "," + (-yVal);
+            span.style.left = xPct + "%";
+            span.style.top = yPct + "%";
+
+            if (isOrigin) {
+                span.style.fontWeight = "700";
+                span.style.fontSize = "8px";
+                span.style.opacity = isDark ? "0.6" : "0.55";
+            } else if (isMajor) {
+                span.style.fontWeight = "600";
+                span.style.fontSize = "7px";
+                span.style.opacity = isDark ? "0.35" : "0.4";
+            } else if (isMid) {
+                span.style.fontWeight = "500";
+                span.style.fontSize = "6px";
+                span.style.opacity = isDark ? "0.25" : "0.3";
+            } else {
+                span.style.fontWeight = "400";
+                span.style.fontSize = "5.5px";
+                span.style.opacity = isDark ? "0.18" : "0.22";
+            }
+
+            overlay.appendChild(span);
+        }
+    }
+}
+
 function desenharBussola(pos, matches) {
     var canvas = document.getElementById("compass-canvas");
     if (!canvas) return;
@@ -1300,6 +1348,11 @@ function desenharBussola(pos, matches) {
     ctx.fillStyle = "#8b5cf6";
     ctx.fillText("Lib-Right", pad + half + half / 2, pad + gSize - 8);
     ctx.globalAlpha = 1;
+
+    ctx.globalAlpha = 1;
+
+    // Grid de coordenadas via HTML (permite zoom legível)
+    _buildGridOverlay();
 
     function toPixel(econ, soc) {
         var px = cx + (econ / RANGE) * half;
@@ -1639,11 +1692,27 @@ function addMapMarker(svg, bbox, item) {
         x += 6; 
     } else if (item.id === "ireland") {
         x -= 6; 
+    } else if (item.id === "portugal") {
+        x -= 4;
+        w = Math.min(w, 10);
+        h = Math.min(h, 10);
+    } else if (item.id === "netherlands") {
+        w = Math.min(w, 10);
+        h = Math.min(h, 10);
+    } else if (item.id === "norway") {
+        y += 18;
+        x -= 24;
+        w = Math.min(w, 8);
+        h = Math.min(h, 8);
+    } else if (item.id === "denmark") {
+        w = Math.min(w, 10);
+        h = Math.min(h, 10);
     }
 
     groupNode.setAttribute("class", "marker-g");
     groupNode.setAttribute("transform", "translate(" + x + " " + y + ")");
     groupNode.style.cursor = "pointer";
+    groupNode.style.filter = "drop-shadow(0px 1px 3px rgba(0,0,0,0.65))";
 
     var img = document.createElementNS(ns, "image");
     img.setAttribute("href", best.logo);
@@ -1736,11 +1805,12 @@ function construirMapa(worldData, rankings) {
 }
 
 function iniciarZoomMapa(wrap, svg) {
+    svg.style.transformOrigin = "0 0";
     var scale = 1;
     var panX = 0;
     var panY = 0;
     var minScale = 1;
-    var maxScale = 4;
+    var maxScale = 8;
     var dragThreshold = 8;
     var state = {
         dragReady: false,
@@ -1759,20 +1829,31 @@ function iniciarZoomMapa(wrap, svg) {
             panY = 0;
             return;
         }
-        var bounds = wrap.getBoundingClientRect();
-        var minPanX = bounds.width * (1 - scale);
-        var minPanY = bounds.height * (1 - scale);
+        var minPanX = wrap.clientWidth * (1 - scale);
+        var minPanY = wrap.clientHeight * (1 - scale);
         panX = clamp(panX, minPanX, 0);
         panY = clamp(panY, minPanY, 0);
     }
 
-    function applyTransform(smooth) {
-        clampPan();
-        svg.style.transition = smooth ? "transform 0.18s ease" : "transform 0.05s linear";
-        svg.style.transform = "translate(" + panX + "px, " + panY + "px) scale(" + scale + ")";
+    // Promover SVG para GPU durante interação, remover após parar
+    var gpuTimer = null;
+    function gpuOn() {
+        svg.style.willChange = "transform";
+        clearTimeout(gpuTimer);
+        gpuTimer = setTimeout(function() {
+            svg.style.willChange = "auto";
+            gpuTimer = null;
+        }, 200);
     }
 
-    function zoomBy(factor, clientX, clientY) {
+    function applyTransform(smooth) {
+        clampPan();
+        svg.style.transition = smooth ? "transform 0.15s ease-out" : "none";
+        svg.style.transform = "translate(" + panX + "px, " + panY + "px) scale(" + scale + ")";
+        gpuOn();
+    }
+
+    function zoomBy(factor, clientX, clientY, smooth) {
         var rect = wrap.getBoundingClientRect();
         var cx = (clientX !== undefined) ? (clientX - rect.left) : (rect.width / 2);
         var cy = (clientY !== undefined) ? (clientY - rect.top) : (rect.height / 2);
@@ -1784,7 +1865,7 @@ function iniciarZoomMapa(wrap, svg) {
             panX = cx - (cx - panX) * actualFactor;
             panY = cy - (cy - panY) * actualFactor;
             scale = newScale;
-            applyTransform(true);
+            applyTransform(smooth !== false);
         }
     }
 
@@ -1802,9 +1883,14 @@ function iniciarZoomMapa(wrap, svg) {
         });
     });
 
+    var wheelTimeout = null;
     wrap.addEventListener("wheel", function(event) {
         event.preventDefault();
-        zoomBy(event.deltaY < 0 ? 1.12 : 1 / 1.12, event.clientX, event.clientY);
+        if (wheelTimeout) return;
+        wheelTimeout = requestAnimationFrame(function() {
+            zoomBy(event.deltaY < 0 ? 1.12 : 1 / 1.12, event.clientX, event.clientY, false);
+            wheelTimeout = null;
+        });
     }, { passive: false });
 
     wrap.addEventListener("mousedown", function(event) {
