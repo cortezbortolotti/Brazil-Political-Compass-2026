@@ -1139,6 +1139,15 @@
                                                            },
                                               "color":  "#FF0000",
                                               "logo":  "data/logos/colombia-partido-liberal.png"
+                                          },
+                                          {
+                                              "name":  "Dignidad y Compromiso",
+                                              "position":  {
+                                                               "economic":  -1,
+                                                               "social":  1
+                                                           },
+                                              "color":  "#00BFA5",
+                                              "logo":  "data/logos/colombia-dignidad-y-compromiso.png"
                                           }
                                       ]
                       },
