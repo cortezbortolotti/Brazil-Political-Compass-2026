@@ -428,7 +428,7 @@ body.dark-mode {
     .btns { justify-content: center; }
     .title { font-size: 1.8rem; }
     .badge { margin-bottom: 1rem; }
-    .hero-photo { height: 180px; }
+    .hero-visual { min-height: 180px; }
     .res-wrap { padding: 1rem 0.5rem; }
     .cand-row { flex-direction: row; text-align: left; }
     .cand-row .c-img-wrap { margin-bottom: 0; }
