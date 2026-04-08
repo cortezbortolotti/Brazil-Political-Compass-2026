@@ -372,13 +372,13 @@ body.dark-mode {
     .scores { grid-template-columns: 1fr; gap: 1rem; }
     .sc { padding: 1rem; }
     .compass-wrap { padding: 1.5rem 0.5rem; }
-    .mapa-wrap { aspect-ratio: 1 / 1; }
+    .mapa-wrap { aspect-ratio: 16 / 10; min-height: 0; }
+    .compass-grid-overlay { display: none; }
     .q-nav { flex-direction: column-reverse; }
     .q-nav .btn-p, .q-nav .btn-s { width: 100%; }
-    .cand-row { padding: 1rem 0.75rem; gap: 0.5rem; flex-direction: column; align-items: stretch; }
-    .cand-left { width: 100%; }
-    .cand-pct { font-size: 1.4rem; }
-    .cand-pct { align-self: flex-end; }
+    .cand-row { padding: 1rem 0.75rem; gap: 0.5rem; flex-direction: row; align-items: center; }
+    .cand-left { flex: 1; min-width: 0; }
+    .cand-pct { font-size: 1.4rem; flex-shrink: 0; }
     .q-card { padding: 1.5rem; }
     .res-explicacao { padding: 1.25rem; }
     .modal-box, .pais-box, .modal-cand-content { padding: 1.5rem 1.25rem; }

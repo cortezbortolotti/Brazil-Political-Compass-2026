@@ -500,7 +500,7 @@ function applyI18n() {
 
     var btnMundo = document.getElementById("btn-mundo");
     if (btnMundo) {
-        btnMundo.innerHTML = '<span aria-hidden="true">🌍</span> ' + escapeHtml(t("home_btn_world"));
+        btnMundo.innerHTML = '<span aria-hidden="true">🌎</span> ' + escapeHtml(t("home_btn_world"));
     }
 
     var btnSair = document.getElementById("btn-sair");
