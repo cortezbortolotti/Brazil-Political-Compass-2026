@@ -1257,8 +1257,6 @@ function desenharBussola(pos, matches) {
     var size = 600;
     canvas.width = size * dpr;
     canvas.height = size * dpr;
-    canvas.style.width = size + "px";
-    canvas.style.height = size + "px";
     canvas._canvasSize = size;
     canvas._candidatePoints = [];
 

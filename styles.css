@@ -103,9 +103,9 @@ body {
 }
 .hero-photo {
     position: absolute;
-    inset: 1.1rem;
-    width: calc(100% - 2.2rem);
-    height: calc(100% - 2.2rem);
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 22px;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
@@ -194,7 +194,7 @@ body {
 .badge-dif { color: #ef4444; font-weight: 800; font-size: 0.7rem; padding: 0.2rem 0.5rem; background: rgba(239,68,68,0.1); border-radius: 4px; display: inline-block; white-space: nowrap; margin-top: 0.15rem; }
 .compass-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem 1rem; margin-bottom: 2rem; text-align: center; }
 .compass-title { display: none; }
-.compass-canvas-wrap { position: relative; max-width: 600px; margin: 0 auto; }
+.compass-canvas-wrap { position: relative; max-width: 600px; margin: 0 auto; overflow: hidden; }
 #compass-canvas { width: 100%; height: auto; border-radius: 8px; touch-action: manipulation; }
 .compass-grid-overlay {
     position: absolute;
@@ -372,7 +372,8 @@ body.dark-mode {
     .scores { grid-template-columns: 1fr; gap: 1rem; }
     .sc { padding: 1rem; }
     .compass-wrap { padding: 1.5rem 0.5rem; }
-    .mapa-wrap { aspect-ratio: 16 / 10; min-height: 0; }
+    .mapa-wrap { aspect-ratio: 1 / 1; min-height: 0; }
+    .mapa-wrap svg { width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
     .compass-grid-overlay { display: none; }
     .q-nav { flex-direction: column-reverse; }
     .q-nav .btn-p, .q-nav .btn-s { width: 100%; }
@@ -429,12 +430,12 @@ body.dark-mode {
     .badge { margin-bottom: 1rem; }
     .hero-photo { height: 180px; }
     .res-wrap { padding: 1rem 0.5rem; }
-    .cand-row { flex-direction: column; text-align: center; }
-    .cand-row .c-img-wrap { margin-bottom: 0.5rem; }
-    .cand-row .c-side { flex-direction: column; width: 100%; gap: 0.5rem; }
-    .cand-row .score { justify-content: center; }
-    .c-bar-left, .c-bar-right { justify-content: center; }
-    .score-detail { text-align: center; }
+    .cand-row { flex-direction: row; text-align: left; }
+    .cand-row .c-img-wrap { margin-bottom: 0; }
+    .cand-row .c-side { flex-direction: row; width: auto; gap: 0.5rem; }
+    .cand-row .score { justify-content: flex-end; }
+    .c-bar-left, .c-bar-right { justify-content: flex-start; }
+    .score-detail { text-align: left; }
     .compass-wrap { padding: 1rem 0.5rem; }
     .world-header h2 { font-size: 1.75rem !important; line-height: 1.1; }
     .world-header p { max-width: 28ch; margin: 0 auto; }
