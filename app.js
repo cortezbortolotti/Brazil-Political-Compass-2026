@@ -1352,7 +1352,7 @@ function desenharBussola(pos, matches) {
     ctx.globalAlpha = 1;
 
     // Grid de coordenadas via HTML (permite zoom legível)
-    _buildGridOverlay();
+    // _buildGridOverlay();
 
     function toPixel(econ, soc) {
         var px = cx + (econ / RANGE) * half;
