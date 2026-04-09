@@ -285,6 +285,35 @@ body.dark-mode {
 @keyframes pulsar { 0%{r:6;opacity:0.3} 70%{r:14;opacity:0} 100%{r:6;opacity:0} }
 .m-pulse { animation: pulsar 2s infinite; }
 
+/* ELEIÇÕES */
+.eleicoes-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 1rem; margin-bottom: 2rem; }
+.map-card-v { background: var(--card); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.map-card-v::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,199,129,0.08) 0%, transparent 100%); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.map-card-v:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.map-card-v:hover::before { opacity: 1; }
+.map-card-v-img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid var(--border); background: var(--bg2); }
+.map-card-v-info { padding: 1.25rem; position: relative; z-index: 1; }
+.map-card-v-info h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem; line-height: 1.2; }
+.map-card-v-info p { font-size: 0.85rem; color: var(--txt2); margin: 0; line-height: 1.4; }
+
+/* MAPA ELEIÇÃO INTERATIVO (Leaflet) */
+.mapa-eleicao-main { flex: 1; position: relative; display: flex; flex-direction: column; width: 100%; height: calc(100vh - 64px); height: calc(100dvh - 64px); }
+#mapEleicao { flex: 1; width: 100%; height: 100%; background: var(--bg2); z-index: 1; }
+.map-loading { position: absolute; inset: 0; background: rgba(13,17,23,0.85); backdrop-filter: blur(8px); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; text-align: center; padding: 2rem; color: var(--txt); }
+.spinner { width: 44px; height: 44px; border: 4px solid rgba(0,199,129,0.2); border-top-color: var(--green); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* KEPLER TOOLTIP */
+.kepler-tooltip-container { background: transparent; border: none; box-shadow: none; padding: 0; pointer-events: none; }
+.kepler-tooltip { background: #29323c; color: #fff; font-family: 'Inter', system-ui, sans-serif; padding: 14px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.35); min-width: 320px; font-size: 0.85rem; z-index: 2000; }
+.kepler-tooltip .kt-header { font-weight: 500; color: #fff; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 6px; }
+.kepler-tooltip .kt-icon { color: #a0a7b4; font-size: 1rem; }
+.kepler-tooltip .kt-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; gap: 12px; }
+.kepler-tooltip .kt-label { color: #a0a7b4; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px; font-weight: 400; }
+.kepler-tooltip .kt-val { color: #fff; font-weight: 500; text-align: right; white-space: nowrap; }
+.kepler-tooltip .kt-vencedor .kt-val { font-weight: 800; }
+.leaflet-tooltip-left.kepler-tooltip-container::before, .leaflet-tooltip-right.kepler-tooltip-container::before, .leaflet-tooltip-top.kepler-tooltip-container::before, .leaflet-tooltip-bottom.kepler-tooltip-container::before { display: none !important; }
+
 /* MUNDO */
 .world-main { flex: 1; padding: 2rem; }
 .world-wrap { max-width: 960px; margin: 0 auto; }

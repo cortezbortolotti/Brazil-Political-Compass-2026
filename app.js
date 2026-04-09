@@ -340,6 +340,7 @@ var IMAGE_CACHE = {};
 var ANSWER_VALUES = [2, 1, 0, -1, -2];
 var currentLang = localStorage.getItem("lang") || "pt";
 var dark = localStorage.getItem("theme") !== "light";
+var electionMapInstance = null;
 window.randomizeDevPos = function() {
     S.pos.economic = Math.floor(Math.random() * 201) - 100;
     S.pos.social = Math.floor(Math.random() * 201) - 100;
@@ -529,9 +530,10 @@ function applyI18n() {
             logoTitle: "Back to home",
             photoAlt: "Palacio do Planalto",
             footerPrivacy: "Your answers are not stored.",
-            electionsTitle: "Election Panel",
-            electionsDesc: "This page is under construction. Soon, election statistics and data will be available here.",
-            electionsBack: "← Back"
+            electionsTitle: "Election Maps",
+            electionsCardType: "Presidency of the Republic",
+            electionsBack: "← Back",
+            electionsPrefix: "Elections"
         }
         : currentLang === "es"
             ? {
@@ -539,18 +541,20 @@ function applyI18n() {
                 logoTitle: "Volver al inicio",
                 photoAlt: "Palacio do Planalto",
                 footerPrivacy: "Tus respuestas no se almacenan.",
-                electionsTitle: "Panel de Elecciones",
-                electionsDesc: "Esta página está en construcción. Pronto habrá estadísticas y datos electorales disponibles aquí.",
-                electionsBack: "← Volver"
+                electionsTitle: "Mapas Electorales",
+                electionsCardType: "Presidencia de la República",
+                electionsBack: "← Volver",
+                electionsPrefix: "Elecciones"
             }
             : {
                 logoAlt: "Seção Eleitoral",
                 logoTitle: "Voltar ao início",
                 photoAlt: "Palácio do Planalto",
                 footerPrivacy: "Suas respostas não são armazenadas.",
-                electionsTitle: "Painel de Eleições",
-                electionsDesc: "Esta página está em construção. Em breve, estatísticas e dados eleitorais estarão disponíveis aqui.",
-                electionsBack: "← Voltar"
+                electionsTitle: "Mapas Eleitorais",
+                electionsCardType: "Presidência da República",
+                electionsBack: "← Voltar",
+                electionsPrefix: "Eleições"
             };
 
     document.querySelectorAll(".logo").forEach(function(logo) {
@@ -564,14 +568,19 @@ function applyI18n() {
     var footerLines = document.querySelectorAll(".footer p");
     if (footerLines[1]) footerLines[1].textContent = staticCopy.footerPrivacy;
 
-    var electionsTitle = document.querySelector("#t-eleicoes h2");
+    var electionsTitle = document.querySelector("#t-eleicoes .world-header h2");
     if (electionsTitle) electionsTitle.textContent = staticCopy.electionsTitle;
+    
+    var electionsCardType = document.querySelector("#t-eleicoes .map-card-v-info p");
+    if (electionsCardType) electionsCardType.textContent = staticCopy.electionsCardType;
 
-    var electionsDesc = document.querySelector("#t-eleicoes main p");
-    if (electionsDesc) electionsDesc.textContent = staticCopy.electionsDesc;
+    var btnBackMap = document.getElementById("btn-back-map");
+    if (btnBackMap) btnBackMap.textContent = staticCopy.electionsBack;
 
-    var electionsBack = document.querySelector("#t-eleicoes .btn-p");
-    if (electionsBack) electionsBack.textContent = staticCopy.electionsBack;
+    var mapaTitulo = document.getElementById("mapa-titulo");
+    if (mapaTitulo && window._lastElectionYear) {
+        mapaTitulo.textContent = staticCopy.electionsPrefix + " " + window._lastElectionYear;
+    }
 
     if (document.getElementById("modal-modo")) configurarModalModo(S.quiz || "brazil");
     if (S.perguntas.length && document.getElementById("t-quiz").classList.contains("ativa")) renderQ();
@@ -611,6 +620,21 @@ function aplicarTema() {
     });
     if (window._lastBrazilResult && document.getElementById("t-resultado").classList.contains("ativa")) resultadoBrasil(false);
     if (window._lastWorldData && document.getElementById("t-mundo").classList.contains("ativa")) resultadoMundo(false);
+    
+    if (window.electionMapInstance) {
+        var tileUrl = dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+        window.electionMapInstance.eachLayer(function(layer) {
+            if (layer._url && layer._url.indexOf('cartocdn.com') > -1) {
+                window.electionMapInstance.removeLayer(layer);
+            }
+        });
+        L.tileLayer(tileUrl, {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(window.electionMapInstance);
+        document.getElementById('mapEleicao').style.background = dark ? '#0e0e0e' : '#e5e5e5';
+    }
 }
 
 function startCountdown() {
@@ -2062,6 +2086,113 @@ function reiniciar() {
     fecharQR();
     fecharModalCand();
     ir("t-home");
+}
+
+function abrirMapaEleicao(ano) {
+    if (ano !== "1955") return;
+    window._lastElectionYear = ano;
+    ir("t-mapa-eleicao");
+    
+    setTimeout(function() {
+        if (!electionMapInstance) {
+            electionMapInstance = L.map("mapEleicao").setView([-14.235, -51.925], 4);
+            var tileUrl = dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+            L.tileLayer(tileUrl, {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20
+            }).addTo(electionMapInstance);
+            if (dark) document.getElementById('mapEleicao').style.background = '#0e0e0e';
+        } else {
+            electionMapInstance.invalidateSize();
+        }
+        
+        carregarDadosEleicao(ano);
+    }, 200);
+}
+
+function fecharMapaEleicao() {
+    ir("t-eleicoes");
+}
+
+async function carregarDadosEleicao(ano) {
+    var overlay = document.getElementById("map-loading");
+    if (overlay) overlay.style.display = "flex";
+    
+    try {
+        var url = ano === "1955" ? "1955 brasil presidente.geojson" : "data/" + ano + ".geojson";
+        var response = await fetch(url);
+        var geojsonData = await response.json();
+        
+        electionMapInstance.eachLayer(function(layer) {
+            if (layer instanceof L.GeoJSON) {
+                electionMapInstance.removeLayer(layer);
+            }
+        });
+        function getColorKepler(vencedor) {
+            if (!vencedor || vencedor === "NADA") return "#747474";
+            if (vencedor === "EMPATE") return "#e8e8e8";
+            
+            var colors = {
+                "PSD 20": "#4ed4ff", "PSD 30": "#2eccff", "PSD 40": "#0fc5ff", "PSD 50": "#00b6f0", "PSD 60": "#009fd1", "PSD 70": "#0083ad",
+                "UDN 30": "#5b6dc8", "UDN 40": "#4055bf", "UDN 50": "#384ba8", "UDN 60": "#304091", "UDN 70": "#29367a", "UDN 80": "#222d63", "UDN 90": "#1a224c",
+                "PSP 20": "#b6969a", "PSP 30": "#a1787d", "PSP 40": "#876569", "PSP 50": "#6e5255", "PSP 60": "#533e40", "PSP 70": "#3b2c2d",
+                "PRP 20": "#77d36f", "PRP 40": "#47c33c", "PRP 50": "#3ba432"
+            };
+            
+            return colors[vencedor] || "#888888";
+        }
+        
+        var geojsonLayer = L.geoJSON(geojsonData, {
+            style: function(feature) {
+                var c = getColorKepler(feature.properties.VENCEDOR || "");
+                return {
+                    color: "#ffffff",
+                    weight: 0.3,
+                    opacity: 1,
+                    fillOpacity: 1,
+                    fillColor: c
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var props = feature.properties;
+                var tooltipHtml = "<div class='kepler-tooltip'>" +
+                    "<div class='kt-row'><span class='kt-label'>Cidade</span><span class='kt-val'>" + (props.nome || "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>PSD %</span><span class='kt-val'>" + (props["PSD porcen"] !== null ? props["PSD porcen"] : "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props["UDN porcen"] !== null ? props["UDN porcen"] : "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props["PSP porcen"] !== null ? props["PSP porcen"] : "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>PRP %</span><span class='kt-val'>" + (props["PRP porcen"] !== null ? props["PRP porcen"] : "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Juscelino Kubitschek</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSD"] || "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Adhemar de Barros</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSP"] || "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Juarez Távora</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_UDN"] || "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Plínio Salgado</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PRP"] || "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Votos Nominais</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_Votos Nominais"] || "") + "</span></div>" +
+                "</div>";
+                
+                layer.bindTooltip(tooltipHtml, { sticky: true, className: "kepler-tooltip-container", direction: "auto", offset: [0, -10] });
+                
+                layer.on({
+                    mouseover: function(e) {
+                        var l = e.target;
+                        l.setStyle({ fillOpacity: 1, weight: 2, color: "#fff", opacity: 1 });
+                        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                            l.bringToFront();
+                        }
+                    },
+                    mouseout: function(e) {
+                        geojsonLayer.resetStyle(e.target);
+                    }
+                });
+            }
+        }).addTo(electionMapInstance);
+        
+        electionMapInstance.fitBounds(geojsonLayer.getBounds());
+    } catch (e) {
+        console.error("Erro ao carregar mapa " + ano, e);
+        alert("Erro ao carregar os dados do mapa.");
+    } finally {
+        if (overlay) overlay.style.display = "none";
+    }
 }
 
 function bindEvents() {

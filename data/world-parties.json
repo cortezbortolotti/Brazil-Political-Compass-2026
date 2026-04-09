@@ -73,6 +73,24 @@
                                                            },
                                               "color":  "#6AB023",
                                               "logo":  "data/logos/uk-green-party.png"
+                                          },
+                                          {
+                                              "name":  "Reform UK",
+                                              "position":  {
+                                                               "economic":  5,
+                                                               "social":  -5
+                                                           },
+                                              "color":  "#12B6CF",
+                                              "logo":  "data/logos/uk-reform-uk.png"
+                                          },
+                                          {
+                                              "name":  "Your Party",
+                                              "position":  {
+                                                               "economic":  -7,
+                                                               "social":  5
+                                                           },
+                                              "color":  "#D50000",
+                                              "logo":  "data/logos/uk-your-party.png"
                                           }
                                       ]
                       },
@@ -776,6 +794,87 @@
                                                            },
                                               "color":  "#EE0000",
                                               "logo":  "data/logos/netherlands-sp.png"
+                                          },
+                                          {
+                                              "name":  "SGP",
+                                              "position":  {
+                                                               "economic":  3,
+                                                               "social":  -7
+                                                           },
+                                              "color":  "#E95D0F",
+                                              "logo":  "data/logos/netherlands-sgp.png"
+                                          },
+                                          {
+                                              "name":  "CDA",
+                                              "position":  {
+                                                               "economic":  2,
+                                                               "social":  -2
+                                                           },
+                                              "color":  "#007C5E",
+                                              "logo":  "data/logos/netherlands-cda.png"
+                                          },
+                                          {
+                                              "name":  "ChristenUnie",
+                                              "position":  {
+                                                               "economic":  -1,
+                                                               "social":  -3
+                                                           },
+                                              "color":  "#00AEEF",
+                                              "logo":  "data/logos/netherlands-cu.png"
+                                          },
+                                          {
+                                              "name":  "FvD",
+                                              "position":  {
+                                                               "economic":  4,
+                                                               "social":  -7
+                                                           },
+                                              "color":  "#841818",
+                                              "logo":  "data/logos/netherlands-fvd.png"
+                                          },
+                                          {
+                                              "name":  "JA21",
+                                              "position":  {
+                                                               "economic":  4,
+                                                               "social":  -4
+                                                           },
+                                              "color":  "#242B57",
+                                              "logo":  "data/logos/netherlands-ja21.png"
+                                          },
+                                          {
+                                              "name":  "BBB",
+                                              "position":  {
+                                                               "economic":  2,
+                                                               "social":  -4
+                                                           },
+                                              "color":  "#92C01F",
+                                              "logo":  "data/logos/netherlands-bbb.png"
+                                          },
+                                          {
+                                              "name":  "DENK",
+                                              "position":  {
+                                                               "economic":  -3,
+                                                               "social":  -3
+                                                           },
+                                              "color":  "#44C8F5",
+                                              "logo":  "data/logos/netherlands-denk.png"
+                                          },
+                                          {
+                                              "name":  "PvdD",
+                                              "position":  {
+                                                               "economic":  -5,
+                                                               "social":  6
+                                                           },
+                                              "color":  "#006B2D",
+                                              "logo":  "data/logos/netherlands-pvdd.png"
+                                          },
+                                          {
+                                              "name":  "BIJ1",
+                                              "position":  {
+                                                               "economic":  -8,
+                                                               "social":  8
+                                                           },
+                                              "color":  "#FFFF00",
+                                              "logo":  "data/logos/netherlands-bij1.png"
                                           }
                                       ]
                       },

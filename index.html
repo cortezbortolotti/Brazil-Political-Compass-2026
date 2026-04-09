@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=2.0">
 <title>Compasso Pol&iacute;tico Brasil 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -171,6 +173,11 @@
                 <button class="nav-link ativo" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Eleições</button>
             </div>
             <div class="nav-r">
+                <div class="nav-lang">
+                    <button class="btn-lang" onclick="setLang('pt')">PT</button>
+                    <button class="btn-lang" onclick="setLang('en')">EN</button>
+                    <button class="btn-lang" onclick="setLang('es')">ES</button>
+                </div>
                 <button class="btn-theme" onclick="dark=!dark;aplicarTema()" aria-label="Alternar tema">🌙</button>
             </div>
         </nav>
@@ -179,11 +186,46 @@
             <button class="nav-link ativo" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Eleições</button>
         </div>
     </header>
-    <main class="hero hero-placeholder">
-        <div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800;">Painel de Eleições</h2>
-            <p style="color: var(--txt2); font-size: 1.1rem;">Esta página está em construção. Em breve, estatísticas e dados eleitorais estarão disponíveis aqui.</p>
-            <button class="btn-p" style="margin-top: 2rem;" onclick="ir('t-home')">← Voltar</button>
+    <main class="world-main">
+        <div class="world-wrap">
+            <div class="world-header">
+                <h2 style="font-size:2rem;font-weight:900;margin-bottom:1.5rem;">Mapas Eleitorais</h2>
+            </div>
+            <div class="eleicoes-grid" id="eleicoes-grid">
+                <div class="map-card-v" onclick="abrirMapaEleicao('1955')">
+                    <img src="mapa 1955.png" class="map-card-v-img" alt="Mapa 1955">
+                    <div class="map-card-v-info">
+                        <h3>Eleições Brasileiras de 1955</h3>
+                        <p>Presidência da República</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- TELA DE MAPA ELEIÇÃO INTERATIVO -->
+<div class="tela" id="t-mapa-eleicao">
+    <header class="header">
+        <nav class="nav">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <div class="nav-r">
+                <div class="nav-lang">
+                    <button class="btn-lang" onclick="setLang('pt')">PT</button>
+                    <button class="btn-lang" onclick="setLang('en')">EN</button>
+                    <button class="btn-lang" onclick="setLang('es')">ES</button>
+                </div>
+                <span class="counter" id="mapa-titulo" style="margin-right: 1.5rem;">Eleições 1955</span>
+                <button class="btn-ghost" id="btn-back-map" onclick="fecharMapaEleicao()">← Voltar</button>
+                <button class="btn-theme" onclick="dark=!dark;aplicarTema()" aria-label="Alternar tema">🌙</button>
+            </div>
+        </nav>
+    </header>
+    <main class="mapa-eleicao-main">
+        <div id="mapEleicao"></div>
+        <div id="map-loading" class="map-loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Carregando mapa (pode demorar alguns segundos)...</p>
         </div>
     </main>
 </div>
