@@ -1599,6 +1599,24 @@ window.APP_STATIC_DATA = {
                                                                                 },
                                                                    "color":  "#FFEF00",
                                                                    "logo":  "data/logos/italy-movimento-5-stelle.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Forza Italia",
+                                                                   "position":  {
+                                                                                    "economic":  4,
+                                                                                    "social":  0
+                                                                                },
+                                                                   "color":  "#0087DC",
+                                                                   "logo":  "data/logos/italy-forza-italia.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Azione",
+                                                                   "position":  {
+                                                                                    "economic":  2,
+                                                                                    "social":  3
+                                                                                },
+                                                                   "color":  "#014A8E",
+                                                                   "logo":  "data/logos/italy-azione.png"
                                                                }
                                                            ]
                                            },
@@ -2048,7 +2066,7 @@ window.APP_STATIC_DATA = {
                                                                                     "social":  5
                                                                                 },
                                                                    "color":  "#DA291C",
-                                                                   "logo":  "data/logos/sweden-v-nsterpartiet.png"
+                                                                   "logo":  "data/logos/sweden-vansterpartiet.png"
                                                                },
                                                                {
                                                                    "name":  "Liberalerna",
@@ -2507,7 +2525,7 @@ window.APP_STATIC_DATA = {
                                                                                     "social":  0
                                                                                 },
                                                                    "color":  "#0065F1",
-                                                                   "logo":  "data/logos/norway-h-yre.png"
+                                                                   "logo":  "data/logos/norway-hoyre.png"
                                                                },
                                                                {
                                                                    "name":  "Arbeiderpartiet",
