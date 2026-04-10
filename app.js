@@ -2159,8 +2159,8 @@ async function carregarDadosEleicao(ano) {
                 var tooltipHtml = "<div class='kepler-tooltip'>" +
                     "<div class='kt-row'><span class='kt-label'>Cidade</span><span class='kt-val'>" + (props.nome || "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>PSD %</span><span class='kt-val'>" + (props["PSD porcen"] !== null ? props["PSD porcen"] : "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props["UDN porcen"] !== null ? props["UDN porcen"] : "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props["PSP porcen"] !== null ? props["PSP porcen"] : "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props["UDN porcen"] !== null ? props["UDN porcen"] : "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>PRP %</span><span class='kt-val'>" + (props["PRP porcen"] !== null ? props["PRP porcen"] : "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>Juscelino Kubitschek</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSD"] || "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>Adhemar de Barros</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSP"] || "") + "</span></div>" +
@@ -2204,7 +2204,7 @@ function bindEvents() {
         });
     }
 
-    document.getElementById("btn-brasil").addEventListener("click", function() { abrirModalModo("brazil"); });
+    document.getElementById("btn-brasil").addEventListener("click", function() { abrirModal("modal-construcao"); });
     document.getElementById("btn-mundo").addEventListener("click", function() { abrirModalModo("world"); });
     document.getElementById("opt-rapido").addEventListener("click", function() { fecharModal("modal-modo"); iniciarQuiz(S.quiz, "quick"); });
     document.getElementById("opt-completo").addEventListener("click", function() { fecharModal("modal-modo"); iniciarQuiz(S.quiz, "full"); });
@@ -2241,6 +2241,11 @@ function bindEvents() {
         if (event.target.id === "modal-modo") fecharModal("modal-modo");
     });
 
+    document.getElementById("btn-fechar-construcao").addEventListener("click", function() { fecharModal("modal-construcao"); });
+    document.getElementById("modal-construcao").addEventListener("click", function(event) {
+        if (event.target.id === "modal-construcao") fecharModal("modal-construcao");
+    });
+
     document.getElementById("modal-pais").addEventListener("click", function(event) {
         if (event.target.id === "modal-pais") fecharModal("modal-pais");
     });
@@ -2257,6 +2262,7 @@ function bindEvents() {
     document.addEventListener("keydown", function(event) {
         if (event.key !== "Escape") return;
         fecharModal("modal-modo");
+        fecharModal("modal-construcao");
         fecharModal("modal-pais");
         fecharQR();
         fecharModalCand();
