@@ -2168,12 +2168,12 @@ async function carregarDadosEleicao(ano) {
                 var tooltipHtml = "<div class='kepler-tooltip'>" +
                     "<div class='kt-row'><span class='kt-label'>Cidade</span><span class='kt-val'>" + (props.nome || "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>PSD %</span><span class='kt-val'>" + (props["PSD porcen"] !== null ? props["PSD porcen"] : "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props["PSP porcen"] !== null ? props["PSP porcen"] : "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props["UDN porcen"] !== null ? props["UDN porcen"] : "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props["PSP porcen"] !== null ? props["PSP porcen"] : "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>PRP %</span><span class='kt-val'>" + (props["PRP porcen"] !== null ? props["PRP porcen"] : "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>Juscelino Kubitschek</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSD"] || "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>Adhemar de Barros</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSP"] || "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>Juarez Távora</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_UDN"] || "") + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Adhemar de Barros</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSP"] || "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>Plínio Salgado</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PRP"] || "") + "</span></div>" +
                     "<div class='kt-row'><span class='kt-label'>Votos Nominais</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_Votos Nominais"] || "") + "</span></div>" +
                 "</div>";
