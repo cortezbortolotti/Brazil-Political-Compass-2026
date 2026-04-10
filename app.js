@@ -24,6 +24,9 @@ var UI_COPY = {
         home_stats_questions: "Perguntas no Brasil",
         home_stats_world_questions: "Perguntas no Mundo",
         home_stats_countries: "Países comparados",
+        const_title: "Modo Brasil em Construção",
+        const_sub: "A base de dados oficial para as Eleições 2026 está sendo preparada. Estará disponível em breve!",
+        const_btn: "Entendi",
         countdown_title: "1º Turno",
         countdown_done: "Em andamento",
         quiz_exit: "Sair",
@@ -136,6 +139,9 @@ var UI_COPY = {
         home_stats_questions: "Brazil questions",
         home_stats_world_questions: "World questions",
         home_stats_countries: "Countries compared",
+        const_title: "Brazil Mode Under Construction",
+        const_sub: "The official database for the 2026 Elections is being prepared. It will be available soon!",
+        const_btn: "Understood",
         countdown_title: "Round 1",
         countdown_done: "Live now",
         quiz_exit: "Exit",
@@ -241,6 +247,9 @@ var UI_COPY = {
         home_stats_questions: "Preguntas de Brasil",
         home_stats_world_questions: "Preguntas del Mundo",
         home_stats_countries: "Países comparados",
+        const_title: "Modo Brasil en Construcción",
+        const_sub: "La base de datos oficial para las Elecciones 2026 se está preparando. ¡Estará disponible pronto!",
+        const_btn: "Entendido",
         countdown_title: "1ª Vuelta",
         countdown_done: "En curso",
         quiz_exit: "Salir",
@@ -2134,10 +2143,10 @@ async function carregarDadosEleicao(ano) {
             if (vencedor === "EMPATE") return "#e8e8e8";
             
             var colors = {
-                "PSD 20": "#4ed4ff", "PSD 30": "#2eccff", "PSD 40": "#0fc5ff", "PSD 50": "#00b6f0", "PSD 60": "#009fd1", "PSD 70": "#0083ad",
+                "PSD 20": "#4ed4ff", "PSD 30": "#2eccff", "PSD 40": "#0fc5ff", "PSD 50": "#00b6f0", "PSD 60": "#009fd1", "PSD 70": "#0083ad", "PSD 80": "#00678a", "PSD 90": "#004c66",
                 "UDN 30": "#5b6dc8", "UDN 40": "#4055bf", "UDN 50": "#384ba8", "UDN 60": "#304091", "UDN 70": "#29367a", "UDN 80": "#222d63", "UDN 90": "#1a224c",
                 "PSP 20": "#b6969a", "PSP 30": "#a1787d", "PSP 40": "#876569", "PSP 50": "#6e5255", "PSP 60": "#533e40", "PSP 70": "#3b2c2d",
-                "PRP 20": "#77d36f", "PRP 40": "#47c33c", "PRP 50": "#3ba432"
+                "PRP 20": "#77d36f", "PRP 30": "#5fcc55", "PRP 40": "#47c33c", "PRP 50": "#3ba432", "PRP 70": "#287a20"
             };
             
             return colors[vencedor] || "#888888";
