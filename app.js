@@ -2264,7 +2264,7 @@ function bindEvents() {
     });
 
     window.addEventListener("popstate", function() {
-        var hash = window.location.hash.replace(/^#/, "") || "t-home";
+        var hash = window.location.hash.replace(/^#/, "") || "t-eleicoes";
         ir(hash, false);
     });
 
@@ -2284,6 +2284,6 @@ document.addEventListener("DOMContentLoaded", function() {
     aplicarTema();
     startCountdown();
     carregarResumoHome();
-    var hash = window.location.hash.replace(/^#/, "") || "t-home";
+    var hash = window.location.hash.replace(/^#/, "") || "t-eleicoes";
     ir(hash, false);
 });

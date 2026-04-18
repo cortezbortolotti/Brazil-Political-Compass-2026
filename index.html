@@ -12,12 +12,12 @@
 <body>
 
 <!-- TELA 1: HOME -->
-<div class="tela ativa" id="t-home">
+<div class="tela" id="t-home">
     <header class="header">
         <nav class="nav">
-            <img src="logo.png" class="logo" alt="Se&ccedil;&atilde;o Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao in&iacute;cio">
+            <img src="logo.png" class="logo" alt="Se&ccedil;&atilde;o Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao in&iacute;cio">
             <div class="nav-links">
-                <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')" aria-label="Compasso Político" aria-current="page">Compasso Pol&iacute;tico</button>
+                <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')" aria-label="Compasso Político" aria-current="page" style="display:none">Compasso Pol&iacute;tico</button>
                 <button class="nav-link" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')" aria-label="Eleições">Elei&ccedil;&otilde;es</button>
             </div>
             <div class="nav-r">
@@ -31,7 +31,7 @@
             </div>
         </nav>
         <div class="nav-links-mobile">
-            <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')">Compasso Pol&iacute;tico</button>
+            <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')" style="display:none">Compasso Pol&iacute;tico</button>
             <button class="nav-link" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Elei&ccedil;&otilde;es</button>
         </div>
     </header>
@@ -111,7 +111,7 @@
     <header class="header">
         <div class="progress-wrap"><div class="progress" id="progress"></div></div>
         <nav class="nav">
-            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
             <div class="nav-r">
                 <span class="counter" id="counter">Questão 1 de 70</span>
                 <div class="nav-lang">
@@ -146,7 +146,7 @@
 <div class="tela" id="t-resultado">
     <header class="header">
         <nav class="nav">
-            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
             <div class="nav-r">
                 <div class="nav-lang">
                     <button class="btn-lang" onclick="setLang('pt')">PT</button>
@@ -167,9 +167,9 @@
 <div class="tela" id="t-eleicoes">
     <header class="header">
         <nav class="nav">
-            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
             <div class="nav-links">
-                <button class="nav-link" data-i18n="nav_compasso" onclick="ir('t-home')">Compasso Político</button>
+                <button class="nav-link" data-i18n="nav_compasso" onclick="ir('t-home')" style="display:none">Compasso Político</button>
                 <button class="nav-link ativo" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Eleições</button>
             </div>
             <div class="nav-r">
@@ -182,7 +182,7 @@
             </div>
         </nav>
         <div class="nav-links-mobile">
-            <button class="nav-link" data-i18n="nav_compasso" onclick="ir('t-home')">Compasso Político</button>
+            <button class="nav-link" data-i18n="nav_compasso" onclick="ir('t-home')" style="display:none">Compasso Político</button>
             <button class="nav-link ativo" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Eleições</button>
         </div>
     </header>
@@ -208,7 +208,7 @@
 <div class="tela" id="t-mapa-eleicao">
     <header class="header">
         <nav class="nav">
-            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
             <div class="nav-r">
                 <div class="nav-lang">
                     <button class="btn-lang" onclick="setLang('pt')">PT</button>
@@ -234,7 +234,7 @@
 <div class="tela" id="t-mundo">
     <header class="header">
         <nav class="nav">
-            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao início">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
             <div class="nav-r">
                 <div class="nav-lang">
                     <button class="btn-lang" onclick="setLang('pt')">PT</button>
