@@ -17,14 +17,14 @@
         <nav class="nav">
             <img src="logo.png" class="logo" alt="Se&ccedil;&atilde;o Eleitoral" onerror="this.style.display='none'" onclick="ir('t-home')" style="cursor:pointer" title="Voltar ao in&iacute;cio">
             <div class="nav-links">
-                <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')">Compasso Pol&iacute;tico</button>
-                <button class="nav-link" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')">Elei&ccedil;&otilde;es</button>
+                <button class="nav-link ativo" data-i18n="nav_compasso" onclick="ir('t-home')" aria-label="Compasso Político" aria-current="page">Compasso Pol&iacute;tico</button>
+                <button class="nav-link" data-i18n="nav_eleicoes" onclick="ir('t-eleicoes')" aria-label="Eleições">Elei&ccedil;&otilde;es</button>
             </div>
             <div class="nav-r">
                 <div class="nav-lang">
-                    <button class="btn-lang ativo" onclick="setLang('pt')">PT</button>
-                    <button class="btn-lang" onclick="setLang('en')">EN</button>
-                    <button class="btn-lang" onclick="setLang('es')">ES</button>
+                    <button class="btn-lang ativo" onclick="setLang('pt')" aria-label="Português" aria-current="language">PT</button>
+                    <button class="btn-lang" onclick="setLang('en')" aria-label="English">EN</button>
+                    <button class="btn-lang" onclick="setLang('es')" aria-label="Español">ES</button>
                 </div>
                 <button class="btn-apoie" onclick="abrirQR()" data-i18n="nav_apoie">Apoie o Projeto</button>
                 <button class="btn-theme" id="btn-theme">&#127769;</button>
@@ -58,8 +58,8 @@
                 <span class="hero-chip" data-i18n="home_chip3">Mapa interativo em 20 pa&iacute;ses</span>
             </div>
             <div class="btns">
-                <button class="btn-p" id="btn-brasil"><img src="brazil-flag.png" class="btn-flag" alt="Bandeira do Brasil" data-i18n="home_btn_brasil"> Modo Brasil</button>
-                <button class="btn-s" id="btn-mundo">&#127757; Modo Mundo</button>
+                <button class="btn-p" id="btn-brasil" aria-label="Iniciar quiz no modo Brasil"><img src="brazil-flag.png" class="btn-flag" alt="Bandeira do Brasil" data-i18n="home_btn_brasil"> Modo Brasil</button>
+                <button class="btn-s" id="btn-mundo" aria-label="Iniciar quiz no modo Mundo">&#127757; Modo Mundo</button>
             </div>
             <!-- DEV buttons (desativados — reativar quando necessário)
             <div class="btns" style="margin-top: 15px; gap: 10px;">
@@ -261,16 +261,16 @@
 </div>
 
 <!-- MODAL CONSTRUÇÃO -->
-<div class="modal" id="modal-construcao">
+<div class="modal" id="modal-construcao" role="dialog" aria-modal="true" aria-labelledby="const-title">
     <div class="modal-box" style="text-align: center; max-width: 400px;">
-        <h2 class="m-title" data-i18n="const_title">Modo Brasil em Construção</h2>
+        <h2 class="m-title" id="const-title" data-i18n="const_title">Modo Brasil em Construção</h2>
         <p class="m-sub" style="margin-bottom: 2rem;" data-i18n="const_sub">A base de dados oficial para as Eleições 2026 está sendo preparada. Estará disponível em breve!</p>
         <button class="m-cancel" id="btn-fechar-construcao" style="width: 100%; max-width: none; background: var(--border); color: var(--txt);" data-i18n="const_btn">Entendi</button>
     </div>
 </div>
 
 <!-- MODAL MODO -->
-<div class="modal" id="modal-modo">
+<div class="modal" id="modal-modo" role="dialog" aria-modal="true" aria-labelledby="modo-titulo">
     <div class="modal-box">
         <span class="m-emoji" id="modo-emoji"><img src="brazil-flag.png" class="m-emoji-flag modo-flag" alt="Bandeira do Brasil"></span>
         <h2 class="m-title" id="modo-titulo">Escolha o Modo</h2>
@@ -292,13 +292,13 @@
 </div>
 
 <!-- MODAL PAÃƒÂS -->
-<div class="modal" id="modal-pais">
+<div class="modal" id="modal-pais" role="dialog" aria-modal="true" aria-labelledby="pais-nome">
     <div class="pais-box">
-        <button class="pais-fechar" id="pais-fechar">×</button>
+        <button class="pais-fechar" id="pais-fechar" aria-label="Fechar modal de país">×</button>
         <div class="pais-header">
             <span class="pais-flag" id="pais-flag"></span>
             <div>
-                <div class="pais-nome" id="pais-nome"></div>
+                <div class="pais-nome" id="pais-nome" role="heading" aria-level="2"></div>
                 <div class="pais-sub-txt">Ranking de afinidade política</div>
             </div>
         </div>
@@ -958,9 +958,9 @@
 
 
 <!-- Modal de Comparação de Candidatos -->
-<div class="modal-cand" id="modal-comparacao">
+<div class="modal-cand" id="modal-comparacao" role="dialog" aria-modal="true">
     <div class="modal-cand-content">
-        <button class="modal-cand-close" onclick="fecharModalCand()" aria-label="Fechar modal">&times;</button>
+        <button class="modal-cand-close" onclick="fecharModalCand()" aria-label="Fechar modal de comparação">&times;</button>
         <div id="mc-header" style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);"></div>
         <div id="mc-body"></div>
     </div>
