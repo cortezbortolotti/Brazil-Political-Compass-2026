@@ -2,7 +2,7 @@ var LANGS = ["pt", "en", "es"];
 
 var UI_COPY = {
     pt: {
-        page_title: "Compasso Político Brasil 2026",
+        page_title: "Seção Eleitoral",
         nav_compasso: "Compasso Político",
         nav_eleicoes: "Eleições",
         nav_apoie: "Apoie o Projeto",
@@ -117,7 +117,7 @@ var UI_COPY = {
         }
     },
     en: {
-        page_title: "Political Compass Brazil 2026",
+        page_title: "Electoral Section",
         nav_compasso: "Political Compass",
         nav_eleicoes: "Elections",
         nav_apoie: "Support the Project",
@@ -225,7 +225,7 @@ var UI_COPY = {
         }
     },
     es: {
-        page_title: "Compás Político Brasil 2026",
+        page_title: "Sección Electoral",
         nav_compasso: "Compás Político",
         nav_eleicoes: "Elecciones",
         nav_apoie: "Apoya el Proyecto",
