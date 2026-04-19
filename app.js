@@ -458,6 +458,12 @@ function ir(id, push) {
     if (push === void 0) push = true;
     var target = document.getElementById(id);
     if (!target) return;
+    if (id === "t-rmsp") {
+        var rmspFrame = document.getElementById("rmsp-iframe");
+        if (rmspFrame && !rmspFrame.getAttribute("src") && typeof RMSP_URL !== "undefined") {
+            rmspFrame.setAttribute("src", RMSP_URL);
+        }
+    }
     document.querySelectorAll(".tela").forEach(function(screen) {
         screen.classList.toggle("ativa", screen.id === id);
     });
@@ -580,8 +586,9 @@ function applyI18n() {
     var electionsTitle = document.querySelector("#t-eleicoes .world-header h2");
     if (electionsTitle) electionsTitle.textContent = staticCopy.electionsTitle;
     
-    var electionsCardType = document.querySelector("#t-eleicoes .map-card-v-info p");
-    if (electionsCardType) electionsCardType.textContent = staticCopy.electionsCardType;
+    document.querySelectorAll("#t-eleicoes [data-i18n-election-type]").forEach(function(node) {
+        node.textContent = staticCopy.electionsCardType;
+    });
 
     var btnBackMap = document.getElementById("btn-back-map");
     if (btnBackMap) btnBackMap.textContent = staticCopy.electionsBack;
