@@ -2124,6 +2124,18 @@ function fecharMapaEleicao() {
     ir("t-eleicoes");
 }
 
+var RMSP_URL = "https://secaoeleitoral.github.io/RM-SP-1994-2004/";
+function abrirRMSP() {
+    var iframe = document.getElementById("rmsp-iframe");
+    if (iframe && !iframe.getAttribute("src")) {
+        iframe.setAttribute("src", RMSP_URL);
+    }
+    ir("t-rmsp");
+}
+function fecharRMSP() {
+    ir("t-eleicoes");
+}
+
 async function carregarDadosEleicao(ano) {
     var overlay = document.getElementById("map-loading");
     if (overlay) overlay.style.display = "flex";

@@ -199,6 +199,13 @@
                         <p>Presidência da República</p>
                     </div>
                 </div>
+                <div class="map-card-v" onclick="abrirRMSP()" aria-label="Abrir mapa RMSP 1994-2004">
+                    <div class="map-card-v-placeholder">RMSP 1994–2004</div>
+                    <div class="map-card-v-info">
+                        <h3>Região Metropolitana de SP</h3>
+                        <p>Eleições 1994–2004 · Presidente, Governador, Senador</p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -227,6 +234,22 @@
             <div class="spinner"></div>
             <p>Carregando mapa (pode demorar alguns segundos)...</p>
         </div>
+    </main>
+</div>
+
+<!-- TELA RMSP 1994-2004 (iframe externo) -->
+<div class="tela" id="t-rmsp">
+    <header class="header">
+        <nav class="nav">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
+            <div class="nav-r">
+                <span class="counter" style="margin-right: 1.5rem;">RMSP 1994–2004</span>
+                <button class="btn-ghost" onclick="fecharRMSP()">← Voltar</button>
+            </div>
+        </nav>
+    </header>
+    <main class="rmsp-iframe-main">
+        <iframe id="rmsp-iframe" title="RMSP 1994-2004" loading="lazy" allow="fullscreen"></iframe>
     </main>
 </div>
 
