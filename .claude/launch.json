@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8000"],
       "port": 8000
+    },
+    {
+      "name": "dev-server-rmsp",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8002", "--directory", "D:\\Downloads\\EL2002_search (1)\\EL2002"],
+      "port": 8002
     }
   ]
 }
