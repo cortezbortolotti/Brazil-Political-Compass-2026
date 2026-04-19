@@ -2131,7 +2131,7 @@ function fecharMapaEleicao() {
     ir("t-eleicoes");
 }
 
-var RMSP_URL = "http://localhost:8002/";
+var RMSP_URL = "rmsp/";
 function abrirRMSP() {
     var iframe = document.getElementById("rmsp-iframe");
     if (iframe && !iframe.getAttribute("src")) {
