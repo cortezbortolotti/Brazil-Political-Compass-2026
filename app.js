@@ -548,7 +548,10 @@ function applyI18n() {
             electionsTitle: "Election Maps",
             electionsCardType: "Presidency of the Republic",
             electionsBack: "← Back",
-            electionsPrefix: "Elections"
+            electionsPrefix: "Elections",
+            rmspTitle: "São Paulo Metropolitan Region",
+            rmspDesc: "Elections 1994–2004 · President, Governor, Senator and Mayors",
+            el1955Title: "1955 Brazilian Elections"
         }
         : currentLang === "es"
             ? {
@@ -559,7 +562,10 @@ function applyI18n() {
                 electionsTitle: "Mapas Electorales",
                 electionsCardType: "Presidencia de la República",
                 electionsBack: "← Volver",
-                electionsPrefix: "Elecciones"
+                electionsPrefix: "Elecciones",
+                rmspTitle: "Región Metropolitana de SP",
+                rmspDesc: "Elecciones 1994–2004 · Presidente, Gobernador, Senador y Alcaldes",
+                el1955Title: "Elecciones Brasileñas de 1955"
             }
             : {
                 logoAlt: "Seção Eleitoral",
@@ -569,7 +575,10 @@ function applyI18n() {
                 electionsTitle: "Mapas Eleitorais",
                 electionsCardType: "Presidência da República",
                 electionsBack: "← Voltar",
-                electionsPrefix: "Eleições"
+                electionsPrefix: "Eleições",
+                rmspTitle: "Região Metropolitana de SP",
+                rmspDesc: "Eleições 1994–2004 · Presidente, Governador, Senador e Prefeitos",
+                el1955Title: "Eleições Brasileiras de 1955"
             };
 
     document.querySelectorAll(".logo").forEach(function(logo) {
@@ -588,6 +597,15 @@ function applyI18n() {
     
     document.querySelectorAll("#t-eleicoes [data-i18n-election-type]").forEach(function(node) {
         node.textContent = staticCopy.electionsCardType;
+    });
+    document.querySelectorAll("[data-i18n-rmsp-title]").forEach(function(node) {
+        node.textContent = staticCopy.rmspTitle;
+    });
+    document.querySelectorAll("[data-i18n-rmsp-desc]").forEach(function(node) {
+        node.textContent = staticCopy.rmspDesc;
+    });
+    document.querySelectorAll("[data-i18n-1955-title]").forEach(function(node) {
+        node.textContent = staticCopy.el1955Title;
     });
 
     var btnBackMap = document.getElementById("btn-back-map");
