@@ -551,7 +551,14 @@ function applyI18n() {
             electionsPrefix: "Elections",
             rmspTitle: "São Paulo Metropolitan Region",
             rmspDesc: "Elections 1994–2004 · President, Governor, Senator and Mayors",
-            el1955Title: "1955 Brazilian Elections"
+            el1955Title: "1955 Brazilian Elections",
+            pleb1993Title: "1993 Plebiscite",
+            pleb1993Desc: "Form and System of Government",
+            pleb1993Counter: "1993 Plebiscite",
+            pleb1993Back: "← Back",
+            pleb1993Forma: "Form of Government · Monarchy × Republic",
+            pleb1993Sistema: "System of Government · Presidentialism × Parliamentarism",
+            pleb1993Loading: "Loading plebiscite data..."
         }
         : currentLang === "es"
             ? {
@@ -565,7 +572,14 @@ function applyI18n() {
                 electionsPrefix: "Elecciones",
                 rmspTitle: "Región Metropolitana de SP",
                 rmspDesc: "Elecciones 1994–2004 · Presidente, Gobernador, Senador y Alcaldes",
-                el1955Title: "Elecciones Brasileñas de 1955"
+                el1955Title: "Elecciones Brasileñas de 1955",
+                pleb1993Title: "Plebiscito de 1993",
+                pleb1993Desc: "Forma y Sistema de Gobierno",
+                pleb1993Counter: "Plebiscito 1993",
+                pleb1993Back: "← Volver",
+                pleb1993Forma: "Forma de Gobierno · Monarquía × República",
+                pleb1993Sistema: "Sistema de Gobierno · Presidencialismo × Parlamentarismo",
+                pleb1993Loading: "Cargando datos del plebiscito..."
             }
             : {
                 logoAlt: "Seção Eleitoral",
@@ -578,7 +592,14 @@ function applyI18n() {
                 electionsPrefix: "Eleições",
                 rmspTitle: "Região Metropolitana de SP",
                 rmspDesc: "Eleições 1994–2004 · Presidente, Governador, Senador e Prefeitos",
-                el1955Title: "Eleições Brasileiras de 1955"
+                el1955Title: "Eleições Brasileiras de 1955",
+                pleb1993Title: "Plebiscito de 1993",
+                pleb1993Desc: "Forma e Sistema de Governo",
+                pleb1993Counter: "Plebiscito 1993",
+                pleb1993Back: "← Voltar",
+                pleb1993Forma: "Forma de Governo · Monarquia × República",
+                pleb1993Sistema: "Sistema de Governo · Presidencialismo × Parlamentarismo",
+                pleb1993Loading: "Carregando dados do plebiscito..."
             };
 
     document.querySelectorAll(".logo").forEach(function(logo) {
@@ -607,6 +628,13 @@ function applyI18n() {
     document.querySelectorAll("[data-i18n-1955-title]").forEach(function(node) {
         node.textContent = staticCopy.el1955Title;
     });
+    document.querySelectorAll("[data-i18n-pleb1993-title]").forEach(function(n) { n.textContent = staticCopy.pleb1993Title; });
+    document.querySelectorAll("[data-i18n-pleb1993-desc]").forEach(function(n) { n.textContent = staticCopy.pleb1993Desc; });
+    document.querySelectorAll("[data-i18n-pleb1993-counter]").forEach(function(n) { n.textContent = staticCopy.pleb1993Counter; });
+    document.querySelectorAll("[data-i18n-pleb1993-back]").forEach(function(n) { n.textContent = staticCopy.pleb1993Back; });
+    document.querySelectorAll("[data-i18n-pleb1993-forma]").forEach(function(n) { n.textContent = staticCopy.pleb1993Forma; });
+    document.querySelectorAll("[data-i18n-pleb1993-sistema]").forEach(function(n) { n.textContent = staticCopy.pleb1993Sistema; });
+    document.querySelectorAll("[data-i18n-pleb1993-loading]").forEach(function(n) { n.textContent = staticCopy.pleb1993Loading; });
 
     var btnBackMap = document.getElementById("btn-back-map");
     if (btnBackMap) btnBackMap.textContent = staticCopy.electionsBack;
@@ -2147,6 +2175,103 @@ function abrirMapaEleicao(ano) {
 
 function fecharMapaEleicao() {
     ir("t-eleicoes");
+}
+
+var plebiscitoMapInstance = null;
+var _plebiscitoQuestion = "forma";
+
+function abrirPlebiscito1993() {
+    ir("t-plebiscito-1993");
+    setTimeout(function() {
+        if (!plebiscitoMapInstance) {
+            plebiscitoMapInstance = L.map("mapPlebiscito").setView([-14.235, -51.925], 4);
+            var tileUrl = dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+            L.tileLayer(tileUrl, {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20
+            }).addTo(plebiscitoMapInstance);
+            if (dark) document.getElementById('mapPlebiscito').style.background = '#0e0e0e';
+        } else {
+            plebiscitoMapInstance.invalidateSize();
+        }
+        carregarPlebiscito(_plebiscitoQuestion);
+    }, 200);
+}
+
+function fecharPlebiscito1993() {
+    ir("t-eleicoes");
+}
+
+function setPlebiscito(questao) {
+    _plebiscitoQuestion = questao;
+    document.querySelectorAll(".plebiscito-chip").forEach(function(chip) {
+        chip.classList.toggle("ativo", chip.dataset.pleb === questao);
+    });
+    if (plebiscitoMapInstance) carregarPlebiscito(questao);
+}
+
+async function carregarPlebiscito(questao) {
+    var overlay = document.getElementById("plebiscito-loading");
+    if (overlay) overlay.style.display = "flex";
+
+    // Remove camadas geojson anteriores
+    plebiscitoMapInstance.eachLayer(function(layer) {
+        if (layer instanceof L.GeoJSON) {
+            plebiscitoMapInstance.removeLayer(layer);
+        }
+    });
+
+    try {
+        var url = "1993-" + questao + ".geojson";
+        var response = await fetch(url);
+        if (!response.ok) throw new Error("arquivo não encontrado: " + url);
+        var geojsonData = await response.json();
+
+        function getColorPleb(vencedor) {
+            if (!vencedor || vencedor === "NADA") return "#747474";
+            if (vencedor === "EMPATE") return "#e8e8e8";
+            // Forma: Monarquia / República
+            if (vencedor === "MONARQUIA") return "#7a5195";
+            if (vencedor === "REPÚBLICA" || vencedor === "REPUBLICA") return "#00c781";
+            // Sistema: Presidencialismo / Parlamentarismo
+            if (vencedor === "PRESIDENCIALISMO") return "#1f6feb";
+            if (vencedor === "PARLAMENTARISMO") return "#ef4444";
+            return "#747474";
+        }
+
+        L.geoJSON(geojsonData, {
+            style: function(feature) {
+                return {
+                    fillColor: getColorPleb(feature.properties && feature.properties.vencedor),
+                    weight: 0.5,
+                    opacity: 1,
+                    color: '#333',
+                    fillOpacity: 0.85
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var props = feature.properties || {};
+                var nome = props.nome || props.NOME || props.name || "";
+                var vencedor = props.vencedor || "";
+                layer.bindTooltip("<strong>" + nome + "</strong><br>" + vencedor, { sticky: true });
+            }
+        }).addTo(plebiscitoMapInstance);
+    } catch (e) {
+        console.warn("[Plebiscito 1993] dados indisponíveis:", e.message);
+        if (overlay) {
+            var p = overlay.querySelector("p");
+            if (p) p.textContent = (typeof currentLang !== "undefined" && currentLang === "en")
+                ? "Data being prepared. Come back soon!"
+                : (typeof currentLang !== "undefined" && currentLang === "es")
+                    ? "Datos en preparación. ¡Vuelve pronto!"
+                    : "Dados em preparação. Volte em breve!";
+            overlay.style.display = "flex";
+            return;
+        }
+    }
+
+    if (overlay) overlay.style.display = "none";
 }
 
 var RMSP_URL = "rmsp/";

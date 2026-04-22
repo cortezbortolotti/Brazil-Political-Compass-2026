@@ -309,6 +309,15 @@ body.dark-mode {
 #t-mapa-eleicao .btn-theme { font-size: 0.9rem; padding: 0.25rem 0.5rem; }
 .rmsp-iframe-main { flex: 1; position: relative; width: 100%; height: calc(100vh - 44px); height: calc(100dvh - 44px); }
 .rmsp-iframe-main iframe { width: 100%; height: 100%; border: 0; display: block; background: var(--bg); }
+#t-plebiscito-1993 .nav { height: 44px; padding: 0 1rem; }
+#t-plebiscito-1993 .logo { height: 22px; }
+#t-plebiscito-1993 .counter { font-size: 0.85rem; margin-right: 0.75rem !important; }
+#t-plebiscito-1993 .btn-ghost { padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+.plebiscito-toggle { display: flex; gap: 0.5rem; padding: 0.75rem 1rem; background: var(--bg2); border-bottom: 1px solid var(--border); flex-wrap: wrap; flex-shrink: 0; }
+.plebiscito-chip { padding: 0.5rem 1rem; background: transparent; border: 1px solid var(--border); border-radius: 999px; color: var(--txt2-contrast, var(--txt2)); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.plebiscito-chip:hover { border-color: var(--green); color: var(--txt); }
+.plebiscito-chip.ativo { background: var(--green); border-color: var(--green); color: #000; }
+#mapPlebiscito { flex: 1; width: 100%; background: var(--bg2); z-index: 1; }
 
 /* MAPA ELEIÇÃO INTERATIVO (Leaflet) */
 .mapa-eleicao-main { flex: 1; position: relative; display: flex; flex-direction: column; width: 100%; height: calc(100vh - 44px); height: calc(100dvh - 44px); }

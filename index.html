@@ -192,6 +192,13 @@
                 <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.25rem;">Mapas Eleitorais</h2>
             </div>
             <div class="eleicoes-grid" id="eleicoes-grid">
+                <div class="map-card-v" onclick="abrirPlebiscito1993()" aria-label="Abrir mapa Plebiscito 1993">
+                    <div class="map-card-v-placeholder">Plebiscito 1993</div>
+                    <div class="map-card-v-info">
+                        <h3 data-i18n-pleb1993-title>Plebiscito de 1993</h3>
+                        <p data-i18n-pleb1993-desc>Forma e Sistema de Governo</p>
+                    </div>
+                </div>
                 <div class="map-card-v" onclick="abrirRMSP()" aria-label="Abrir mapa RMSP 1994-2004">
                     <img src="rmsp-cover.png" class="map-card-v-img" alt="Mapa RMSP 1994-2004">
                     <div class="map-card-v-info">
@@ -233,6 +240,30 @@
         <div id="map-loading" class="map-loading" style="display: none;">
             <div class="spinner"></div>
             <p>Carregando mapa (pode demorar alguns segundos)...</p>
+        </div>
+    </main>
+</div>
+
+<!-- TELA PLEBISCITO 1993 -->
+<div class="tela" id="t-plebiscito-1993">
+    <header class="header">
+        <nav class="nav">
+            <img src="logo.png" class="logo" alt="Seção Eleitoral" onerror="this.style.display='none'" onclick="ir('t-eleicoes')" style="cursor:pointer" title="Voltar ao início">
+            <div class="nav-r">
+                <span class="counter" data-i18n-pleb1993-counter style="margin-right: 1.5rem;">Plebiscito 1993</span>
+                <button class="btn-ghost" onclick="fecharPlebiscito1993()" data-i18n-pleb1993-back>← Voltar</button>
+            </div>
+        </nav>
+    </header>
+    <main class="mapa-eleicao-main">
+        <div class="plebiscito-toggle">
+            <button class="plebiscito-chip ativo" onclick="setPlebiscito('forma')" data-pleb="forma" data-i18n-pleb1993-forma>Forma de Governo · Monarquia × República</button>
+            <button class="plebiscito-chip" onclick="setPlebiscito('sistema')" data-pleb="sistema" data-i18n-pleb1993-sistema>Sistema de Governo · Presidencialismo × Parlamentarismo</button>
+        </div>
+        <div id="mapPlebiscito"></div>
+        <div id="plebiscito-loading" class="map-loading" style="display:none;">
+            <div class="spinner"></div>
+            <p data-i18n-pleb1993-loading>Carregando dados do plebiscito...</p>
         </div>
     </main>
 </div>
