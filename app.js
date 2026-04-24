@@ -2223,10 +2223,16 @@ async function carregarPlebiscito(questao) {
     });
 
     try {
-        var url = "1993-" + questao + ".geojson";
-        var response = await fetch(url);
-        if (!response.ok) throw new Error("arquivo não encontrado: " + url);
-        var geojsonData = await response.json();
+        // Carregar Brasil e países estrangeiros em paralelo
+        var [responseBr, responseMundo] = await Promise.all([
+            fetch("1993-" + questao + ".geojson"),
+            fetch("1993-" + questao + "-mundo.geojson")
+        ]);
+        if (!responseBr.ok) throw new Error("arquivo não encontrado: 1993-" + questao + ".geojson");
+        var [geojsonData, geojsonMundo] = await Promise.all([
+            responseBr.json(),
+            responseMundo.ok ? responseMundo.json() : Promise.resolve(null)
+        ]);
 
         function getColorPleb(vencedor, pctValue) {
             // pctValue: percentual (0-100) para gradiente — mapeia 20% → 100%
@@ -2355,6 +2361,50 @@ async function carregarPlebiscito(questao) {
                 });
             }
         }).addTo(plebiscitoMapInstance);
+
+        // Layer de países estrangeiros (por cima do Brasil)
+        if (geojsonMundo) {
+            var isSistemaMundo = questao === "sistema";
+            L.geoJSON(geojsonMundo, {
+                style: function(feature) {
+                    var props = feature.properties || {};
+                    var vencedor = props.vencedor || "";
+                    var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
+                    return {
+                        fillColor: getColorPleb(vencedor, pct),
+                        weight: 0.3,
+                        opacity: 1,
+                        color: '#ffffff',
+                        fillOpacity: vencedor === "NADA" ? 0 : 1,
+                        lineCap: 'round',
+                        lineJoin: 'round'
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    var props = feature.properties || {};
+                    var nome = props.nome_pt || props.nome || "";
+                    var vencedor = props.vencedor || "";
+                    if (vencedor === "NADA") return;
+                    var total = props.total || 0;
+                    var tooltipHtml = "<div class='kepler-tooltip'>" +
+                        "<div class='kt-row'><span class='kt-label'>País</span><span class='kt-val'>" + nome + "</span></div>";
+                    if (isSistemaMundo) {
+                        tooltipHtml +=
+                            "<div class='kt-row'><span class='kt-label'>Presidencialismo %</span><span class='kt-val'>" + (props.pres_pct || 0).toFixed(2) + "</span></div>" +
+                            "<div class='kt-row'><span class='kt-label'>Parlamentarismo %</span><span class='kt-val'>" + (props.parl_pct || 0).toFixed(2) + "</span></div>";
+                    } else {
+                        tooltipHtml +=
+                            "<div class='kt-row'><span class='kt-label'>República %</span><span class='kt-val'>" + (props.rep_pct || 0).toFixed(2) + "</span></div>" +
+                            "<div class='kt-row'><span class='kt-label'>Monarquia %</span><span class='kt-val'>" + (props.mon_pct || 0).toFixed(2) + "</span></div>";
+                    }
+                    tooltipHtml +=
+                        "<div class='kt-row'><span class='kt-label'>Votos Totais</span><span class='kt-val'>" + total + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Vencedor</span><span class='kt-val'><strong>" + vencedor + "</strong></span></div>" +
+                        "</div>";
+                    layer.bindTooltip(tooltipHtml, { sticky: true, className: "kepler-tooltip-container", direction: "auto", offset: [0, -10] });
+                }
+            }).addTo(plebiscitoMapInstance);
+        }
     } catch (e) {
         console.warn("[Plebiscito 1993] dados indisponíveis:", e.message);
         if (overlay) {
