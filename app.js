@@ -2283,7 +2283,9 @@ async function carregarPlebiscito(questao) {
                     weight: 0.3,
                     opacity: 1,
                     color: '#ffffff',
-                    fillOpacity: 1
+                    fillOpacity: 1,
+                    lineCap: 'round',
+                    lineJoin: 'round'
                 };
             },
             onEachFeature: function(feature, layer) {
