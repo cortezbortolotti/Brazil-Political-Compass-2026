@@ -558,7 +558,7 @@ function applyI18n() {
             pleb1993Back: "← Back",
             pleb1993Forma: "Form of Government · Monarchy × Republic",
             pleb1993Sistema: "System of Government · Presidentialism × Parliamentarism",
-            pleb1993Loading: "Loading plebiscite data..."
+            pleb1993Loading: "Loading map..."
         }
         : currentLang === "es"
             ? {
@@ -579,7 +579,7 @@ function applyI18n() {
                 pleb1993Back: "← Volver",
                 pleb1993Forma: "Forma de Gobierno · Monarquía × República",
                 pleb1993Sistema: "Sistema de Gobierno · Presidencialismo × Parlamentarismo",
-                pleb1993Loading: "Cargando datos del plebiscito..."
+                pleb1993Loading: "Cargando mapa..."
             }
             : {
                 logoAlt: "Seção Eleitoral",
@@ -599,7 +599,7 @@ function applyI18n() {
                 pleb1993Back: "← Voltar",
                 pleb1993Forma: "Forma de Governo · Monarquia × República",
                 pleb1993Sistema: "Sistema de Governo · Presidencialismo × Parlamentarismo",
-                pleb1993Loading: "Carregando dados do plebiscito..."
+                pleb1993Loading: "Carregando mapa..."
             };
 
     document.querySelectorAll(".logo").forEach(function(logo) {
