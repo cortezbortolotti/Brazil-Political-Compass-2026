@@ -2229,12 +2229,13 @@ async function carregarPlebiscito(questao) {
         var geojsonData = await response.json();
 
         function getColorPleb(vencedor, pctValue) {
-            // pctValue: percentual (0-100) para gradiente
+            // pctValue: percentual (0-100) para gradiente — mapeia 20% → 100%
             if (!vencedor || vencedor === "NADA") return "#747474";
             if (vencedor === "EMPATE") return "#e8e8e8";
 
-            // Normalizar percentual [0-1]
-            var t = Math.max(0, Math.min(100, pctValue || 50)) / 100;
+            // Mapear 20% = cor clara (t=0), 100% = cor escura (t=1)
+            var pct = Math.max(0, Math.min(100, pctValue || 50));
+            var t = Math.max(0, Math.min(1, (pct - 20) / 80)); // (20% → 100%)
 
             // Interpolação linear entre cores
             function lerpColor(c1, c2, t) {
@@ -2252,22 +2253,22 @@ async function carregarPlebiscito(questao) {
                 return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
             }
 
-            // Gradientes: cores claras (20%) → escuras (80%)
+            // Gradientes: cores claras (20%) → escuras (90%)
             if (vencedor === "REPÚBLICA" || vencedor === "REPUBLICA") {
-                // Verde: #77d36f (claro) → #1a5a2d (escuro)
-                return lerpColor("#77d36f", "#1a5a2d", t * 0.6 + 0.2); // Vai de 20% a 80%
+                // Verde PSL: #77d36f (claro) → #173e13 (escuro)
+                return lerpColor("#77d36f", "#173e13", t);
             }
             if (vencedor === "MONARQUIA") {
-                // Amarelo: #ffd700 (claro) → #b8860b (escuro)
-                return lerpColor("#ffd700", "#b8860b", t * 0.6 + 0.2);
+                // Amarelo PSB: #f0db75 (claro) → #73620c (escuro)
+                return lerpColor("#f0db75", "#73620c", t);
             }
             if (vencedor === "PRESIDENCIALISMO") {
-                // Verde (igual República)
-                return lerpColor("#77d36f", "#1a5a2d", t * 0.6 + 0.2);
+                // Verde PSL (igual República)
+                return lerpColor("#77d36f", "#173e13", t);
             }
             if (vencedor === "PARLAMENTARISMO") {
-                // Amarelo (igual Monarquia)
-                return lerpColor("#ffd700", "#b8860b", t * 0.6 + 0.2);
+                // Amarelo PSB (igual Monarquia)
+                return lerpColor("#f0db75", "#73620c", t);
             }
             return "#747474";
         }
