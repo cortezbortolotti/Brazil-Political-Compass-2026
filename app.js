@@ -2279,7 +2279,7 @@ async function carregarPlebiscito(questao) {
                 var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
                 return {
                     fillColor: getColorPleb(vencedor, pct),
-                    weight: 0.8,
+                    weight: 0.3,
                     opacity: 1,
                     color: '#ffffff',
                     fillOpacity: 1
@@ -2335,12 +2335,12 @@ async function carregarPlebiscito(questao) {
                     offset: [0, -10]
                 });
 
-                // Hover effects (inspirado em 1955)
+                // Hover effects (igual a 1955)
                 layer.on({
                     mouseover: function(e) {
                         var l = e.target;
                         l.setStyle({
-                            weight: 1.2,
+                            weight: 2,
                             color: '#fff',
                             opacity: 1
                         });
