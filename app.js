@@ -2215,12 +2215,12 @@ async function carregarPlebiscito(questao) {
     var overlay = document.getElementById("plebiscito-loading");
     if (overlay) overlay.style.display = "flex";
 
-    // Remove camadas geojson anteriores
+    // Remove camadas geojson anteriores (coleta antes de remover para evitar bug de iteração)
+    var layersToRemove = [];
     plebiscitoMapInstance.eachLayer(function(layer) {
-        if (layer instanceof L.GeoJSON) {
-            plebiscitoMapInstance.removeLayer(layer);
-        }
+        if (layer instanceof L.GeoJSON) layersToRemove.push(layer);
     });
+    layersToRemove.forEach(function(l) { plebiscitoMapInstance.removeLayer(l); });
 
     try {
         // Carregar Brasil e países estrangeiros em paralelo
