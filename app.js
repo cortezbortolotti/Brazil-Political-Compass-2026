@@ -2179,6 +2179,7 @@ function fecharMapaEleicao() {
 
 var plebiscitoMapInstance = null;
 var _plebiscitoQuestion = "forma";
+var _plebiscitoCache = {}; // cache dos GeoJSONs para não re-fazer fetch
 
 function abrirPlebiscito1993() {
     ir("t-plebiscito-1993");
@@ -2223,16 +2224,26 @@ async function carregarPlebiscito(questao) {
     layersToRemove.forEach(function(l) { plebiscitoMapInstance.removeLayer(l); });
 
     try {
-        // Carregar Brasil e países estrangeiros em paralelo
-        var [responseBr, responseMundo] = await Promise.all([
-            fetch("1993-" + questao + ".geojson"),
-            fetch("1993-" + questao + "-mundo.geojson")
-        ]);
-        if (!responseBr.ok) throw new Error("arquivo não encontrado: 1993-" + questao + ".geojson");
-        var [geojsonData, geojsonMundo] = await Promise.all([
-            responseBr.json(),
-            responseMundo.ok ? responseMundo.json() : Promise.resolve(null)
-        ]);
+        // Usar cache se disponível; senão buscar
+        var keyBr = "br-" + questao;
+        var keyMundo = "mundo-" + questao;
+
+        if (!_plebiscitoCache[keyBr]) {
+            var rBr = await fetch("1993-" + questao + ".geojson");
+            if (!rBr.ok) throw new Error("arquivo não encontrado: 1993-" + questao + ".geojson");
+            _plebiscitoCache[keyBr] = await rBr.json();
+        }
+        var geojsonData = _plebiscitoCache[keyBr];
+
+        if (!_plebiscitoCache[keyMundo]) {
+            try {
+                var rMundo = await fetch("1993-" + questao + "-mundo.geojson");
+                _plebiscitoCache[keyMundo] = rMundo.ok ? await rMundo.json() : null;
+            } catch (e) {
+                _plebiscitoCache[keyMundo] = null;
+            }
+        }
+        var geojsonMundo = _plebiscitoCache[keyMundo];
 
         function getColorPleb(vencedor, pctValue) {
             // pctValue: percentual (0-100) para gradiente — mapeia 20% → 100%
