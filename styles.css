@@ -314,7 +314,7 @@ body.dark-mode {
 #t-plebiscito-1993 .counter { font-size: 0.85rem; margin-right: 0.75rem !important; }
 #t-plebiscito-1993 .btn-ghost { padding: 0.35rem 0.75rem; font-size: 0.85rem; }
 .plebiscito-toggle { display: flex; gap: 0.5rem; padding: 0.75rem 1rem; background: var(--bg2); border-bottom: 1px solid var(--border); flex-wrap: wrap; flex-shrink: 0; }
-.plebiscito-chip { padding: 0.5rem 1rem; background: transparent; border: 1px solid var(--border); border-radius: 999px; color: var(--txt2-contrast, var(--txt2)); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.plebiscito-chip { padding: 0.25rem 0.6rem; background: transparent; border: 1px solid var(--border); border-radius: 999px; color: var(--txt2-contrast, var(--txt2)); font-size: 0.7rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
 .plebiscito-chip:hover { border-color: var(--green); color: var(--txt); }
 .plebiscito-chip.ativo { background: var(--green); border-color: var(--green); color: #000; }
 #mapPlebiscito { flex: 1; width: 100%; background: var(--bg2); z-index: 1; }
