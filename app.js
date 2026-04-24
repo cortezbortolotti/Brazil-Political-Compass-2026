@@ -558,7 +558,10 @@ function applyI18n() {
             pleb1993Back: "← Back",
             pleb1993Forma: "Form of Government · Monarchy × Republic",
             pleb1993Sistema: "System of Government · Presidentialism × Parliamentarism",
-            pleb1993Loading: "Loading map..."
+            pleb1993Loading: "Loading map...",
+            creditsPleb: "Credits: data organized by @opotiguar based on TRE information",
+            creditsRmsp: "Credits: CEM USP",
+            credits1955: "Credits: Chamber of Deputies of Brazil"
         }
         : currentLang === "es"
             ? {
@@ -579,7 +582,10 @@ function applyI18n() {
                 pleb1993Back: "← Volver",
                 pleb1993Forma: "Forma de Gobierno · Monarquía × República",
                 pleb1993Sistema: "Sistema de Gobierno · Presidencialismo × Parlamentarismo",
-                pleb1993Loading: "Cargando mapa..."
+                pleb1993Loading: "Cargando mapa...",
+                creditsPleb: "Créditos: datos organizados por @opotiguar a partir de información de los TREs",
+                creditsRmsp: "Créditos: CEM USP",
+                credits1955: "Créditos: Cámara de Diputados de Brasil"
             }
             : {
                 logoAlt: "Seção Eleitoral",
@@ -599,7 +605,10 @@ function applyI18n() {
                 pleb1993Back: "← Voltar",
                 pleb1993Forma: "Forma de Governo · Monarquia × República",
                 pleb1993Sistema: "Sistema de Governo · Presidencialismo × Parlamentarismo",
-                pleb1993Loading: "Carregando mapa..."
+                pleb1993Loading: "Carregando mapa...",
+                creditsPleb: "Créditos: organização dos dados por @opotiguar a partir de informações dos TREs",
+                creditsRmsp: "Créditos: CEM USP",
+                credits1955: "Créditos: Câmara dos Deputados do Brasil"
             };
 
     document.querySelectorAll(".logo").forEach(function(logo) {
@@ -635,6 +644,9 @@ function applyI18n() {
     document.querySelectorAll("[data-i18n-pleb1993-forma]").forEach(function(n) { n.textContent = staticCopy.pleb1993Forma; });
     document.querySelectorAll("[data-i18n-pleb1993-sistema]").forEach(function(n) { n.textContent = staticCopy.pleb1993Sistema; });
     document.querySelectorAll("[data-i18n-pleb1993-loading]").forEach(function(n) { n.textContent = staticCopy.pleb1993Loading; });
+    document.querySelectorAll("[data-i18n-credits-pleb]").forEach(function(n) { n.textContent = staticCopy.creditsPleb; });
+    document.querySelectorAll("[data-i18n-credits-rmsp]").forEach(function(n) { n.textContent = staticCopy.creditsRmsp; });
+    document.querySelectorAll("[data-i18n-credits-1955]").forEach(function(n) { n.textContent = staticCopy.credits1955; });
 
     var btnBackMap = document.getElementById("btn-back-map");
     if (btnBackMap) btnBackMap.textContent = staticCopy.electionsBack;
@@ -696,6 +708,21 @@ function aplicarTema() {
             maxZoom: 20
         }).addTo(window.electionMapInstance);
         document.getElementById('mapEleicao').style.background = dark ? '#0e0e0e' : '#e5e5e5';
+    }
+
+    if (window.plebiscitoMapInstance) {
+        var plebTileUrl = dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+        window.plebiscitoMapInstance.eachLayer(function(layer) {
+            if (layer._url && layer._url.indexOf('cartocdn.com') > -1) {
+                window.plebiscitoMapInstance.removeLayer(layer);
+            }
+        });
+        L.tileLayer(plebTileUrl, {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(window.plebiscitoMapInstance);
+        document.getElementById('mapPlebiscito').style.background = dark ? '#0e0e0e' : '#e5e5e5';
     }
 }
 
