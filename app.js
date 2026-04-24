@@ -2228,33 +2228,91 @@ async function carregarPlebiscito(questao) {
         if (!response.ok) throw new Error("arquivo não encontrado: " + url);
         var geojsonData = await response.json();
 
-        function getColorPleb(vencedor) {
+        function getColorPleb(vencedor, pctValue) {
+            // pctValue: percentual (0-100) para gradiente
             if (!vencedor || vencedor === "NADA") return "#747474";
             if (vencedor === "EMPATE") return "#e8e8e8";
-            // Forma: Monarquia / República
-            if (vencedor === "MONARQUIA") return "#7a5195";
-            if (vencedor === "REPÚBLICA" || vencedor === "REPUBLICA") return "#00c781";
-            // Sistema: Presidencialismo / Parlamentarismo
-            if (vencedor === "PRESIDENCIALISMO") return "#1f6feb";
-            if (vencedor === "PARLAMENTARISMO") return "#ef4444";
+
+            // Normalizar percentual [0-1]
+            var t = Math.max(0, Math.min(100, pctValue || 50)) / 100;
+
+            // Interpolação linear entre cores
+            function lerpColor(c1, c2, t) {
+                var r1 = parseInt(c1.substring(1, 3), 16);
+                var g1 = parseInt(c1.substring(3, 5), 16);
+                var b1 = parseInt(c1.substring(5, 7), 16);
+                var r2 = parseInt(c2.substring(1, 3), 16);
+                var g2 = parseInt(c2.substring(3, 5), 16);
+                var b2 = parseInt(c2.substring(5, 7), 16);
+
+                var r = Math.round(r1 + (r2 - r1) * t);
+                var g = Math.round(g1 + (g2 - g1) * t);
+                var b = Math.round(b1 + (b2 - b1) * t);
+
+                return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+            }
+
+            // Gradientes: cores claras (20%) → escuras (80%)
+            if (vencedor === "REPÚBLICA" || vencedor === "REPUBLICA") {
+                // Verde: #77d36f (claro) → #1a5a2d (escuro)
+                return lerpColor("#77d36f", "#1a5a2d", t * 0.6 + 0.2); // Vai de 20% a 80%
+            }
+            if (vencedor === "MONARQUIA") {
+                // Amarelo: #ffd700 (claro) → #b8860b (escuro)
+                return lerpColor("#ffd700", "#b8860b", t * 0.6 + 0.2);
+            }
+            if (vencedor === "PRESIDENCIALISMO") {
+                // Verde (igual República)
+                return lerpColor("#77d36f", "#1a5a2d", t * 0.6 + 0.2);
+            }
+            if (vencedor === "PARLAMENTARISMO") {
+                // Amarelo (igual Monarquia)
+                return lerpColor("#ffd700", "#b8860b", t * 0.6 + 0.2);
+            }
             return "#747474";
         }
 
-        L.geoJSON(geojsonData, {
+        var geojsonLayer = L.geoJSON(geojsonData, {
             style: function(feature) {
+                var props = feature.properties || {};
+                var vencedor = props.vencedor || "";
+                var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
                 return {
-                    fillColor: getColorPleb(feature.properties && feature.properties.vencedor),
-                    weight: 0.5,
+                    fillColor: getColorPleb(vencedor, pct),
+                    weight: 0.3,
                     opacity: 1,
-                    color: '#333',
-                    fillOpacity: 0.85
+                    color: '#ffffff',
+                    fillOpacity: 1
                 };
             },
             onEachFeature: function(feature, layer) {
                 var props = feature.properties || {};
                 var nome = props.nome || props.NOME || props.name || "";
                 var vencedor = props.vencedor || "";
-                layer.bindTooltip("<strong>" + nome + "</strong><br>" + vencedor, { sticky: true });
+                var pct = (props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 0).toFixed(2);
+
+                var tooltipHtml = "<strong>" + nome + "</strong><br>" + vencedor;
+                if (vencedor !== "NADA" && vencedor !== "EMPATE") {
+                    tooltipHtml += "<br>" + pct + "%";
+                }
+
+                layer.bindTooltip(tooltipHtml, { sticky: true });
+
+                // Hover effects (inspirado em 1955)
+                layer.on({
+                    mouseover: function(e) {
+                        var l = e.target;
+                        l.setStyle({
+                            weight: 2,
+                            color: '#fff',
+                            opacity: 1
+                        });
+                        l.bringToFront();
+                    },
+                    mouseout: function(e) {
+                        geojsonLayer.resetStyle(e.target);
+                    }
+                });
             }
         }).addTo(plebiscitoMapInstance);
     } catch (e) {
