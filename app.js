@@ -2377,16 +2377,23 @@ async function carregarPlebiscito(questao) {
         if (geojsonMundo) {
             var isSistemaMundo = questao === "sistema";
             L.geoJSON(geojsonMundo, {
+                filter: function(feature) {
+                    // Excluir o polígono do Brasil — os municípios já cobrem o território
+                    var nome = (feature.properties || {}).nome || "";
+                    return nome !== "Brazil";
+                },
                 style: function(feature) {
                     var props = feature.properties || {};
                     var vencedor = props.vencedor || "";
                     var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
+                    var semDado = vencedor === "NADA";
                     return {
                         fillColor: getColorPleb(vencedor, pct),
-                        weight: 0.3,
-                        opacity: 1,
+                        weight: semDado ? 0 : 0.3,
+                        opacity: semDado ? 0 : 1,
                         color: '#ffffff',
-                        fillOpacity: vencedor === "NADA" ? 0 : 1,
+                        fillOpacity: semDado ? 0 : 1,
+                        interactive: !semDado,
                         lineCap: 'round',
                         lineJoin: 'round'
                     };
