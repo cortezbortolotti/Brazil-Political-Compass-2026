@@ -239,6 +239,10 @@
         </nav>
     </header>
     <main class="mapa-eleicao-main">
+        <div class="plebiscito-toggle" id="el1955-toggle">
+            <button class="plebiscito-chip ativo" onclick="set1955Cargo('presidente')" data-cargo="presidente" data-i18n-1955-btn-pres>Presidente</button>
+            <button class="plebiscito-chip" onclick="set1955Cargo('vice')" data-cargo="vice" data-i18n-1955-btn-vice>Vice-Presidente</button>
+        </div>
         <div id="mapEleicao"></div>
         <div id="map-loading" class="map-loading" style="display: none;">
             <div class="spinner"></div>

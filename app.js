@@ -558,6 +558,8 @@ function applyI18n() {
             pleb1993Back: "← Back",
             pleb1993Forma: "Form of Government · Monarchy × Republic",
             pleb1993Sistema: "System of Government · Presidentialism × Parliamentarism",
+            el1955BtnPres: "President",
+            el1955BtnVice: "Vice President",
             pleb1993Loading: "Loading map...",
             creditsPleb: "Credits: data organized by @opotiguar based on TRE information",
             creditsRmsp: "Credits: CEM USP",
@@ -582,6 +584,8 @@ function applyI18n() {
                 pleb1993Back: "← Volver",
                 pleb1993Forma: "Forma de Gobierno · Monarquía × República",
                 pleb1993Sistema: "Sistema de Gobierno · Presidencialismo × Parlamentarismo",
+                el1955BtnPres: "Presidente",
+                el1955BtnVice: "Vicepresidente",
                 pleb1993Loading: "Cargando mapa...",
                 creditsPleb: "Créditos: datos organizados por @opotiguar a partir de información de los TREs",
                 creditsRmsp: "Créditos: CEM USP",
@@ -605,6 +609,8 @@ function applyI18n() {
                 pleb1993Back: "← Voltar",
                 pleb1993Forma: "Forma de Governo · Monarquia × República",
                 pleb1993Sistema: "Sistema de Governo · Presidencialismo × Parlamentarismo",
+                el1955BtnPres: "Presidente",
+                el1955BtnVice: "Vice-Presidente",
                 pleb1993Loading: "Carregando mapa...",
                 creditsPleb: "Créditos: organização dos dados por @opotiguar a partir de informações dos TREs",
                 creditsRmsp: "Créditos: CEM USP",
@@ -637,6 +643,8 @@ function applyI18n() {
     document.querySelectorAll("[data-i18n-1955-title]").forEach(function(node) {
         node.textContent = staticCopy.el1955Title;
     });
+    document.querySelectorAll("[data-i18n-1955-btn-pres]").forEach(function(n) { n.textContent = staticCopy.el1955BtnPres; });
+    document.querySelectorAll("[data-i18n-1955-btn-vice]").forEach(function(n) { n.textContent = staticCopy.el1955BtnVice; });
     document.querySelectorAll("[data-i18n-pleb1993-title]").forEach(function(n) { n.textContent = staticCopy.pleb1993Title; });
     document.querySelectorAll("[data-i18n-pleb1993-desc]").forEach(function(n) { n.textContent = staticCopy.pleb1993Desc; });
     document.querySelectorAll("[data-i18n-pleb1993-counter]").forEach(function(n) { n.textContent = staticCopy.pleb1993Counter; });
@@ -2180,6 +2188,10 @@ function reiniciar() {
 function abrirMapaEleicao(ano) {
     if (ano !== "1955") return;
     window._lastElectionYear = ano;
+    window._1955cargo = "presidente";
+    document.querySelectorAll("[data-cargo]").forEach(function(btn) {
+        btn.classList.toggle("ativo", btn.dataset.cargo === "presidente");
+    });
     ir("t-mapa-eleicao");
     
     setTimeout(function() {
@@ -2196,8 +2208,16 @@ function abrirMapaEleicao(ano) {
             electionMapInstance.invalidateSize();
         }
         
-        carregarDadosEleicao(ano);
+        carregarDadosEleicao(ano, window._1955cargo || "presidente");
     }, 200);
+}
+
+function set1955Cargo(cargo) {
+    window._1955cargo = cargo;
+    document.querySelectorAll("[data-cargo]").forEach(function(btn) {
+        btn.classList.toggle("ativo", btn.dataset.cargo === cargo);
+    });
+    if (electionMapInstance) carregarDadosEleicao("1955", cargo);
 }
 
 function fecharMapaEleicao() {
@@ -2479,77 +2499,110 @@ function fecharRMSP() {
     ir("t-eleicoes");
 }
 
-async function carregarDadosEleicao(ano) {
+var _el1955cache = {};
+
+async function carregarDadosEleicao(ano, cargo) {
+    cargo = cargo || "presidente";
     var overlay = document.getElementById("map-loading");
     if (overlay) overlay.style.display = "flex";
-    
+
     try {
-        var url = ano === "1955" ? "1955 brasil presidente.geojson" : "data/" + ano + ".geojson";
-        var response = await fetch(url);
-        var geojsonData = await response.json();
-        
+        var isVice = (ano === "1955" && cargo === "vice");
+        var cacheKey = ano + "-" + cargo;
+        var url = isVice ? "1955-vice.geojson"
+                : (ano === "1955" ? "1955 brasil presidente.geojson"
+                                  : "data/" + ano + ".geojson");
+
+        if (!_el1955cache[cacheKey]) {
+            var response = await fetch(url);
+            _el1955cache[cacheKey] = await response.json();
+        }
+        var geojsonData = _el1955cache[cacheKey];
+
+        // Remove camadas GeoJSON anteriores
+        var toRemove = [];
         electionMapInstance.eachLayer(function(layer) {
-            if (layer instanceof L.GeoJSON) {
-                electionMapInstance.removeLayer(layer);
-            }
+            if (layer instanceof L.GeoJSON) toRemove.push(layer);
         });
+        toRemove.forEach(function(l) { electionMapInstance.removeLayer(l); });
+
         function getColorKepler(vencedor) {
             if (!vencedor || vencedor === "NADA") return "#747474";
             if (vencedor === "EMPATE") return "#e8e8e8";
-            
             var colors = {
-                "PSD 20": "#4ed4ff", "PSD 30": "#2eccff", "PSD 40": "#0fc5ff", "PSD 50": "#00b6f0", "PSD 60": "#009fd1", "PSD 70": "#0083ad", "PSD 80": "#00678a", "PSD 90": "#004c66",
-                "UDN 30": "#5b6dc8", "UDN 40": "#4055bf", "UDN 50": "#384ba8", "UDN 60": "#304091", "UDN 70": "#29367a", "UDN 80": "#222d63", "UDN 90": "#1a224c",
-                "PSP 20": "#b6969a", "PSP 30": "#a1787d", "PSP 40": "#876569", "PSP 50": "#6e5255", "PSP 60": "#533e40", "PSP 70": "#3b2c2d",
-                "PRP 20": "#77d36f", "PRP 30": "#5fcc55", "PRP 40": "#47c33c", "PRP 50": "#3ba432", "PRP 70": "#287a20"
+                // Presidente — PSD (azul-ciano)
+                "PSD 20": "#4ed4ff", "PSD 30": "#2eccff", "PSD 40": "#0fc5ff",
+                "PSD 50": "#00b6f0", "PSD 60": "#009fd1", "PSD 70": "#0083ad",
+                "PSD 80": "#00678a", "PSD 90": "#004c66",
+                // Presidente — UDN (azul-escuro)
+                "UDN 30": "#5b6dc8", "UDN 40": "#4055bf", "UDN 50": "#384ba8",
+                "UDN 60": "#304091", "UDN 70": "#29367a", "UDN 80": "#222d63",
+                "UDN 90": "#1a224c",
+                // Presidente — PSP (marrom-rosado)
+                "PSP 20": "#b6969a", "PSP 30": "#a1787d", "PSP 40": "#876569",
+                "PSP 50": "#6e5255", "PSP 60": "#533e40", "PSP 70": "#3b2c2d",
+                // Presidente — PRP (verde)
+                "PRP 20": "#77d36f", "PRP 30": "#5fcc55", "PRP 40": "#47c33c",
+                "PRP 50": "#3ba432", "PRP 70": "#287a20",
+                // Vice — PTB/Goulart (vermelho)
+                "PTB 20": "#ff9090", "PTB 30": "#f06060", "PTB 40": "#de3a3a",
+                "PTB 50": "#c42020", "PTB 60": "#a81010", "PTB 70": "#8b0606",
+                "PTB 80": "#6e0303", "PTB 90": "#500101"
             };
-            
             return colors[vencedor] || "#888888";
         }
-        
+
         var geojsonLayer = L.geoJSON(geojsonData, {
             style: function(feature) {
-                var c = getColorKepler(feature.properties.VENCEDOR || "");
                 return {
                     color: "#ffffff",
                     weight: 0.3,
                     opacity: 1,
                     fillOpacity: 1,
-                    fillColor: c
+                    fillColor: getColorKepler(feature.properties.VENCEDOR || "")
                 };
             },
             onEachFeature: function(feature, layer) {
                 var props = feature.properties;
                 var tooltipHtml = "<div class='kepler-tooltip'>" +
-                    "<div class='kt-row'><span class='kt-label'>Cidade</span><span class='kt-val'>" + (props.nome || "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>PSD %</span><span class='kt-val'>" + (props["PSD porcen"] !== null ? props["PSD porcen"] : "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props["UDN porcen"] !== null ? props["UDN porcen"] : "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props["PSP porcen"] !== null ? props["PSP porcen"] : "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>PRP %</span><span class='kt-val'>" + (props["PRP porcen"] !== null ? props["PRP porcen"] : "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>Juscelino Kubitschek</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSD"] || "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>Juarez Távora</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_UDN"] || "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>Adhemar de Barros</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSP"] || "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>Plínio Salgado</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PRP"] || "") + "</span></div>" +
-                    "<div class='kt-row'><span class='kt-label'>Votos Nominais</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_Votos Nominais"] || "") + "</span></div>" +
-                "</div>";
-                
+                    "<div class='kt-row'><span class='kt-label'>Cidade</span><span class='kt-val'>" + (props.nome || "") + "</span></div>";
+
+                if (isVice) {
+                    tooltipHtml +=
+                        "<div class='kt-row'><span class='kt-label'>João Goulart (PTB)</span><span class='kt-val'>" + (props.PTB || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Milton Campos (UDN)</span><span class='kt-val'>" + (props.UDN || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Danton Coelho (PSP)</span><span class='kt-val'>" + (props.PSP || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>PTB %</span><span class='kt-val'>" + (props.PTB_pct !== null ? props.PTB_pct : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props.UDN_pct !== null ? props.UDN_pct : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props.PSP_pct !== null ? props.PSP_pct : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Votos Nominais</span><span class='kt-val'>" + (props.total || "") + "</span></div>";
+                } else {
+                    tooltipHtml +=
+                        "<div class='kt-row'><span class='kt-label'>PSD %</span><span class='kt-val'>" + (props["PSD porcen"] !== null ? props["PSD porcen"] : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>UDN %</span><span class='kt-val'>" + (props["UDN porcen"] !== null ? props["UDN porcen"] : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>PSP %</span><span class='kt-val'>" + (props["PSP porcen"] !== null ? props["PSP porcen"] : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>PRP %</span><span class='kt-val'>" + (props["PRP porcen"] !== null ? props["PRP porcen"] : "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Juscelino Kubitschek</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSD"] || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Juarez Távora</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_UDN"] || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Adhemar de Barros</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PSP"] || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Plínio Salgado</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_PRP"] || "") + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Votos Nominais</span><span class='kt-val'>" + (props["Banco de Dados - 1955 Presidente & Vice_Votos Nominais"] || "") + "</span></div>";
+                }
+
+                tooltipHtml += "</div>";
                 layer.bindTooltip(tooltipHtml, { sticky: true, className: "kepler-tooltip-container", direction: "auto", offset: [0, -10] });
-                
+
                 layer.on({
                     mouseover: function(e) {
                         var l = e.target;
                         l.setStyle({ fillOpacity: 1, weight: 2, color: "#fff", opacity: 1 });
-                        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                            l.bringToFront();
-                        }
+                        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) l.bringToFront();
                     },
-                    mouseout: function(e) {
-                        geojsonLayer.resetStyle(e.target);
-                    }
+                    mouseout: function(e) { geojsonLayer.resetStyle(e.target); }
                 });
             }
         }).addTo(electionMapInstance);
-        
+
         electionMapInstance.fitBounds(geojsonLayer.getBounds());
     } catch (e) {
         console.error("Erro ao carregar mapa " + ano, e);
