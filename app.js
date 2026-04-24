@@ -2279,7 +2279,7 @@ async function carregarPlebiscito(questao) {
                 var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
                 return {
                     fillColor: getColorPleb(vencedor, pct),
-                    weight: 0.3,
+                    weight: 0.8,
                     opacity: 1,
                     color: '#ffffff',
                     fillOpacity: 1
@@ -2289,21 +2289,58 @@ async function carregarPlebiscito(questao) {
                 var props = feature.properties || {};
                 var nome = props.nome || props.NOME || props.name || "";
                 var vencedor = props.vencedor || "";
-                var pct = (props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 0).toFixed(2);
+                var total = props.total || 0;
 
-                var tooltipHtml = "<strong>" + nome + "</strong><br>" + vencedor;
-                if (vencedor !== "NADA" && vencedor !== "EMPATE") {
-                    tooltipHtml += "<br>" + pct + "%";
+                // Determinar qual questão (Forma vs Sistema) e construir tooltip accordingly
+                var isSistema = props.pres_pct !== undefined;
+
+                var tooltipHtml = "<div class='kepler-tooltip'>" +
+                    "<div class='kt-row'><span class='kt-label'>Município</span><span class='kt-val'>" + nome + "</span></div>";
+
+                if (isSistema) {
+                    // Sistema: Presidencialismo vs Parlamentarismo
+                    var pres = props.presidencialismo || 0;
+                    var parl = props.parlamentarismo || 0;
+                    var presPct = (props.pres_pct || 0).toFixed(2);
+                    var parlPct = (props.parl_pct || 0).toFixed(2);
+
+                    tooltipHtml +=
+                        "<div class='kt-row'><span class='kt-label'>Presidencialismo %</span><span class='kt-val'>" + presPct + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Parlamentarismo %</span><span class='kt-val'>" + parlPct + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Presidencialismo</span><span class='kt-val'>" + pres + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Parlamentarismo</span><span class='kt-val'>" + parl + "</span></div>";
+                } else {
+                    // Forma: República vs Monarquia
+                    var rep = props.republica || 0;
+                    var mon = props.monarquia || 0;
+                    var repPct = (props.rep_pct || 0).toFixed(2);
+                    var monPct = (props.mon_pct || 0).toFixed(2);
+
+                    tooltipHtml +=
+                        "<div class='kt-row'><span class='kt-label'>República %</span><span class='kt-val'>" + repPct + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Monarquia %</span><span class='kt-val'>" + monPct + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>República</span><span class='kt-val'>" + rep + "</span></div>" +
+                        "<div class='kt-row'><span class='kt-label'>Monarquia</span><span class='kt-val'>" + mon + "</span></div>";
                 }
 
-                layer.bindTooltip(tooltipHtml, { sticky: true });
+                tooltipHtml +=
+                    "<div class='kt-row'><span class='kt-label'>Votos Totais</span><span class='kt-val'>" + total + "</span></div>" +
+                    "<div class='kt-row'><span class='kt-label'>Vencedor</span><span class='kt-val'><strong>" + vencedor + "</strong></span></div>" +
+                    "</div>";
+
+                layer.bindTooltip(tooltipHtml, {
+                    sticky: true,
+                    className: "kepler-tooltip-container",
+                    direction: "auto",
+                    offset: [0, -10]
+                });
 
                 // Hover effects (inspirado em 1955)
                 layer.on({
                     mouseover: function(e) {
                         var l = e.target;
                         l.setStyle({
-                            weight: 2,
+                            weight: 1.2,
                             color: '#fff',
                             opacity: 1
                         });
