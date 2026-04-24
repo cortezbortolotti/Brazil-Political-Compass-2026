@@ -2293,47 +2293,30 @@ async function carregarPlebiscito(questao) {
         var geojsonMundo = _plebiscitoCache[keyMundo];
 
         function getColorPleb(vencedor, pctValue) {
-            // pctValue: percentual (0-100) para gradiente — mapeia 20% → 100%
             if (!vencedor || vencedor === "NADA") return "#747474";
             if (vencedor === "EMPATE") return "#e8e8e8";
 
-            // Mapear 20% = cor clara (t=0), 100% = cor escura (t=1)
+            // Decil: arredonda para o múltiplo de 10 mais próximo (mín 20)
             var pct = Math.max(0, Math.min(100, pctValue || 50));
-            var t = Math.max(0, Math.min(1, (pct - 20) / 80)); // (20% → 100%)
+            var decil = Math.max(20, Math.floor(pct / 10) * 10);
 
-            // Interpolação linear entre cores
-            function lerpColor(c1, c2, t) {
-                var r1 = parseInt(c1.substring(1, 3), 16);
-                var g1 = parseInt(c1.substring(3, 5), 16);
-                var b1 = parseInt(c1.substring(5, 7), 16);
-                var r2 = parseInt(c2.substring(1, 3), 16);
-                var g2 = parseInt(c2.substring(3, 5), 16);
-                var b2 = parseInt(c2.substring(5, 7), 16);
+            // Verde (#77d36f → #173e13) — República / Presidencialismo
+            var verde = {
+                20: "#77d36f", 30: "#6bc064", 40: "#5fae58",
+                50: "#539b4d", 60: "#478941", 70: "#3b7636",
+                80: "#2f632a", 90: "#23511f"
+            };
+            // Amarelo (#f0db75 → #73620c) — Monarquia / Parlamentarismo
+            var amarelo = {
+                20: "#f0db75", 30: "#e0cc68", 40: "#d1bd5b",
+                50: "#c1ae4e", 60: "#b29f41", 70: "#a28f33",
+                80: "#928026", 90: "#837119"
+            };
 
-                var r = Math.round(r1 + (r2 - r1) * t);
-                var g = Math.round(g1 + (g2 - g1) * t);
-                var b = Math.round(b1 + (b2 - b1) * t);
-
-                return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
-            }
-
-            // Gradientes: cores claras (20%) → escuras (90%)
-            if (vencedor === "REPÚBLICA" || vencedor === "REPUBLICA") {
-                // Verde PSL: #77d36f (claro) → #173e13 (escuro)
-                return lerpColor("#77d36f", "#173e13", t);
-            }
-            if (vencedor === "MONARQUIA") {
-                // Amarelo PSB: #f0db75 (claro) → #73620c (escuro)
-                return lerpColor("#f0db75", "#73620c", t);
-            }
-            if (vencedor === "PRESIDENCIALISMO") {
-                // Verde PSL (igual República)
-                return lerpColor("#77d36f", "#173e13", t);
-            }
-            if (vencedor === "PARLAMENTARISMO") {
-                // Amarelo PSB (igual Monarquia)
-                return lerpColor("#f0db75", "#73620c", t);
-            }
+            if (vencedor === "REPÚBLICA" || vencedor === "PRESIDENCIALISMO")
+                return verde[decil] || verde[90];
+            if (vencedor === "MONARQUIA" || vencedor === "PARLAMENTARISMO")
+                return amarelo[decil] || amarelo[90];
             return "#747474";
         }
 
@@ -2341,7 +2324,7 @@ async function carregarPlebiscito(questao) {
             style: function(feature) {
                 var props = feature.properties || {};
                 var vencedor = props.vencedor || "";
-                var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
+                var pct = (vencedor === "REPÚBLICA" ? props.rep_pct : vencedor === "MONARQUIA" ? props.mon_pct : vencedor === "PRESIDENCIALISMO" ? props.pres_pct : vencedor === "PARLAMENTARISMO" ? props.parl_pct : null) || 50;
                 return {
                     fillColor: getColorPleb(vencedor, pct),
                     weight: 0.3,
@@ -2432,7 +2415,7 @@ async function carregarPlebiscito(questao) {
                 style: function(feature) {
                     var props = feature.properties || {};
                     var vencedor = props.vencedor || "";
-                    var pct = props.rep_pct || props.mon_pct || props.pres_pct || props.parl_pct || 50;
+                    var pct = (vencedor === "REPÚBLICA" ? props.rep_pct : vencedor === "MONARQUIA" ? props.mon_pct : vencedor === "PRESIDENCIALISMO" ? props.pres_pct : vencedor === "PARLAMENTARISMO" ? props.parl_pct : null) || 50;
                     var semDado = vencedor === "NADA";
                     return {
                         fillColor: getColorPleb(vencedor, pct),
